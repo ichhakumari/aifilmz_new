@@ -1,0 +1,368 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+:root {
+  /* Color Palette */
+  --primary-orange: #FE4A23;
+  --secondary-orange: #E03A16;
+
+  /* Font size scale - fluid typography */
+  --text-xs: clamp(0.75rem, 0.7rem + 0.25vw, 0.875rem);
+  --text-sm: clamp(0.875rem, 0.8rem + 0.375vw, 1rem);
+  --text-base: clamp(1rem, 0.9rem + 0.5vw, 1.125rem);
+  --text-lg: clamp(1.125rem, 1rem + 0.625vw, 1.25rem);
+  --text-xl: clamp(1.25rem, 1.1rem + 0.75vw, 1.5rem);
+  --text-2xl: clamp(1.5rem, 1.3rem + 1vw, 1.875rem);
+  --text-3xl: clamp(1.875rem, 1.6rem + 1.375vw, 2.25rem);
+  --text-4xl: clamp(2.25rem, 1.9rem + 1.75vw, 3rem);
+  --text-5xl: clamp(3rem, 2.5rem + 2.5vw, 4rem);
+  --text-6xl: clamp(4rem, 3rem + 5vw, 6rem);
+}
+
+html {
+  font-size: 16px;
+  scroll-behavior: smooth;
+}
+
+body {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 400;
+  line-height: 1.6;
+  letter-spacing: -0.01em;
+  overflow-x: hidden;
+  -webkit-font-smoothing: antialiased;
+  -moz-osx-font-smoothing: grayscale;
+}
+
+/* Global Typography */
+h1, h2, h3, h4, h5, h6 {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-weight: 600;
+  line-height: 1.2;
+  letter-spacing: -0.02em;
+}
+
+h1 {
+  font-size: var(--text-6xl);
+  font-weight: 700;
+}
+
+h2 {
+  font-size: var(--text-5xl);
+  font-weight: 700;
+}
+
+h3 {
+  font-size: var(--text-4xl);
+  font-weight: 600;
+}
+
+h4 {
+  font-size: var(--text-3xl);
+  font-weight: 600;
+}
+
+h5 {
+  font-size: var(--text-2xl);
+  font-weight: 600;
+}
+
+h6 {
+  font-size: var(--text-xl);
+  font-weight: 600;
+}
+
+p, span, div, button, a, input, textarea, select, label {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+/* Theme Configuration */
+.app {
+  min-height: 100vh;
+  transition: all 0.3s ease;
+}
+
+/* Light Mode - White Backgrounds with Orange Accents */
+.light {
+  --bg-primary: #FFFFFF;
+  --bg-secondary: #F8F9FA;
+  --bg-tertiary: #F1F3F4;
+  --bg-quaternary: #E8EAED;
+  --text-primary: #000000;
+  --text-secondary: #333333;
+  --text-muted: #666666;
+  --text-inverse: #FFFFFF;
+  --border-color: rgba(254, 74, 35, 0.2);
+  --shadow: rgba(0, 0, 0, 0.1);
+  --accent-color: var(--primary-orange);
+  --accent-hover: var(--secondary-orange);
+  --highlight-color: rgba(254, 74, 35, 0.1);
+  --card-bg: #FFFFFF;
+  --nav-bg: rgba(255, 255, 255, 0.95);
+}
+
+/* Dark Mode - Black Backgrounds with Orange Accents */
+.dark {
+  --bg-primary: #000000;
+  --bg-secondary: #0A0A0A;
+  --bg-tertiary: #1A1A1A;
+  --bg-quaternary: #2A2A2A;
+  --text-primary: #FFFFFF;
+  --text-secondary: #CCCCCC;
+  --text-muted: #999999;
+  --text-inverse: #000000;
+  --border-color: rgba(254, 74, 35, 0.3);
+  --shadow: rgba(254, 74, 35, 0.2);
+  --accent-color: var(--primary-orange);
+  --accent-hover: var(--secondary-orange);
+  --highlight-color: rgba(254, 74, 35, 0.2);
+  --card-bg: #1A1A1A;
+  --nav-bg: rgba(0, 0, 0, 0.95);
+}
+
+/* Loading Screen */
+.loading-screen {
+  position: fixed;
+  top: 0;
+  left: 0;
+  width: 100vw;
+  height: 100vh;
+  background: var(--bg-primary);
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  z-index: 9999;
+}
+
+.loading-content {
+  text-align: center;
+  color: var(--text-primary);
+}
+
+.loading-logo {
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+  font-size: var(--text-4xl);
+  font-weight: 800;
+  color: var(--accent-color);
+  margin-bottom: 2rem;
+  letter-spacing: 0.1em;
+}
+
+.loading-spinner {
+  width: 50px;
+  height: 50px;
+  border: 3px solid var(--border-color);
+  border-top: 3px solid var(--accent-color);
+  border-radius: 50%;
+  animation: spin 1s linear infinite;
+  margin: 0 auto;
+}
+
+@keyframes spin {
+  0% { transform: rotate(0deg); }
+  100% { transform: rotate(360deg); }
+}
+
+/* Glassmorphism utilities */
+.glass {
+  background: rgba(255, 255, 255, 0.1);
+  backdrop-filter: blur(30px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px var(--shadow);
+}
+
+.glass-card {
+  background: var(--card-bg);
+  backdrop-filter: blur(30px);
+  border: 1px solid var(--border-color);
+  border-radius: 20px;
+  box-shadow: 0 8px 32px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.glass-card:hover {
+  border-color: var(--accent-color);
+  box-shadow: 0 12px 40px var(--shadow);
+  transform: translateY(-2px);
+}
+
+/* Dark mode glass adjustments */
+.dark .glass {
+  background: rgba(0, 0, 0, 0.7);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px var(--shadow);
+}
+
+.dark .glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px var(--shadow);
+}
+
+/* Light mode glass adjustments */
+.light .glass {
+  background: rgba(255, 255, 255, 0.8);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px var(--shadow);
+}
+
+.light .glass-card {
+  background: var(--card-bg);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px var(--shadow);
+}
+
+/* Floating Navbar Styles */
+.floating-navbar {
+  position: fixed;
+  top: 20px;
+  left: 0;
+  right: 0;
+  z-index: 1000;
+  background: var(--nav-bg);
+  backdrop-filter: blur(20px);
+  border: 1px solid var(--border-color);
+  box-shadow: 0 8px 32px var(--shadow);
+  transition: all 0.3s ease;
+}
+
+.floating-navbar.scrolled {
+  top: 10px;
+  background: var(--nav-bg);
+  box-shadow: 0 12px 40px var(--shadow);
+}
+
+/* Button styles */
+.btn-primary {
+  background: var(--accent-color);
+  color: var(--text-inverse);
+  border: none;
+  padding: clamp(0.75rem, 0.7rem + 0.25vw, 1rem) clamp(1.5rem, 1.3rem + 1vw, 2rem);
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: var(--text-base);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  box-shadow: 0 4px 15px var(--shadow);
+  line-height: 1.5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(2.75rem, 2.5rem + 1.25vw, 3.5rem);
+  letter-spacing: -0.01em;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.btn-primary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow);
+  background: var(--accent-hover);
+}
+
+.btn-secondary {
+  background: transparent;
+  color: var(--text-primary);
+  border: 2px solid var(--accent-color);
+  padding: clamp(0.625rem, 0.575rem + 0.25vw, 0.875rem) clamp(1.375rem, 1.2rem + 0.875vw, 1.75rem);
+  border-radius: 50px;
+  font-weight: 600;
+  font-size: var(--text-base);
+  cursor: pointer;
+  transition: all 0.3s ease;
+  position: relative;
+  line-height: 1.5;
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+  min-height: clamp(2.75rem, 2.5rem + 1.25vw, 3.5rem);
+  letter-spacing: -0.01em;
+  font-family: 'Roboto', -apple-system, BlinkMacSystemFont, 'Segoe UI', sans-serif;
+}
+
+.btn-secondary:hover {
+  transform: translateY(-2px);
+  box-shadow: 0 6px 20px var(--shadow);
+  background-color: var(--highlight-color);
+}
+
+/* Gradient text utilities - using orange colors */
+.gradient-text {
+  color: var(--accent-color);
+  background: linear-gradient(135deg, var(--primary-orange), var(--secondary-orange));
+  -webkit-background-clip: text;
+  -webkit-text-fill-color: transparent;
+  background-clip: text;
+}
+
+/* Responsive design improvements */
+@media (max-width: 768px) {
+  html {
+    font-size: 14px;
+  }
+  
+  .loading-logo {
+    font-size: var(--text-3xl);
+  }
+}
+
+@media (max-width: 480px) {
+  html {
+    font-size: 13px;
+  }
+  
+  .loading-logo {
+    font-size: var(--text-2xl);
+  }
+}
+
+/* Custom scrollbar */
+::-webkit-scrollbar {
+  width: 8px;
+}
+
+::-webkit-scrollbar-track {
+  background: var(--bg-tertiary);
+}
+
+::-webkit-scrollbar-thumb {
+  background: var(--accent-color);
+  border-radius: 4px;
+}
+
+::-webkit-scrollbar-thumb:hover {
+  background: var(--accent-hover);
+}
+
+/* Text selection */
+::selection {
+  background: var(--highlight-color);
+  color: var(--text-primary);
+}
+
+/* Focus styles */
+.focus-visible:focus {
+  outline: 2px solid var(--accent-color);
+  outline-offset: 2px;
+}
+
+/* Smooth transitions for theme switching */
+* {
+  transition: background-color 0.3s ease, color 0.3s ease, border-color 0.3s ease;
+}
+
+/* Orange animation effects */
+@keyframes orange-pulse {
+  0%, 100% {
+    box-shadow: 0 0 20px var(--shadow);
+  }
+  50% {
+    box-shadow: 0 0 30px var(--shadow);
+  }
+}
+
+.dark .orange-pulse {
+  animation: orange-pulse 2s infinite;
+}

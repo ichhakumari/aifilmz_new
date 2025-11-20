@@ -13,10 +13,10 @@ const Services = () => {
   const isScrolling = useRef(false);
 
   const services = [
-    { title: "Commercial Production", video: "/public/videos/zomato.mp4" },
-    { title: "Corporate Videos", video: "/public/videos/lion.mp4" },
-    { title: "Documentary Films", video: "/public/videos/republic2.mp4" },
-    { title: "Automated Editing", video: "/public/videos/republic.mp4" }
+    { title: "Commercial Production", video: "/videos/zomato.mp4" },
+    { title: "Corporate Videos", video: "/videos/lion.mp4" },
+    { title: "Documentary Films", video: "/videos/republic2.mp4" },
+    { title: "Automated Editing", video: "/videos/republic.mp4" }
   ];
 
   useEffect(() => {

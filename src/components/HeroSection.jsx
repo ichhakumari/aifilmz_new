@@ -21,7 +21,7 @@ const HeroSection = () => {
           className="w-full h-full object-cover"
         >
           <source
-            src="/public/videos/Amul Janmashtami Special.mp4"
+            src="/videos/Amul Janmashtami Special.mp4"
             type="video/mp4"
           />
         </video>

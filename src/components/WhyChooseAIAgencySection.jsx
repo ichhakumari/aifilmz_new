@@ -84,7 +84,7 @@ const WhyChooseAIAgencySection = () => {
                 loop
                 playsInline
               >
-                <source src="/public/videos/shoes.mp4" type="video/mp4" />
+                <source src="/videos/shoes.mp4" type="video/mp4" />
               </video>
               <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <motion.button

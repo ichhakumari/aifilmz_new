@@ -16,63 +16,63 @@ const GlimpseAtFilms = () => {
       title: 'Vasavi Gold & Diamonds AI Ad',
       category: 'AI ADS',
       thumbnail: '',
-      videoUrl: "/public/videos/shoes.mp4"
+      videoUrl: "/videos/shoes.mp4"
     },
     {
       id: 2,
       title: 'Sankara Eye Hospital Campaign',
       category: 'AI ADS',
       thumbnail: '',
-      videoUrl: "/public/videos/Cadbury Dairy Milk.mp4"
+      videoUrl: "/videos/Cadbury Dairy Milk.mp4"
     },
     {
       id: 3,
       title: "Nature's Box Honey",
       category: 'AI ADS',
       thumbnail: '',
-      videoUrl: "/public/videos/lion.mp4"
+      videoUrl: "/videos/lion.mp4"
     },
     {
       id: 4,
       title: 'Quantum Computing Visuals',
       category: 'Tech Promo',
       thumbnail: '',
-      videoUrl: "/public/videos/republic2.mp4"
+      videoUrl: "/videos/republic2.mp4"
     },
     {
       id: 5,
       title: 'Architectural Fly-through',
       category: '3D Render',
       thumbnail: '',
-      videoUrl: "/public/videos/zomato.mp4"
+      videoUrl: "/videos/zomato.mp4"
     },
     {
       id: 6,
       title: 'Cyber Security Explainer',
       category: 'Animation',
       thumbnail: '',
-      videoUrl: "/public/videos/Cadbury Dairy Milk.mp4"
+      videoUrl: "/videos/Cadbury Dairy Milk.mp4"
     },
     {
       id: 7,
       title: 'Eco-Friendly Product Launch',
       category: 'Commercial',
       thumbnail: '',
-      videoUrl: "/public/videos/bear.mp4"
+      videoUrl: "/videos/bear.mp4"
     },
     {
       id: 8,
       title: 'Medical Technology Showcase',
       category: 'Healthcare',
       thumbnail: '',
-      videoUrl: "/public/videos/lion.mp4"
+      videoUrl: "/videos/lion.mp4"
     },
     {
       id: 9,
       title: 'Automotive AI Integration',
       category: 'AI ADS',
       thumbnail: '',
-      videoUrl: '/public/videos/republic.mp4'
+      videoUrl: '/videos/republic.mp4'
     }
   ];
 

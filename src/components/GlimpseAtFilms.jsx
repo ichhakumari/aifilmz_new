@@ -99,15 +99,15 @@ const GlimpseAtFilms = () => {
   };
 
   return (
-    <section ref={ref} className="py-16 sm:py-20 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+    <section ref={ref} className="py-12 sm:py-16 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="container mx-auto max-w-7xl">
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-8 sm:mb-12"
         >
-          <h2 className="font-bold mb-4" style={{ fontSize: 'var(--text-5xl)', color: 'var(--text-primary)' }}>
+          <h2 className="font-bold mb-4" style={{ fontSize: 'var(--text-4xl)', color: 'var(--text-primary)' }}>
             Transforming Brands Through{" "}
             <TypeAnimation
               sequence={[
@@ -147,7 +147,7 @@ const GlimpseAtFilms = () => {
               </div>
 
               <div className="absolute top-0 left-0 right-0 p-4 sm:p-6 pointer-events-none">
-                <h3 className="text-white font-bold text-lg sm:text-xl truncate mb-2 drop-shadow-md">{film.title}</h3>
+                <h3 className="text-white font-bold text-base sm:text-lg truncate mb-2 drop-shadow-md">{film.title}</h3>
               </div>
             </motion.div>
           ))}

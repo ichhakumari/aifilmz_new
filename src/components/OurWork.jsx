@@ -149,25 +149,64 @@ const OurWork = () => {
   };
 
   return (
-    <section ref={ref} className="py-16 sm:py-20 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-tertiary)' }}>
+    <section ref={ref} className="py-8 sm:py-12 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-tertiary)' }}>
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 50 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-8 sm:mb-10"
         >
-          <h2 className="font-bold mb-6 gradient-text" style={{ fontSize: 'var(--text-5xl)' }}>
+          <h2 className="font-bold mb-4 gradient-text" style={{ fontSize: 'var(--text-4xl)' }}>
             Our Work
           </h2>
-          <p className="max-w-3xl mx-auto leading-relaxed" style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
+          <p className="max-w-3xl mx-auto leading-relaxed" style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)' }}>
             Explore our portfolio of groundbreaking projects that showcase the perfect fusion of AI technology and creative storytelling.
           </p>
         </motion.div>
 
+        {/* Project Navigation - Radio Buttons */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.2 }}
+          className="mb-8"
+        >
+          <div className="flex flex-wrap justify-center gap-3 max-w-5xl mx-auto">
+            {projects.map((project, index) => (
+              <button
+                key={project.id}
+                onClick={() => setActiveProject(index)}
+                className={`flex-shrink-0 px-4 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${index === activeProject
+                  ? 'shadow-lg scale-105'
+                  : 'hover:scale-102'
+                  }`}
+                style={{
+                  backgroundColor: index === activeProject
+                    ? 'var(--accent-color)'
+                    : 'var(--bg-quaternary)',
+                  color: index === activeProject
+                    ? 'white'
+                    : 'var(--text-secondary)',
+                  border: index === activeProject
+                    ? 'none'
+                    : '1px solid var(--border-color)'
+                }}
+              >
+                <div className="flex items-center gap-2">
+                  <span className="w-2 h-2 rounded-full" style={{
+                    backgroundColor: index === activeProject ? 'white' : 'var(--accent-color)'
+                  }}></span>
+                  <span>{project.title}</span>
+                </div>
+              </button>
+            ))}
+          </div>
+        </motion.div>
+
         {/* Dynamic Two-Column Layout */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+        <div className="grid lg:grid-cols-2 gap-6 lg:gap-6 items-center">
           {/* Left Column - Dynamic Text Content */}
           <div className="order-2 lg:order-1">
             <AnimatePresence mode="wait">
@@ -177,7 +216,7 @@ const OurWork = () => {
                 initial="enter"
                 animate="center"
                 exit="exit"
-                className="space-y-6"
+                className="space-y-4"
               >
                 {/* Category Badge */}
                 <motion.div
@@ -204,7 +243,7 @@ const OurWork = () => {
                   transition={{ delay: 0.3 }}
                   className="font-bold"
                   style={{
-                    fontSize: 'var(--text-3xl)',
+                    fontSize: 'var(--text-2xl)',
                     color: 'var(--text-primary)',
                     lineHeight: 1.2
                   }}
@@ -219,7 +258,7 @@ const OurWork = () => {
                   transition={{ delay: 0.4 }}
                   className="leading-relaxed"
                   style={{
-                    fontSize: 'var(--text-lg)',
+                    fontSize: 'var(--text-base)',
                     color: 'var(--text-secondary)',
                     lineHeight: 1.6
                   }}
@@ -232,7 +271,7 @@ const OurWork = () => {
                   initial={{ opacity: 0, y: 20 }}
                   animate={{ opacity: 1, y: 0 }}
                   transition={{ delay: 0.5 }}
-                  className="space-y-4 pt-4"
+                  className="space-y-3 pt-3"
                 >
                   {/* Client Info */}
                   <div className="flex items-center space-x-4">
@@ -320,8 +359,8 @@ const OurWork = () => {
                 exit="exit"
                 className="relative"
               >
-                <div className="glass-card p-4 sm:p-6 group cursor-pointer rounded-2xl overflow-hidden">
-                  <div className="relative overflow-hidden rounded-xl mb-4 w-full h-80 sm:h-[400px] lg:h-[500px]">
+                <div className="glass-card p-3 sm:p-4 group cursor-pointer rounded-2xl overflow-hidden">
+                  <div className="relative overflow-hidden rounded-xl mb-3 w-full h-80 sm:h-[400px] lg:h-[500px]">
                     <video
                       src={currentProject.videoUrl}
                       className="w-full h-full object-cover"
@@ -331,18 +370,18 @@ const OurWork = () => {
                       Your browser does not support the video tag.
                     </video>
 
-                    {/* Navigation Buttons */}
+                    {/* Navigation Buttons - On Video */}
                     <button
                       onClick={(e) => { e.stopPropagation(); handlePrevious(); }}
-                      className="absolute left-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/30 hover:bg-black/50 text-white backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-10"
+                      className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-sm transition-all z-10 shadow-lg"
                     >
-                      <SafeIcon icon={FiChevronLeft} className="w-6 h-6" />
+                      <SafeIcon icon={FiChevronLeft} className="w-5 h-5" />
                     </button>
                     <button
                       onClick={(e) => { e.stopPropagation(); handleNext(); }}
-                      className="absolute right-4 top-1/2 -translate-y-1/2 p-3 rounded-full bg-black/30 hover:bg-black/50 text-white backdrop-blur-sm transition-all opacity-0 group-hover:opacity-100 z-10"
+                      className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-sm transition-all z-10 shadow-lg"
                     >
-                      <SafeIcon icon={FiChevronRight} className="w-6 h-6" />
+                      <SafeIcon icon={FiChevronRight} className="w-5 h-5" />
                     </button>
                   </div>
                 </div>

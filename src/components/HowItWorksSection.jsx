@@ -28,28 +28,28 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section ref={ref} className="py-16 sm:py-20 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-quaternary)' }}>
+    <section ref={ref} className="py-12 sm:py-16 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-quaternary)' }}>
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-12 sm:mb-16"
+          className="text-center mb-8 sm:mb-10"
         >
-          <h2 className="font-bold mb-4" style={{ fontSize: 'var(--text-5xl)', color: 'var(--text-primary)' }}>
-            How We Works
+          <h2 className="font-bold mb-4" style={{ fontSize: 'var(--text-4xl)', color: 'var(--text-primary)' }}>
+            How We Work
           </h2>
-          <p 
-            className="max-w-3xl mx-auto leading-relaxed" 
-            style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}
+          <p
+            className="max-w-3xl mx-auto leading-relaxed"
+            style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)' }}
           >
             Our streamlined process makes creating professional video content simple, fast, and effective.
           </p>
         </motion.div>
 
         {/* Three Column Layout */}
-        <div className="grid md:grid-cols-3 gap-8 lg:gap-12">
+        <div className="grid md:grid-cols-3 gap-6 lg:gap-8">
           {steps.map((step, index) => (
             <motion.div
               key={index}
@@ -59,20 +59,20 @@ const HowItWorksSection = () => {
               className="text-center"
             >
               {/* Step Number */}
-              <motion.div className="mb-6 mx-auto">
+              <motion.div className="mb-4 mx-auto">
                 <motion.div
                   initial={{ scale: 0 }}
                   animate={isInView ? { scale: 1 } : {}}
                   transition={{ duration: 0.5, delay: 0.3 + index * 0.2, type: "spring" }}
                 >
-                  <div 
-                    className="w-16 h-16 rounded-full flex items-center justify-center mx-auto mb-4" 
+                  <div
+                    className="w-14 h-14 rounded-full flex items-center justify-center mx-auto mb-3"
                     style={{ backgroundColor: 'var(--accent-color)' }}
                   >
-                    <SafeIcon icon={step.icon} className="w-8 h-8 text-white" />
+                    <SafeIcon icon={step.icon} className="w-7 h-7 text-white" />
                   </div>
-                  <div 
-                    className="inline-block px-3 py-1 rounded-full text-sm font-semibold" 
+                  <div
+                    className="inline-block px-3 py-1 rounded-full text-sm font-semibold"
                     style={{ backgroundColor: 'var(--highlight-color)', color: 'var(--accent-color)' }}
                   >
                     Step {index + 1}
@@ -81,12 +81,12 @@ const HowItWorksSection = () => {
               </motion.div>
 
               {/* Content */}
-              <div className="glass-card p-6 sm:p-8">
-                <h3 className="font-bold mb-4" style={{ fontSize: 'var(--text-xl)', color: 'var(--text-primary)' }}>
+              <div className="glass-card p-5 sm:p-6">
+                <h3 className="font-bold mb-3" style={{ fontSize: 'var(--text-lg)', color: 'var(--text-primary)' }}>
                   {step.title}
                 </h3>
-                <p 
-                  className="leading-relaxed mb-6" 
+                <p
+                  className="leading-relaxed mb-4"
                   style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7 }}
                 >
                   {step.description}
@@ -115,11 +115,11 @@ const HowItWorksSection = () => {
           transition={{ duration: 0.8, delay: 0.8 }}
           className="text-center mt-12 sm:mt-16"
         >
-          <p className="mb-6" style={{ fontSize: 'var(--text-lg)', color: 'var(--text-secondary)' }}>
+          <p className="mb-6" style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)' }}>
             Ready to get started?{' '}
-            <a 
-              href="#contact-us" 
-              className="font-semibold ml-2 transition-colors hover:opacity-80" 
+            <a
+              href="#contact-us"
+              className="font-semibold ml-2 transition-colors hover:opacity-80"
               style={{ color: 'var(--accent-color)' }}
             >
               Talk to our team

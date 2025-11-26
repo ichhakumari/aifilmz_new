@@ -19,8 +19,8 @@ const Logo = ({ name }) => {
     MORNINGSTAR: { letterSpacing: '0.05em' }
   };
   return (
-    <span 
-      className="text-3xl font-semibold tracking-wider whitespace-nowrap"
+    <span
+      className="text-2xl font-semibold tracking-wider whitespace-nowrap"
       style={{
         color: 'var(--text-muted)',
         ...customStyles[name]
@@ -33,10 +33,10 @@ const Logo = ({ name }) => {
 
 const TrustedBy = () => {
   return (
-    <div className="py-16 overflow-x-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+    <div className="py-12 sm:py-16 overflow-x-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
-        <h3 
-          className="text-center text-sm font-bold tracking-widest uppercase mb-12" 
+        <h3
+          className="text-center text-xs font-bold tracking-widest uppercase mb-12"
           style={{ color: 'var(--text-muted)' }}
         >
           Trusted by the world's leading companies

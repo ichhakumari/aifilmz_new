@@ -121,6 +121,7 @@ const Header = () => {
             </div>
           </motion.div>
 
+
           {/* Desktop Navigation */}
           <nav ref={dropdownRef} className="hidden lg:flex items-center space-x-1">
             {navItems.map((item, index) => (

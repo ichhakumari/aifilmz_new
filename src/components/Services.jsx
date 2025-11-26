@@ -95,13 +95,13 @@ const Services = () => {
               >
                 <div>
                   <span
-                    className="text-sm font-semibold tracking-widest uppercase"
+                    className="text-xs font-semibold tracking-widest uppercase"
                     style={{ color: 'var(--electric-teal)' }}
                   >
                     Service {String(index + 1).padStart(2, '0')}
                   </span>
                 </div>
-                <h2 className="text-4xl md:text-6xl font-bold text-white mb-2 tracking-tight">
+                <h2 className="text-3xl md:text-5xl font-bold text-white mb-2 tracking-tight">
                   {service.title}
                 </h2>
                 <div

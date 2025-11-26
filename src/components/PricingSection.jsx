@@ -38,7 +38,7 @@ const PricingSection = () => {
   ];
 
   return (
-    <section ref={ref} className="py-16 sm:py-20 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+    <section ref={ref} className="py-12 sm:py-16 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <motion.div
@@ -47,13 +47,13 @@ const PricingSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12 sm:mb-16"
         >
-          <span 
-            className="font-semibold mb-3 inline-block" 
+          <span
+            className="font-semibold mb-3 inline-block"
             style={{ color: 'var(--accent-color)', fontSize: 'var(--text-base)' }}
           >
             Affordable & Scaleable
           </span>
-          <h2 className="font-bold" style={{ fontSize: 'var(--text-5xl)', color: 'var(--text-primary)' }}>
+          <h2 className="font-bold" style={{ fontSize: 'var(--text-4xl)', color: 'var(--text-primary)' }}>
             AI Video Pricing
           </h2>
         </motion.div>
@@ -70,19 +70,19 @@ const PricingSection = () => {
               style={{
                 backgroundColor: 'var(--card-bg)',
                 borderColor: 'var(--accent-color)',
-                boxShadow: plan.highlight 
-                  ? '0 0 40px rgba(0, 206, 209, 0.2)' 
+                boxShadow: plan.highlight
+                  ? '0 0 40px rgba(0, 206, 209, 0.2)'
                   : '0 0 20px rgba(0, 206, 209, 0.1)'
               }}
             >
-              <h3 className="font-bold mb-3" style={{ fontSize: 'var(--text-2xl)', color: 'var(--text-primary)' }}>
+              <h3 className="font-bold mb-3" style={{ fontSize: 'var(--text-xl)', color: 'var(--text-primary)' }}>
                 {plan.title}
               </h3>
               <p className="mb-8" style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)' }}>
                 {plan.description}
               </p>
               <div className="my-4">
-                <span className="font-bold" style={{ fontSize: 'var(--text-5xl)', color: 'var(--text-primary)' }}>
+                <span className="font-bold" style={{ fontSize: 'var(--text-4xl)', color: 'var(--text-primary)' }}>
                   {plan.price}
                 </span>
                 <span className="ml-2" style={{ color: 'var(--text-muted)' }}>
@@ -92,17 +92,17 @@ const PricingSection = () => {
               <ul className="space-y-4 my-8 flex-grow">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start">
-                    <SafeIcon 
-                      icon={FiCheck} 
-                      className="w-5 h-5 mr-3 mt-1 flex-shrink-0" 
+                    <SafeIcon
+                      icon={FiCheck}
+                      className="w-5 h-5 mr-3 mt-1 flex-shrink-0"
                       style={{ color: 'var(--accent-color)' }}
                     />
                     <span style={{ color: 'var(--text-secondary)' }}>{feature}</span>
                   </li>
                 ))}
               </ul>
-              <button 
-                className="btn-primary mt-auto" 
+              <button
+                className="btn-primary mt-auto"
                 style={{ backgroundColor: 'var(--accent-color)', color: 'var(--text-inverse)' }}
               >
                 Get Started

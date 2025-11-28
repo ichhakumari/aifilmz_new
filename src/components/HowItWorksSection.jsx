@@ -13,17 +13,17 @@ const HowItWorksSection = () => {
     {
       icon: FiEdit3,
       title: "Share Your Vision",
-      description: "Tell us about your project goals, target audience, and creative preferences. Our AI analyzes your requirements to suggest optimal approaches."
+      description: "Tell us about your project - whether you need AI avatar cloning, animated graphics, product videos, ad films, or music videos. Our AI analyzes your requirements to suggest optimal approaches."
     },
     {
       icon: FiCode,
       title: "AI-Powered Creation",
-      description: "Our intelligent systems generate initial concepts, storyboards, and assets while our creative team refines them with human expertise."
+      description: "Our intelligent systems generate avatars, create animated content, produce reel videos, and craft compelling visuals while our creative team refines them with human expertise."
     },
     {
       icon: FiPlayCircle,
       title: "Review & Deliver",
-      description: "Collaborate with our team through iterative feedback. Finalize your video and receive deliverables optimized for all platforms."
+      description: "Collaborate with our team through iterative feedback. Finalize your AI-generated content and receive deliverables optimized for all platforms."
     }
   ];
 

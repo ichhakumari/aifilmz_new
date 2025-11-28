@@ -68,7 +68,7 @@ const Footer = () => {
                 className="mb-6 leading-relaxed text-sm"
                 style={{ color: '#CCCCCC' }}
               >
-                AI-powered video production platform for businesses. Automate your content creation with intelligent AI solutions that boost productivity and reduce costs.
+                AI-powered video production platform specializing in AI avatar cloning, cloned reel videos, animated graphics, product videos, ad films, animated videos, and music videos. Transform your content creation with intelligent AI solutions.
               </p>
             </div>
 

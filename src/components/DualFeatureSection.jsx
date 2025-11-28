@@ -17,8 +17,8 @@ const DualFeatureSection = () => {
       id: 1,
       icon: FiCode,
       title: "AI-Powered Creation",
-      description: "Harness cutting-edge artificial intelligence to automate complex workflows, generate stunning visuals, and accelerate your production timeline without compromising quality.",
-      highlights: ["Smart Automation", "Visual Generation", "Time Efficiency"],
+      description: "Harness cutting-edge AI for avatar cloning, animated graphics, music video generation, and automated content creation that accelerates your production timeline without compromising quality.",
+      highlights: ["AI Avatar Cloning", "Animated Graphics", "Music Video AI"],
       cta: "Explore AI Tools",
       gradientColors: ["#D12300", "#FF6B35"],
       bgPattern: "tech"
@@ -27,8 +27,8 @@ const DualFeatureSection = () => {
       id: 2,
       icon: FiFilm,
       title: "Creative Excellence",
-      description: "Combine human artistry with machine precision to deliver compelling narratives that resonate with your audience and drive meaningful engagement.",
-      highlights: ["Expert Storytelling", "Visual Mastery", "Audience Connection"],
+      description: "Combine human artistry with AI precision to deliver compelling ad films, product videos, and social media reels that resonate with your audience and drive engagement.",
+      highlights: ["AI Ad Films", "Product Videos", "Cloned Reel Videos"],
       cta: "View Portfolio",
       gradientColors: ["#D12300", "#B11E00"],
       bgPattern: "creative"
@@ -59,7 +59,7 @@ const DualFeatureSection = () => {
             ease: "easeInOut"
           }}
         />
-        
+
         <motion.div
           className="absolute w-64 h-64 rounded-full"
           style={{
@@ -191,7 +191,7 @@ const DualFeatureSection = () => {
   };
 
   return (
-    <section 
+    <section
       ref={ref}
       className="py-20 px-4 sm:px-6 transition-colors duration-500"
       style={{ backgroundColor: 'var(--bg-primary)' }}
@@ -204,18 +204,18 @@ const DualFeatureSection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-16"
         >
-          <h2 
+          <h2
             className="font-bold mb-4"
-            style={{ 
+            style={{
               fontSize: 'var(--text-4xl)',
               color: 'var(--text-primary)'
             }}
           >
             Transform Your Vision Into Reality
           </h2>
-          <p 
+          <p
             className="max-w-3xl mx-auto leading-relaxed"
-            style={{ 
+            style={{
               fontSize: 'var(--text-lg)',
               color: 'var(--text-secondary)'
             }}
@@ -231,8 +231,8 @@ const DualFeatureSection = () => {
               key={feature.id}
               initial={{ opacity: 0, y: 50 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ 
-                duration: 0.8, 
+              transition={{
+                duration: 0.8,
                 delay: index * 0.2,
                 ease: "easeOut"
               }}
@@ -241,20 +241,20 @@ const DualFeatureSection = () => {
               onMouseLeave={() => setHoveredCard(null)}
             >
               {/* Card Container */}
-              <div 
+              <div
                 className="relative p-8 sm:p-10 rounded-2xl transition-all duration-500 overflow-hidden"
                 style={{
                   backgroundColor: isDark ? 'rgba(255, 255, 255, 0.03)' : 'rgba(0, 0, 0, 0.02)',
                   border: `1px solid ${isDark ? 'rgba(209, 35, 0, 0.2)' : 'rgba(209, 35, 0, 0.15)'}`,
-                  boxShadow: isDark 
+                  boxShadow: isDark
                     ? '0 10px 40px rgba(0, 0, 0, 0.3), 0 0 80px rgba(209, 35, 0, 0.1)'
                     : '0 10px 40px rgba(0, 0, 0, 0.1), 0 0 80px rgba(209, 35, 0, 0.05)',
                   transform: hoveredCard === feature.id ? 'translateY(-8px) scale(1.02)' : 'translateY(0) scale(1)',
                 }}
               >
                 {/* Animated Background */}
-                <AnimatedBackground 
-                  pattern={feature.bgPattern} 
+                <AnimatedBackground
+                  pattern={feature.bgPattern}
                   isActive={hoveredCard === feature.id || isInView}
                 />
 
@@ -267,14 +267,14 @@ const DualFeatureSection = () => {
                       background: `linear-gradient(135deg, ${feature.gradientColors[0]}, ${feature.gradientColors[1]})`,
                       boxShadow: `0 8px 32px ${feature.gradientColors[0]}30`,
                     }}
-                    whileHover={{ 
+                    whileHover={{
                       rotate: 360,
                       scale: 1.1
                     }}
                     transition={{ duration: 0.6, ease: "easeInOut" }}
                   >
-                    <SafeIcon 
-                      icon={feature.icon} 
+                    <SafeIcon
+                      icon={feature.icon}
                       className="w-8 h-8 text-white"
                     />
                   </motion.div>
@@ -295,7 +295,7 @@ const DualFeatureSection = () => {
                   </motion.h3>
 
                   {/* Description */}
-                  <p 
+                  <p
                     className="mb-6 leading-relaxed"
                     style={{
                       fontSize: 'var(--text-base)',
@@ -314,7 +314,7 @@ const DualFeatureSection = () => {
                         className="flex items-center space-x-3"
                         initial={{ opacity: 0, x: -20 }}
                         animate={isInView ? { opacity: 1, x: 0 } : {}}
-                        transition={{ 
+                        transition={{
                           delay: 0.6 + index * 0.2 + i * 0.1,
                           duration: 0.5
                         }}
@@ -331,7 +331,7 @@ const DualFeatureSection = () => {
                             delay: i * 0.3
                           }}
                         />
-                        <span 
+                        <span
                           className="text-sm font-medium"
                           style={{ color: 'var(--text-secondary)' }}
                         >
@@ -349,7 +349,7 @@ const DualFeatureSection = () => {
                       color: 'white',
                       boxShadow: `0 4px 20px ${feature.gradientColors[0]}40`,
                     }}
-                    whileHover={{ 
+                    whileHover={{
                       scale: 1.05,
                       boxShadow: `0 8px 30px ${feature.gradientColors[0]}60`
                     }}

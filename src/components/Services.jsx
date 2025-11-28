@@ -13,10 +13,13 @@ const Services = () => {
   const isScrolling = useRef(false);
 
   const services = [
-    { title: "Commercial Production", video: "/videos/zomato.mp4" },
-    { title: "Corporate Videos", video: "/videos/lion.mp4" },
-    { title: "Documentary Films", video: "/videos/republic2.mp4" },
-    { title: "Automated Editing", video: "/videos/republic.mp4" }
+    { title: "AI Avatar Cloning", video: "/videos/lion.mp4" },
+    { title: "AI Cloned Reel Videos", video: "/videos/republic.mp4" },
+    { title: "AI Animated Graphics", video: "/videos/bear.mp4" },
+    { title: "AI Product Videos", video: "/videos/shoes.mp4" },
+    { title: "AI Ad Films", video: "/videos/zomato.mp4" },
+    { title: "AI Animated Videos", video: "/videos/Cadbury Dairy Milk.mp4" },
+    { title: "AI Music Videos", video: "/videos/Amul Janmashtami Special.mp4" }
   ];
 
   useEffect(() => {

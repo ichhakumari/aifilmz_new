@@ -15,7 +15,7 @@ const WhyChooseAIAgencySection = () => {
     {
       icon: FiZap,
       title: "Lightning Fast Production",
-      description: "Deliver high-quality video content in record time with our AI-enhanced workflow that cuts production time by 60%."
+      description: "Create AI avatars, animated graphics, product videos, and music videos in record time with our AI-enhanced workflow that cuts production time by 60%."
     },
     {
       icon: FiShield,
@@ -25,12 +25,12 @@ const WhyChooseAIAgencySection = () => {
     {
       icon: FiTrendingUp,
       title: "Proven ROI Results",
-      description: "Our clients see an average 3x increase in engagement and 45% reduction in production costs."
+      description: "Our AI-powered services including cloned reel videos, ad films, and animated content deliver 3x engagement increase and 45% cost reduction."
     },
     {
       icon: FiUsers,
       title: "Expert Creative Team",
-      description: "Work with industry veterans who combine artistic vision with cutting-edge AI technology."
+      description: "Work with industry veterans who specialize in AI avatar cloning, animated videos, and cutting-edge AI video production technology."
     }
   ];
 

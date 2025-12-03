@@ -16,8 +16,8 @@ const OurWork = () => {
       id: 1,
       title: "AI Avatar Cloning",
       description: "Revolutionary AI-powered avatar cloning technology that creates photorealistic digital twins for personalized video content",
-      videoUrl: "/videos/lion.mp4",
-      thumbnail: "/public/videos/lion.mp4",
+      videoUrl: "/videos/video2.mp4",
+      thumbnail: "/videos/video2.mp4",
       category: "AI Avatar",
       duration: "2:15",
       details: {
@@ -32,7 +32,7 @@ const OurWork = () => {
       id: 2,
       title: "AI Cloned Reel Videos",
       description: "Engaging short-form content created using AI cloning technology for social media platforms and viral marketing campaigns",
-      videoUrl: "/videos/republic.mp4",
+      videoUrl: "/videos/video1.mp4",
       thumbnail: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       category: "Social Media Reels",
       duration: "0:45",
@@ -48,7 +48,7 @@ const OurWork = () => {
       id: 3,
       title: "AI Animated Graphics",
       description: "Stunning animated graphics and motion design created with AI-enhanced tools for modern brand storytelling",
-      videoUrl: "/videos/bear.mp4",
+      videoUrl: "/videos/annimated.mp4",
       thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       category: "Animation",
       duration: "1:30",
@@ -112,7 +112,7 @@ const OurWork = () => {
       id: 7,
       title: "AI Music Videos",
       description: "Creative music videos with AI-generated visuals synchronized to audio for artists and music labels",
-      videoUrl: "/videos/Amul Janmashtami Special.mp4",
+      videoUrl: "/videos/graphics.mp4",
       thumbnail: "https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
       category: "Music Video",
       duration: "3:20",
@@ -199,7 +199,7 @@ const OurWork = () => {
         </motion.div>
 
         {/* Project Navigation - Radio Buttons */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.2 }}
@@ -235,7 +235,7 @@ const OurWork = () => {
               </button>
             ))}
           </div>
-        </motion.div>
+        </motion.div> */}
 
         {/* Dynamic Two-Column Layout */}
         <div className="grid lg:grid-cols-2 gap-6 lg:gap-6 items-center">

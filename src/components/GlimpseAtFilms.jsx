@@ -12,6 +12,20 @@ const GlimpseAtFilms = () => {
 
   const films = [
     {
+      id: 8,
+      title: 'Medical Technology Showcase',
+      category: 'Healthcare',
+      thumbnail: '',
+      videoUrl: "/videos/graphics.mp4"
+    },
+    {
+      id: 9,
+      title: 'Automotive AI Integration',
+      category: 'AI ADS',
+      thumbnail: '',
+      videoUrl: '/videos/eagle.mp4'
+    },
+    {
       id: 1,
       title: 'Vasavi Gold & Diamonds AI Ad',
       category: 'AI ADS',
@@ -30,14 +44,14 @@ const GlimpseAtFilms = () => {
       title: "Nature's Box Honey",
       category: 'AI ADS',
       thumbnail: '',
-      videoUrl: "/videos/lion.mp4"
+      videoUrl: "/videos/video1.mp4"
     },
     {
       id: 4,
       title: 'Quantum Computing Visuals',
       category: 'Tech Promo',
       thumbnail: '',
-      videoUrl: "/videos/republic2.mp4"
+      videoUrl: "/videos/video2.mp4"
     },
     {
       id: 5,
@@ -58,22 +72,9 @@ const GlimpseAtFilms = () => {
       title: 'Eco-Friendly Product Launch',
       category: 'Commercial',
       thumbnail: '',
-      videoUrl: "/videos/bear.mp4"
-    },
-    {
-      id: 8,
-      title: 'Medical Technology Showcase',
-      category: 'Healthcare',
-      thumbnail: '',
-      videoUrl: "/videos/lion.mp4"
-    },
-    {
-      id: 9,
-      title: 'Automotive AI Integration',
-      category: 'AI ADS',
-      thumbnail: '',
-      videoUrl: '/videos/republic.mp4'
+      videoUrl: "/videos/annimated.mp4"
     }
+
   ];
 
   const containerVariants = {

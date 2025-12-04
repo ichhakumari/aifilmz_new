@@ -12,104 +12,175 @@ const PricingSection = () => {
   const pricingPlans = [
     {
       title: "AI Avatar Productions",
-      description: "Hyper-realistic, on-screen virtual presenters to deliver any message.",
+      description: "On-screen virtual presenters with hyper-realistic delivery.",
       price: "$500",
-      priceDetails: "/FIRST 30 SECONDS",
+      priceDetails: "FIRST 30 SECONDS",
       features: [
-        "+$250 each additional 60 seconds, pro-rated",
-        "All videos tailored to your brand",
-        "Human creativity included—from concept to script to completion",
-        "Choose from a diverse range of spokespersons or go \"faceless\" with VO only"
+        "+$250 per 60 seconds additional",
+        "Brand-tailored content",
+        "Full creative support",
+        "Multiple spokesperson options"
       ],
       highlight: false
     },
     {
       title: "AI Cinematic Productions",
-      description: "Hollywood-esque scenes and montages crafted with cutting-edge tools & expert storytelling.",
+      description: "Hollywood-level scenes with advanced AI & expert storytelling.",
       price: "$3,000+",
-      priceDetails: "(CUSTOM QUOTED)",
+      priceDetails: "CUSTOM QUOTED",
       features: [
-        "Pricing depends on length, complexity & amount of custom scenes",
-        "All videos tailored to your brand",
-        "Human creativity included—from concept to script to completion"
+        "Scalable pricing by complexity",
+        "Brand-tailored content",
+        "Full creative support",
+        "Custom scene creation"
       ],
       highlight: true
     }
   ];
 
   return (
-    <section ref={ref} className="py-12 sm:py-16 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-      <div className="container mx-auto max-w-7xl">
+    <section ref={ref} className="py-16 sm:py-20 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12 sm:mb-16"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-14 sm:mb-16"
         >
           <span
-            className="font-semibold mb-3 inline-block"
-            style={{ color: 'var(--accent-color)', fontSize: 'var(--text-base)' }}
+            className="font-semibold mb-2 inline-block text-sm tracking-widest uppercase"
+            style={{ color: 'var(--accent-color)' }}
           >
-            Affordable & Scaleable
+            Transparent Pricing
           </span>
-          <h2 className="font-bold" style={{ fontSize: 'var(--text-4xl)', color: 'var(--text-primary)' }}>
-            AI Video Pricing
+          <h2 
+            className="font-bold text-3xl sm:text-4xl md:text-5xl" 
+            style={{ color: 'var(--text-primary)' }}
+          >
+            Simple & <span style={{ color: 'var(--accent-color)' }}>Scalable</span>
           </h2>
+          <p 
+            className="mt-4 text-base sm:text-lg max-w-2xl mx-auto"
+            style={{ color: 'var(--text-secondary)' }}
+          >
+            Choose the perfect plan for your content needs
+          </p>
         </motion.div>
 
-        {/* Pricing Cards */}
-        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+        {/* Pricing Cards Grid */}
+        <div className="grid md:grid-cols-2 gap-6 lg:gap-8 max-w-4xl mx-auto">
           {pricingPlans.map((plan, index) => (
             <motion.div
               key={index}
-              initial={{ opacity: 0, y: 50 }}
+              initial={{ opacity: 0, y: 30 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.8, delay: index * 0.2 }}
-              className="p-8 sm:p-10 rounded-2xl flex flex-col transition-all duration-300 border-2"
+              transition={{ duration: 0.6, delay: index * 0.15 }}
+              className={`relative rounded-xl p-6 sm:p-8 flex flex-col transition-all duration-300 border group overflow-hidden`}
               style={{
-                backgroundColor: 'var(--card-bg)',
-                borderColor: 'var(--accent-color)',
-                boxShadow: plan.highlight
-                  ? '0 0 40px rgba(0, 206, 209, 0.2)'
-                  : '0 0 20px rgba(0, 206, 209, 0.1)'
+                backgroundColor: plan.highlight ? 'var(--bg-tertiary)' : 'var(--card-bg)',
+                borderColor: plan.highlight ? 'var(--accent-color)' : 'var(--border-color)',
+                borderWidth: '1px',
               }}
             >
-              <h3 className="font-bold mb-3" style={{ fontSize: 'var(--text-xl)', color: 'var(--text-primary)' }}>
+              {/* Highlight Badge */}
+              {plan.highlight && (
+                <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: 'var(--accent-color)' }}></div>
+              )}
+              
+              {plan.highlight && (
+                <div 
+                  className="inline-block mb-4 px-3 py-1 rounded-full text-xs font-semibold w-fit"
+                  style={{ 
+                    backgroundColor: 'var(--accent-color)',
+                    color: 'white'
+                  }}
+                >
+                  RECOMMENDED
+                </div>
+              )}
+
+              {/* Title & Description */}
+              <h3 
+                className="font-bold text-lg sm:text-xl mb-2" 
+                style={{ color: 'var(--text-primary)' }}
+              >
                 {plan.title}
               </h3>
-              <p className="mb-8" style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)' }}>
+              <p 
+                className="text-sm mb-6"
+                style={{ color: 'var(--text-secondary)' }}
+              >
                 {plan.description}
               </p>
-              <div className="my-4">
-                <span className="font-bold" style={{ fontSize: 'var(--text-4xl)', color: 'var(--text-primary)' }}>
-                  {plan.price}
-                </span>
-                <span className="ml-2" style={{ color: 'var(--text-muted)' }}>
-                  {plan.priceDetails}
-                </span>
+
+              {/* Price */}
+              <div className="mb-6">
+                <div className="flex items-baseline gap-2">
+                  <span 
+                    className="font-bold text-3xl sm:text-4xl" 
+                    style={{ color: 'var(--accent-color)' }}
+                  >
+                    {plan.price}
+                  </span>
+                  <span 
+                    className="text-xs font-semibold tracking-wide uppercase"
+                    style={{ color: 'var(--text-muted)' }}
+                  >
+                    {plan.priceDetails}
+                  </span>
+                </div>
               </div>
-              <ul className="space-y-4 my-8 flex-grow">
+
+              {/* Features List */}
+              <ul className="space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature, i) => (
-                  <li key={i} className="flex items-start">
-                    <SafeIcon
-                      icon={FiCheck}
-                      className="w-5 h-5 mr-3 mt-1 flex-shrink-0"
-                      style={{ color: 'var(--accent-color)' }}
-                    />
-                    <span style={{ color: 'var(--text-secondary)' }}>{feature}</span>
+                  <li key={i} className="flex items-start gap-3">
+                    <div 
+                      className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
+                      style={{ backgroundColor: 'var(--accent-color)', opacity: 0.2 }}
+                    >
+                      <SafeIcon
+                        icon={FiCheck}
+                        className="w-3 h-3"
+                        style={{ color: 'var(--accent-color)' }}
+                      />
+                    </div>
+                    <span 
+                      className="text-sm"
+                      style={{ color: 'var(--text-secondary)' }}
+                    >
+                      {feature}
+                    </span>
                   </li>
                 ))}
               </ul>
+
+              {/* CTA Button */}
               <button
-                className="btn-primary mt-auto"
-                style={{ backgroundColor: 'var(--accent-color)', color: 'var(--text-inverse)' }}
+                className="w-full py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:scale-105"
+                style={{
+                  backgroundColor: plan.highlight ? 'var(--accent-color)' : 'var(--bg-tertiary)',
+                  color: plan.highlight ? 'white' : 'var(--text-primary)',
+                  border: plan.highlight ? 'none' : '1px solid var(--border-color)',
+                }}
               >
                 Get Started
               </button>
             </motion.div>
           ))}
         </div>
+
+        {/* Footer Note */}
+        <motion.p
+          initial={{ opacity: 0 }}
+          animate={isInView ? { opacity: 1 } : {}}
+          transition={{ duration: 0.6, delay: 0.4 }}
+          className="text-center mt-12 text-sm"
+          style={{ color: 'var(--text-muted)' }}
+        >
+          Need a custom solution? <span style={{ color: 'var(--accent-color)', fontWeight: '600' }}>Contact us</span> for enterprise pricing
+        </motion.p>
       </div>
     </section>
   );

@@ -30,7 +30,7 @@ const Footer = () => {
 
   return (
     <footer style={{ backgroundColor: '#000000' }} className="py-12 sm:py-16 px-4 sm:px-6">
-      <div className="container mx-auto max-w-7xl">
+      <div className="container mx-auto max-w-7xl   px-4 sm:px-6">
         {/* Top Section */}
         <div className="text-center mb-10">
           <h2

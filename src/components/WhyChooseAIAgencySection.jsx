@@ -14,74 +14,80 @@ const WhyChooseAIAgencySection = () => {
   const features = [
     {
       icon: FiZap,
-      title: "Lightning Fast Production",
-      description: "Create AI avatars, animated graphics, product videos, and music videos in record time with our AI-enhanced workflow that cuts production time by 60%."
+      title: "Lightning Fast",
+      description: "60% faster production with AI-enhanced workflow"
     },
     {
       icon: FiShield,
-      title: "Enterprise-Grade Security",
-      description: "Your data and creative assets are protected with bank-level encryption and secure cloud infrastructure."
+      title: "Bank-Level Security",
+      description: "Enterprise-grade encryption & secure cloud infrastructure"
     },
     {
       icon: FiTrendingUp,
-      title: "Proven ROI Results",
-      description: "Our AI-powered services including cloned reel videos, ad films, and animated content deliver 3x engagement increase and 45% cost reduction."
+      title: "Proven ROI",
+      description: "3x engagement increase & 45% cost reduction"
     },
     {
       icon: FiUsers,
       title: "Expert Creative Team",
-      description: "Work with industry veterans who specialize in AI avatar cloning, animated videos, and cutting-edge AI video production technology."
+      description: "Industry veterans specializing in AI video technology"
     }
   ];
 
   return (
-    <section ref={ref} className="py-12 sm:py-16 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-primary)' }}>
-      <div className="container mx-auto max-w-7xl">
+    <section ref={ref} className="py-10  px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      <div className="container mx-auto max-w-6xl">
         {/* Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-12 sm:mb-16"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-14 sm:mb-16"
         >
-          <h2 className="font-bold mb-4" style={{ fontSize: 'var(--text-4xl)', color: 'var(--text-primary)' }}>
-            Why Choose Our AI Video Agency
+          <h2 
+            className="font-bold text-xl sm:text-2xl md:text-3xl mb-4" 
+            style={{ color: 'var(--text-primary)' }}
+          >
+            Why Choose <span style={{ color: 'var(--accent-color)' }}>AIFILMZ</span>
           </h2>
           <p
-            className="max-w-3xl mx-auto leading-relaxed"
-            style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)' }}
+            className="max-w-2xl mx-auto text-base  leading-relaxed"
+            style={{ color: 'var(--text-secondary)' }}
           >
-            We combine cutting-edge artificial intelligence with creative expertise to deliver exceptional video content that drives results.
+            Cutting-edge AI combined with creative expertise for exceptional results
           </p>
         </motion.div>
 
-        {/* Layout */}
-        <div className="grid lg:grid-cols-2 gap-12 lg:gap-16 items-start">
-          {/* Left Section */}
+        {/* Two Column Layout */}
+        <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-stretch">
+          {/* Left Section - Video */}
           <motion.div
-            initial={{ opacity: 0, x: -50 }}
+            initial={{ opacity: 0, x: -30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.2 }}
-            className="space-y-6"
+            transition={{ duration: 0.6, delay: 0.15 }}
+            className="flex flex-col"
           >
-            <div>
-              <h3 className="font-bold mb-4" style={{ fontSize: 'var(--text-xl)', color: 'var(--text-primary)' }}>
-                See Our AI-Powered Process in Action
+            <div className="mb-6 sm:mb-8">
+              <h3 
+                className="font-bold text-xl sm:text-2xl mb-3" 
+                style={{ color: 'var(--text-primary)' }}
+              >
+                AI-Powered Process
               </h3>
               <p
-                className="leading-relaxed mb-6"
-                style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)', lineHeight: 1.7 }}
+                className="text-sm sm:text-base leading-relaxed"
+                style={{ color: 'var(--text-secondary)' }}
               >
-                Watch how our intelligent workflow transforms complex video production challenges into seamless, efficient processes. From concept to final delivery, experience the future of content creation.
+                Watch how our intelligent workflow transforms video production into seamless, efficient processes.
               </p>
             </div>
 
             {/* Video */}
-            <div className="relative rounded-2xl overflow-hidden glass-card group" style={{ minHeight: '300px' }}>
+            <div className="relative rounded-xl overflow-hidden group flex-grow bg-black/20" style={{ minHeight: '280px' }}>
               <video
                 ref={videoRef}
-                className="w-full rounded-2xl"
-                style={{ height: '360px', objectFit: 'cover' }}
+                className="w-full h-full"
+                style={{ objectFit: 'cover' }}
                 autoPlay
                 muted
                 loop
@@ -89,12 +95,12 @@ const WhyChooseAIAgencySection = () => {
               >
                 <source src="/videos/eagle.mp4" type="video/mp4" />
               </video>
-              <div className="absolute inset-0 bg-black/40 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
+              <div className="absolute inset-0 bg-black/30 opacity-0 group-hover:opacity-100 transition-opacity duration-300 flex items-center justify-center">
                 <motion.button
-                  className="p-4 rounded-full"
+                  className="p-3 sm:p-4 rounded-full shadow-lg"
                   style={{ backgroundColor: 'var(--accent-color)' }}
                   whileHover={{ scale: 1.1 }}
-                  whileTap={{ scale: 0.9 }}
+                  whileTap={{ scale: 0.95 }}
                   onClick={() => {
                     if (videoRef.current) {
                       if (isPlaying) {
@@ -107,56 +113,65 @@ const WhyChooseAIAgencySection = () => {
                     }
                   }}
                 >
-                  <SafeIcon icon={isPlaying ? FiPause : FiPlay} className="w-8 h-8 text-white" />
+                  <SafeIcon icon={isPlaying ? FiPause : FiPlay} className="w-6 h-6 text-white" />
                 </motion.button>
               </div>
             </div>
-
-
           </motion.div>
 
-          {/* Right Section - Features */}
+          {/* Right Section - Features Grid */}
           <motion.div
-            initial={{ opacity: 0, x: 80 }}
+            initial={{ opacity: 0, x: 30 }}
             animate={isInView ? { opacity: 1, x: 0 } : {}}
-            transition={{ duration: 0.8, delay: 0.4, ease: "easeOut" }}
-            className="space-y-6"
+            transition={{ duration: 0.6, delay: 0.25 }}
+            className="flex flex-col"
           >
-            {features.map((feature, index) => (
-              <motion.div
-                key={index}
-                initial={{ opacity: 0, x: 120 }}
-                animate={isInView ? { opacity: 1, x: 0 } : {}}
-                transition={{ duration: 0.9, delay: 0.6 + index * 0.25, ease: "easeOut" }}
-                className="flex items-start space-x-4 p-4 rounded-xl glass-card hover:bg-teal-500/5 transition-all duration-300"
-              >
-                <div
-                  className="p-3 rounded-lg flex-shrink-0"
-                  style={{ backgroundColor: 'var(--accent-color)' }}
+            <div className="grid grid-cols-1 sm:grid-cols-2 gap-4 mb-8 flex-grow">
+              {features.map((feature, index) => (
+                <motion.div
+                  key={index}
+                  initial={{ opacity: 0, y: 20 }}
+                  animate={isInView ? { opacity: 1, y: 0 } : {}}
+                  transition={{ duration: 0.5, delay: 0.35 + index * 0.1 }}
+                  className="p-5 rounded-lg border transition-all duration-300 hover:border-orange-500/50 hover:bg-orange-500/5"
+                  style={{ borderColor: 'var(--border-color)', backgroundColor: 'var(--card-bg)' }}
                 >
-                  <SafeIcon icon={feature.icon} className="w-6 h-6 text-white" />
-                </div>
-                <div className="flex-1">
-                  <h4 className="font-bold mb-2" style={{ fontSize: 'var(--text-base)', color: 'var(--text-primary)' }}>
+                  <div
+                    className="p-2 rounded-lg w-fit mb-3 flex items-center justify-center"
+                    style={{ backgroundColor: 'var(--accent-color)', width: '36px', height: '36px' }}
+                  >
+                    <SafeIcon icon={feature.icon} className="w-5 h-5 text-white" />
+                  </div>
+                  <h4 
+                    className="font-semibold text-sm sm:text-base mb-2" 
+                    style={{ color: 'var(--text-primary)' }}
+                  >
                     {feature.title}
                   </h4>
                   <p
-                    className="leading-relaxed"
-                    style={{ fontSize: 'var(--text-xs)', color: 'var(--text-secondary)', lineHeight: 1.6 }}
+                    className="text-xs sm:text-sm leading-relaxed"
+                    style={{ color: 'var(--text-secondary)' }}
                   >
                     {feature.description}
                   </p>
-                </div>
-              </motion.div>
+                </motion.div>
+              ))}
+            </div>
 
-            ))}
+            {/* CTA Button */}
             <motion.div
-              initial={{ opacity: 0, y: 20 }}
+              initial={{ opacity: 0, y: 15 }}
               animate={isInView ? { opacity: 1, y: 0 } : {}}
-              transition={{ duration: 0.5, delay: 1.0 }}
-              className="pt-4"
+              transition={{ duration: 0.5, delay: 0.8 }}
+              className="w-full"
             >
-              <button className="btn-primary w-full sm:w-auto">
+              <button 
+                className="w-full py-3 px-6 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:shadow-lg hover:scale-105"
+                style={{
+                  backgroundColor: 'var(--accent-color)',
+                  color: 'white'
+                }}
+              >
                 Schedule a Demo
               </button>
             </motion.div>

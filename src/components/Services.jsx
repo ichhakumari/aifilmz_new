@@ -1,175 +1,204 @@
-import React, { useState, useEffect, useRef } from 'react';
+import React, { useState, useRef } from 'react';
 import { motion } from 'framer-motion';
 import SafeIcon from '../common/SafeIcon';
 import { useTheme } from '../context/ThemeContext';
 import * as FiIcons from 'react-icons/fi';
 
-const { FiChevronDown } = FiIcons;
+const { FiChevronLeft, FiChevronRight } = FiIcons;
 
 const Services = () => {
   const [currentService, setCurrentService] = useState(0);
   const { isDark } = useTheme();
   const containerRef = useRef(null);
-  const isScrolling = useRef(false);
 
   const services = [
-    { title: "AI Avatar Cloning", video: "/videos/video1.mp4" },
-    { title: "AI Cloned Reel Videos", video: "/videos/video2.mp4" },
-    { title: "AI Animated Graphics", video: "/videos/annimated.mp4" },
-    { title: "AI Product Videos", video: "/videos/graphics.mp4" },
-    { title: "AI Ad Films", video: "/videos/zomato.mp4" },
-    { title: "AI Animated Videos", video: "/videos/Cadbury Dairy Milk.mp4" },
-    { title: "AI Music Videos", video: "/videos/Amul Janmashtami Special.mp4" }
+    { title: "AI Avatar Cloning", description: "Hyper-realistic virtual presenters for personalized content", video: "/videos/video1.mp4" },
+    { title: "AI Cloned Reel Videos", description: "Engaging short-form content for social media", video: "/videos/video2.mp4" },
+    { title: "AI Animated Graphics", description: "Stunning motion graphics with AI-enhanced tools", video: "/videos/annimated.mp4" },
+    { title: "AI Product Videos", description: "Professional product showcases with 3D rendering", video: "/videos/graphics.mp4" },
+    { title: "AI Ad Films", description: "High-impact advertising with maximum engagement", video: "/videos/zomato.mp4" },
+    { title: "AI Animated Videos", description: "Fully animated content for brands and stories", video: "/videos/Cadbury Dairy Milk.mp4" },
+    { title: "AI Music Videos", description: "Creative visuals synchronized to audio", video: "/videos/Amul Janmashtami Special.mp4" }
   ];
 
-  useEffect(() => {
-    const handleWheel = (e) => {
-      if (!containerRef.current || isScrolling.current) return;
-      e.preventDefault();
-      isScrolling.current = true;
+  const handlePrevious = () => {
+    setCurrentService((prev) => (prev - 1 + services.length) % services.length);
+  };
 
-      if (e.deltaY > 0) {
-        // Scroll down
-        setCurrentService((prev) => Math.min(prev + 1, services.length - 1));
-      } else {
-        // Scroll up
-        setCurrentService((prev) => Math.max(prev - 1, 0));
-      }
+  const handleNext = () => {
+    setCurrentService((prev) => (prev + 1) % services.length);
+  };
 
-      setTimeout(() => {
-        isScrolling.current = false;
-      }, 1000);
-    };
-
-    const container = containerRef.current;
-    if (container) {
-      container.addEventListener('wheel', handleWheel, { passive: false });
-    }
-
-    return () => {
-      if (container) {
-        container.removeEventListener('wheel', handleWheel);
-      }
-    };
-  }, [services.length]);
+  const currentServiceData = services[currentService];
 
   return (
-    <section id="services" className="relative h-screen w-full overflow-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-      <div
-        ref={containerRef}
-        className={`relative h-full w-full transition-colors duration-500`}
-      >
-        {/* Services */}
-        {services.map((service, index) => (
-          <div
-            key={index}
-            className={`absolute inset-0 transition-all duration-1000 ease-in-out ${index === currentService
-              ? 'opacity-100 translate-y-0'
-              : index < currentService
-                ? 'opacity-0 -translate-y-full'
-                : 'opacity-0 translate-y-full'
-              }`}
+    <section 
+      id="services" 
+      ref={containerRef}
+      className="py-16 sm:py-10 px-4 sm:px-6"
+      style={{ backgroundColor: 'var(--bg-primary)' }}
+    >
+      <div className="container mx-auto max-w-6xl">
+        {/* Section Header */}
+        <motion.div
+          initial={{ opacity: 0, y: 20 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6 }}
+          className="text-center mb-14 sm:mb-16"
+        >
+          <h2 
+            className="font-bold text-xl sm:text-2xl md:text-3xl mb-4" 
+            style={{ color: 'var(--text-primary)' }}
           >
-            {/* Video Background */}
-            <video
-              autoPlay
-              loop
-              muted
-              playsInline
-              className="absolute inset-0 w-full h-full object-cover"
-              key={service.video}
-            >
-              <source src={service.video} type="video/mp4" />
-            </video>
+            Our <span style={{ color: 'var(--accent-color)' }}>Services</span>
+          </h2>
+          <p 
+            className="text-base max-w-2xl mx-auto"
+            style={{ color: 'var(--text-secondary)' }}
+          >
+            Explore our comprehensive range of AI-powered video production services
+          </p>
+        </motion.div>
 
-            {/* Overlay */}
-            <div className="absolute inset-0 bg-gradient-to-t from-black/80 via-black/30 to-transparent" />
-
-            {/* Content */}
-            <div className="absolute bottom-12 left-8 md:left-16 z-10">
-              <motion.div
-                initial={{ opacity: 0, x: -50 }}
-                animate={{
-                  opacity: index === currentService ? 1 : 0,
-                  x: index === currentService ? 0 : -50
-                }}
-                transition={{ duration: 0.7, delay: 0.3 }}
-                className="space-y-3"
-              >
-                <div>
-                  <span
-                    className="text-xs font-semibold tracking-widest uppercase"
-                    style={{ color: 'var(--electric-teal)' }}
+        {/* Slider Container */}
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={{ opacity: 1, y: 0 }}
+          transition={{ duration: 0.6, delay: 0.2 }}
+          className="relative"
+        >
+          {/* Main Slider Content */}
+          <div className="grid lg:grid-cols-2 gap-8 lg:gap-12 items-center">
+            {/* Video Section */}
+            <div className="order-2 lg:order-1">
+              <div className="relative rounded-lg overflow-hidden border" style={{ borderColor: 'var(--border-color)' }}>
+                <motion.div
+                  key={currentService}
+                  initial={{ opacity: 0, scale: 0.95 }}
+                  animate={{ opacity: 1, scale: 1 }}
+                  transition={{ duration: 0.5 }}
+                  className="w-full bg-black"
+                  style={{ aspectRatio: '16/9' }}
+                >
+                  <video
+                    src={currentServiceData.video}
+                    className="w-full h-full object-cover"
+                    controls
+                    muted
+                    loop
                   >
-                    Service {String(index + 1).padStart(2, '0')}
-                  </span>
-                </div>
-                <h2 className="text-3xl md:text-5xl font-bold text-white mb-2 tracking-tight">
-                  {service.title}
-                </h2>
-                <div
-                  className="w-24 h-1 rounded-full"
-                  style={{ background: 'linear-gradient(to right, var(--electric-teal), var(--deep-teal))' }}
-                />
+                    Your browser does not support the video tag.
+                  </video>
+                </motion.div>
+              </div>
+            </div>
+
+            {/* Content Section */}
+            <div className="order-1 lg:order-2 flex flex-col justify-center">
+              {/* Service Index */}
+              <motion.div
+                key={currentService}
+                initial={{ opacity: 0, x: -20 }}
+                animate={{ opacity: 1, x: 0 }}
+                transition={{ duration: 0.5 }}
+                className="mb-6"
+              >
+                <span 
+                  className="text-sm font-semibold tracking-widest uppercase"
+                  style={{ color: 'var(--accent-color)' }}
+                >
+                  Service {String(currentService + 1).padStart(2, '0')} / {String(services.length).padStart(2, '0')}
+                </span>
+              </motion.div>
+
+              {/* Service Title */}
+              <motion.h3
+                key={`title-${currentService}`}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.1 }}
+                className="font-bold text-2xl sm:text-3xl md:text-4xl mb-4 leading-tight"
+                style={{ color: 'var(--text-primary)' }}
+              >
+                {currentServiceData.title}
+              </motion.h3>
+
+              {/* Service Description */}
+              <motion.p
+                key={`desc-${currentService}`}
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.2 }}
+                className="text-base sm:text-lg mb-8"
+                style={{ color: 'var(--text-secondary)' }}
+              >
+                {currentServiceData.description}
+              </motion.p>
+
+              {/* Accent Line */}
+              <motion.div
+                initial={{ width: 0 }}
+                animate={{ width: '60px' }}
+                transition={{ duration: 0.8, delay: 0.3 }}
+                className="h-1 rounded-full mb-8"
+                style={{ backgroundColor: 'var(--accent-color)' }}
+              />
+
+              {/* Navigation Buttons */}
+              <motion.div
+                initial={{ opacity: 0, y: 10 }}
+                animate={{ opacity: 1, y: 0 }}
+                transition={{ duration: 0.5, delay: 0.3 }}
+                className="flex items-center gap-4"
+              >
+                <button
+                  onClick={handlePrevious}
+                  className="p-3 rounded-full border transition-all duration-300 hover:bg-orange-500/10"
+                  style={{ borderColor: 'var(--accent-color)', color: 'var(--accent-color)' }}
+                >
+                  <SafeIcon icon={FiChevronLeft} className="w-6 h-6" />
+                </button>
+                <button
+                  onClick={handleNext}
+                  className="p-3 rounded-full transition-all duration-300 hover:shadow-lg"
+                  style={{ backgroundColor: 'var(--accent-color)', color: 'white' }}
+                >
+                  <SafeIcon icon={FiChevronRight} className="w-6 h-6" />
+                </button>
               </motion.div>
             </div>
           </div>
-        ))}
 
-        {/* Progress Indicators */}
-        <div className="absolute right-8 md:right-12 top-1/2 -translate-y-1/2 z-20 flex flex-col gap-4">
-          {services.map((_, index) => (
-            <button
-              key={index}
-              onClick={() => setCurrentService(index)}
-              className="group relative"
-            >
-              <div
-                className={`w-3 h-3 rounded-full transition-all duration-300 ${index === currentService ? 'scale-125' : ''
-                  }`}
-                style={{
-                  backgroundColor: index === currentService
-                    ? 'var(--electric-teal)'
-                    : (isDark ? '#fd0d0d' : '#f70909')
-                }}
-              />
-              <span
-                className="absolute right-6 top-1/2 -translate-y-1/2 whitespace-nowrap opacity-0 group-hover:opacity-100 transition-opacity duration-300 text-sm font-medium"
-                style={{ color: isDark ? 'white' : 'black' }}
-              >
-                {services[index].title}
-              </span>
-            </button>
-          ))}
-        </div>
-
-        {/* Scroll Indicator */}
-        {currentService < services.length - 1 && (
+          {/* Slider Indicators */}
           <motion.div
-            initial={{ opacity: 0 }}
-            animate={{ opacity: 1 }}
-            className="absolute bottom-8 left-1/2 -translate-x-1/2 z-20"
+            initial={{ opacity: 0, y: 20 }}
+            animate={{ opacity: 1, y: 0 }}
+            transition={{ duration: 0.6, delay: 0.4 }}
+            className="flex justify-center gap-2 mt-12"
           >
-            <div className="flex flex-col items-center gap-2 animate-bounce">
-              <span className="text-white text-sm font-medium">Scroll Down</span>
-              <SafeIcon icon={FiChevronDown} className="w-6 h-6" style={{ color: 'var(--electric-teal)' }} />
-            </div>
+            {services.map((_, index) => (
+              <motion.button
+                key={index}
+                onClick={() => setCurrentService(index)}
+                whileHover={{ scale: 1.2 }}
+                whileTap={{ scale: 0.95 }}
+                className="transition-all duration-300"
+              >
+                <motion.div
+                  layout
+                  className="h-2 rounded-full"
+                  animate={{
+                    width: index === currentService ? '32px' : '8px'
+                  }}
+                  style={{
+                    backgroundColor: index === currentService
+                      ? 'var(--accent-color)'
+                      : 'var(--border-color)'
+                  }}
+                />
+              </motion.button>
+            ))}
           </motion.div>
-        )}
-
-        {/* Navigation Instructions */}
-        <motion.div
-          initial={{ opacity: 0, y: -20 }}
-          animate={{ opacity: 1, y: 0 }}
-          transition={{ delay: 0.5 }}
-          className="absolute top-6 right-0 -translate-x-1/2 z-20 px-6 py-3 rounded-full backdrop-blur-md transition-all duration-300"
-          style={{
-            backgroundColor: isDark ? 'rgba(0,0,0,0.8)' : 'rgba(255,255,255,0.9)',
-            border: `1px solid var(--accent-color)`,
-            color: 'var(--text-primary)'
-          }}
-        >
-          <p className="text-sm font-medium">Use mouse wheel to navigate services</p>
         </motion.div>
       </div>
     </section>

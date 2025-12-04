@@ -8,73 +8,63 @@ const { FiPlay } = FiIcons;
 
 const GlimpseAtFilms = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.1 });
+  const isInView = useInView(ref, { once: true, threshold: 0.2 });
 
   const films = [
     {
       id: 8,
-      title: 'Medical Technology Showcase',
+      title: 'Medical Technology',
       category: 'Healthcare',
-      thumbnail: '',
       videoUrl: "/videos/graphics.mp4"
     },
     {
       id: 9,
-      title: 'Automotive AI Integration',
-      category: 'AI ADS',
-      thumbnail: '',
+      title: 'Automotive AI',
+      category: 'AI Ads',
       videoUrl: '/videos/eagle.mp4'
     },
     {
       id: 1,
-      title: 'Vasavi Gold & Diamonds AI Ad',
-      category: 'AI ADS',
-      thumbnail: '',
+      title: 'Vasavi Gold & Diamonds',
+      category: 'Commercial',
       videoUrl: "/videos/shoes.mp4"
     },
     {
       id: 2,
-      title: 'Sankara Eye Hospital Campaign',
-      category: 'AI ADS',
-      thumbnail: '',
+      title: 'Sankara Eye Hospital',
+      category: 'Healthcare',
       videoUrl: "/videos/Cadbury Dairy Milk.mp4"
     },
     {
       id: 3,
       title: "Nature's Box Honey",
-      category: 'AI ADS',
-      thumbnail: '',
+      category: 'Product',
       videoUrl: "/videos/video1.mp4"
     },
     {
       id: 4,
-      title: 'Quantum Computing Visuals',
-      category: 'Tech Promo',
-      thumbnail: '',
+      title: 'Quantum Computing',
+      category: 'Tech',
       videoUrl: "/videos/video2.mp4"
     },
     {
       id: 5,
-      title: 'Architectural Fly-through',
+      title: 'Architectural Design',
       category: '3D Render',
-      thumbnail: '',
       videoUrl: "/videos/zomato.mp4"
     },
     {
       id: 6,
-      title: 'Cyber Security Explainer',
+      title: 'Cyber Security',
       category: 'Animation',
-      thumbnail: '',
       videoUrl: "/videos/Cadbury Dairy Milk.mp4"
     },
     {
       id: 7,
-      title: 'Eco-Friendly Product Launch',
+      title: 'Eco-Friendly Launch',
       category: 'Commercial',
-      thumbnail: '',
       videoUrl: "/videos/annimated.mp4"
     }
-
   ];
 
   const containerVariants = {
@@ -82,7 +72,8 @@ const GlimpseAtFilms = () => {
     visible: {
       opacity: 1,
       transition: {
-        staggerChildren: 0.1,
+        staggerChildren: 0.08,
+        delayChildren: 0.1,
       },
     },
   };
@@ -95,60 +86,108 @@ const GlimpseAtFilms = () => {
       transition: {
         type: "spring",
         stiffness: 100,
+        damping: 10,
       },
     },
   };
 
   return (
-    <section ref={ref} className="py-12 sm:py-16 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-secondary)' }}>
-      <div className="container mx-auto max-w-7xl">
+    <section id="transforming-brands" ref={ref} className="container mx-auto py-16 sm:py-20 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      <div className=" max-w-7xl">
+        {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 30 }}
+          initial={{ opacity: 0, y: 20 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8 }}
-          className="text-center mb-8 sm:mb-12"
+          transition={{ duration: 0.6 }}
+          className="text-center mb-14 sm:mb-16"
         >
-          <h2 className="font-bold mb-4" style={{ fontSize: 'var(--text-4xl)', color: 'var(--text-primary)' }}>
-            Transforming Brands Through{" "}
-            <TypeAnimation
-              sequence={[
-                'Ad Films', 2000,
-                'Corporate Videos', 2000,
-                'Documentry Films', 2000,
-              ]}
-              wrapper="span"
-              speed={40}
-              deletionSpeed={60}
-              repeat={Infinity}
-              style={{ color: '#FF6B35' }}
-            />
+          <h2 
+            className="font-bold text-3xl sm:text-4xl md:text-5xl mb-3" 
+            style={{ color: 'var(--text-primary)' }}
+          >
+            Our Latest <span style={{ color: 'var(--accent-color)' }}>
+              <TypeAnimation
+                sequence={[
+                  'Works',
+                  2000,
+                  'Projects',
+                  2000,
+                  'Creations',
+                  2000,
+                ]}
+                wrapper="span"
+                speed={50}
+                deletionSpeed={80}
+                repeat={Infinity}
+              />
+            </span>
           </h2>
+          <p 
+            className="text-base sm:text-lg max-w-2xl mx-auto"
+            style={{ color: 'var(--text-secondary)' }}
+          >
+            Explore our latest video projects showcasing diverse industries and creative excellence
+          </p>
         </motion.div>
 
+        {/* Video Grid */}
         <motion.div
           variants={containerVariants}
           initial="hidden"
           animate={isInView ? "visible" : "hidden"}
-          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-12"
+          className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-3 gap-6"
         >
           {films.map((film) => (
             <motion.div
               key={film.id}
               variants={itemVariants}
-              className="group relative rounded-xl overflow-hidden shadow-lg"
+              className="group relative rounded-lg overflow-hidden border transition-all duration-300 hover:border-orange-500/50"
+              style={{ borderColor: 'var(--border-color)' }}
             >
-              <div className="relative aspect-square bg-black">
+              {/* Video Container */}
+              <div className="relative w-full bg-black" style={{ aspectRatio: '16/9' }}>
                 <video
                   src={film.videoUrl}
-                  className="w-full h-full object-cover"
+                  className="w-full h-full object-cover group-hover:scale-105 transition-transform duration-500"
                   controls
                   muted
                   loop
                 />
+                
+                {/* Overlay on Hover */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
+                  <motion.div 
+                    initial={{ scale: 0.8, opacity: 0 }}
+                    whileHover={{ scale: 1, opacity: 1 }}
+                    className="p-3 rounded-full"
+                    style={{ backgroundColor: 'var(--accent-color)' }}
+                  >
+                    <SafeIcon icon={FiPlay} className="w-6 h-6 text-white" />
+                  </motion.div>
+                </div>
               </div>
 
-              <div className="absolute top-0 left-0 right-0 p-4 sm:p-6 pointer-events-none">
-                <h3 className="text-white font-bold text-base sm:text-lg truncate mb-2 drop-shadow-md">{film.title}</h3>
+              {/* Content */}
+              <div className="p-4 sm:p-5" style={{ backgroundColor: 'var(--card-bg)' }}>
+                <div className="flex items-start justify-between gap-3 mb-2">
+                  <div className="flex-1">
+                    <h3 
+                      className="font-semibold text-sm sm:text-base line-clamp-2" 
+                      style={{ color: 'var(--text-primary)' }}
+                    >
+                      {film.title}
+                    </h3>
+                  </div>
+                </div>
+                <span 
+                  className="inline-block px-2.5 py-1 rounded-md text-xs font-medium"
+                  style={{
+                    backgroundColor: 'var(--highlight-color)',
+                    color: 'var(--accent-color)'
+                  }}
+                >
+                  {film.category}
+                </span>
               </div>
             </motion.div>
           ))}

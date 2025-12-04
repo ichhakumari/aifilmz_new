@@ -2,6 +2,7 @@ import React, { useState, useEffect } from 'react';
 import { motion } from 'framer-motion';
 import Header from './components/Header';
 import HeroSection from './components/HeroSection';
+import WelcomeSection from './components/WelcomeSection';
 import TrustedBy from './components/TrustedBy';
 import OurWork from './components/OurWork';
 import Services from './components/Services';
@@ -43,6 +44,7 @@ function App() {
         <Header />
         <main>
           <HeroSection />
+          <WelcomeSection />
           <TrustedBy />
           <OurWork />
           <Services />

@@ -33,7 +33,7 @@ const Logo = ({ name }) => {
 
 const TrustedBy = () => {
   return (
-    <div className="py-12 sm:py-16 overflow-x-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+    <div className="py-8 sm:py-10 overflow-x-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h3
           className="text-center text-xs font-bold tracking-widest uppercase mb-12"
@@ -41,18 +41,18 @@ const TrustedBy = () => {
         >
           Trusted by the world's leading companies
         </h3>
-        <div className="relative h-12">
+        <div className="relative overflow-hidden">
           <motion.div
-            className="absolute top-0 left-0 flex items-center"
-            animate={{ x: ['0%', '-100%'] }}
+            className="flex items-center"
+            animate={{ x: ['0%', '-50%'] }}
             transition={{
               ease: 'linear',
-              duration: 40,
+              duration: 30,
               repeat: Infinity,
             }}
           >
             {duplicatedLogos.map((logo, index) => (
-              <div key={index} className="flex-shrink-0 mx-12 flex justify-center items-center">
+              <div key={index} className="flex-shrink-0 mx-8 sm:mx-12 flex justify-center items-center min-w-fit">
                 <Logo name={logo} />
               </div>
             ))}

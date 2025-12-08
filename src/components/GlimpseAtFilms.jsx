@@ -93,7 +93,7 @@ const GlimpseAtFilms = () => {
 
   return (
     <section id="transforming-brands" ref={ref} className="container mx-auto py-16 sm:py-20 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-primary)' }}>
-      <div className=" max-w-7xl">
+      <div className=" max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -101,8 +101,8 @@ const GlimpseAtFilms = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14 sm:mb-16"
         >
-          <h2 
-            className="font-bold text-3xl sm:text-4xl md:text-5xl mb-3" 
+          <h2
+            className="font-bold text-3xl sm:text-4xl md:text-5xl mb-3"
             style={{ color: 'var(--text-primary)' }}
           >
             Our Latest <span style={{ color: 'var(--accent-color)' }}>
@@ -122,7 +122,7 @@ const GlimpseAtFilms = () => {
               />
             </span>
           </h2>
-          <p 
+          <p
             className="text-base sm:text-lg max-w-2xl mx-auto"
             style={{ color: 'var(--text-secondary)' }}
           >
@@ -153,10 +153,10 @@ const GlimpseAtFilms = () => {
                   muted
                   loop
                 />
-                
+
                 {/* Overlay on Hover */}
                 <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                  <motion.div 
+                  <motion.div
                     initial={{ scale: 0.8, opacity: 0 }}
                     whileHover={{ scale: 1, opacity: 1 }}
                     className="p-3 rounded-full"
@@ -171,15 +171,15 @@ const GlimpseAtFilms = () => {
               <div className="p-4 sm:p-5" style={{ backgroundColor: 'var(--card-bg)' }}>
                 <div className="flex items-start justify-between gap-3 mb-2">
                   <div className="flex-1">
-                    <h3 
-                      className="font-semibold text-sm sm:text-base line-clamp-2" 
+                    <h3
+                      className="font-semibold text-sm sm:text-base line-clamp-2"
                       style={{ color: 'var(--text-primary)' }}
                     >
                       {film.title}
                     </h3>
                   </div>
                 </div>
-                <span 
+                <span
                   className="inline-block px-2.5 py-1 rounded-md text-xs font-medium"
                   style={{
                     backgroundColor: 'var(--highlight-color)',

@@ -1,395 +1,346 @@
-import React, { useState } from 'react';
-import { motion } from 'framer-motion';
+import React from 'react';
+import { Link } from 'react-router-dom';
 import { useTheme } from '../context/ThemeContext';
 import * as FiIcons from 'react-icons/fi';
+import * as FaIcons from 'react-icons/fa';
 
-const { FiPhone, FiMail, FiMapPin, FiUser, FiSend } = FiIcons;
+const { FiPhone, FiMail, FiMapPin } = FiIcons;
+const { FaFacebookF, FaTwitter, FaInstagram, FaLinkedinIn, FaYoutube } = FaIcons;
 
 const Footer = () => {
   const { isDark } = useTheme();
-  const [formData, setFormData] = useState({
-    fullName: '',
-    email: '',
-    company: '',
-    projectDetails: ''
-  });
-
-  const handleSubmit = (e) => {
-    e.preventDefault();
-    console.log('Form submitted:', formData);
-    // Add your form submission logic here
-    alert('Message sent successfully!');
-  };
-
-  const handleChange = (e) => {
-    setFormData({
-      ...formData,
-      [e.target.name]: e.target.value
-    });
-  };
 
   return (
     <footer style={{ backgroundColor: '#000000' }} className="py-12 sm:py-16 px-4 sm:px-6">
-      <div className="container mx-auto max-w-7xl   px-4 sm:px-6">
-        {/* Top Section */}
-        <div className="text-center mb-10">
-          <h2
-            className="text-2xl sm:text-3xl font-bold mb-3"
-            style={{ color: '#FFFFFF' }}
-          >
-            Let's Create{' '}
-            <span style={{ color: 'var(--electric-teal)' }}>Together</span>
-          </h2>
-          <p
-            className="max-w-2xl mx-auto leading-relaxed text-sm"
-            style={{ color: '#CCCCCC' }}
-          >
-            Ready to transform your ideas into extraordinary visual experiences? Get in touch and let's discuss your next project.
-          </p>
-        </div>
-
-        {/* Main Content Grid */}
-        <div className="grid grid-cols-1 lg:grid-cols-2 gap-8 mb-12">
-          {/* Left Section - Company Info */}
+      <div className="container mx-auto max-w-7xl px-4 sm:px-6">
+        {/* Main Footer Content */}
+        <div className="grid grid-cols-1 md:grid-cols-2 lg:grid-cols-4 gap-8 mb-12">
+          {/* About Section */}
           <div>
-            <div className="mb-6">
-              <div className="flex items-center gap-3 mb-4">
-                <div className="w-10 h-10 rounded-lg flex items-center justify-center" style={{ backgroundColor: 'var(--accent-color)' }}>
-                  <FiPhone className="w-5 h-5 text-white" />
-                </div>
-                <h3
-                  className="text-xl font-bold"
-                  style={{ color: '#FFFFFF' }}
-                >
-                  AI Filmz
-                </h3>
-              </div>
-              <p
-                className="mb-6 leading-relaxed text-sm"
-                style={{ color: '#CCCCCC' }}
+            {/* Logo */}
+            <div className="mb-4">
+              <img src="/imges/logo.png" alt="AI Filmz Logo" className="h-12 w-auto" />
+            </div>
+            <p
+              className="mb-6 leading-relaxed text-sm"
+              style={{ color: '#CCCCCC' }}
+            >
+              AI-powered video production platform specializing in AI avatar cloning, cloned reel videos, animated graphics, product videos, ad films, animated videos, and music videos.
+            </p>
+            {/* Social Media Links */}
+            <div className="flex gap-3">
+              <a
+                href="https://facebook.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity"
+                style={{ backgroundColor: 'rgba(254, 74, 35, 0.2)' }}
               >
-                AI-powered video production platform specializing in AI avatar cloning, cloned reel videos, animated graphics, product videos, ad films, animated videos, and music videos. Transform your content creation with intelligent AI solutions.
-              </p>
-            </div>
-
-            {/* Address */}
-            <div className="flex gap-3 mb-4 text-sm">
-              <FiMapPin className="w-4 h-4 mt-1 flex-shrink-0" style={{ color: '#FFFFFF' }} />
-              <div style={{ color: '#CCCCCC' }}>
-                <p>Ground, 1st Floor, SupremeWork Co-working Space,</p>
-                <p>Plot No. 84, Institutional Area, Prem Puri,</p>
-                <p>Sector 32, Gurugram, Haryana 122001</p>
-              </div>
-            </div>
-
-            {/* Contact Info */}
-            <div className="space-y-3 text-sm">
-              <div className="flex items-center gap-4">
-                <FiPhone className="w-4 h-4" style={{ color: '#FFFFFF' }} />
-                <a
-                  href="tel:+918035315291"
-                  className="hover:text-teal-600 transition-colors"
-                  style={{ color: '#FFFFFF' }}
-                >
-                  +918035315291
-                </a>
-              </div>
-              <div className="flex items-center gap-4">
-                <FiMail className="w-4 h-4" style={{ color: '#FFFFFF' }} />
-                <a
-                  href="mailto:contact@aifilmz.com"
-                  className="hover:text-teal-600 transition-colors"
-                  style={{ color: '#FFFFFF' }}
-                >
-                  contact@aifilmz.com
-                </a>
-              </div>
-            </div>
-
-            {/* Quick Links */}
-            <div className="mt-6">
-              <h4
-                className="text-base font-semibold mb-3"
-                style={{ color: '#FFFFFF' }}
+                <FaFacebookF className="w-5 h-5" style={{ color: '#FE4A23' }} />
+              </a>
+              <a
+                href="https://twitter.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity"
+                style={{ backgroundColor: 'rgba(254, 74, 35, 0.2)' }}
               >
-                Quick Links
-              </h4>
-              <div className="grid grid-cols-2 gap-2 text-sm">
+                <FaTwitter className="w-5 h-5" style={{ color: '#FE4A23' }} />
+              </a>
+              <a
+                href="https://instagram.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity"
+                style={{ backgroundColor: 'rgba(254, 74, 35, 0.2)' }}
+              >
+                <FaInstagram className="w-5 h-5" style={{ color: '#FE4A23' }} />
+              </a>
+              <a
+                href="https://linkedin.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity"
+                style={{ backgroundColor: 'rgba(254, 74, 35, 0.2)' }}
+              >
+                <FaLinkedinIn className="w-5 h-5" style={{ color: '#FE4A23' }} />
+              </a>
+              <a
+                href="https://youtube.com"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="w-10 h-10 rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity"
+                style={{ backgroundColor: 'rgba(254, 74, 35, 0.2)' }}
+              >
+                <FaYoutube className="w-5 h-5" style={{ color: '#FE4A23' }} />
+              </a>
+            </div>
+          </div>
+
+          {/* Services Section */}
+          <div>
+            <h4
+              className="text-base font-semibold mb-4"
+              style={{ color: '#FFFFFF' }}
+            >
+              Our Services
+            </h4>
+            <ul className="space-y-2 text-sm">
+              <li>
                 <a
-                  href="#features"
-                  className="hover:text-teal-600 transition-colors"
+                  href="/#services"
+                  className="transition-colors"
                   style={{ color: '#CCCCCC' }}
+                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
                 >
-                  Features
+                  AI Avatar Cloning
                 </a>
+              </li>
+              <li>
                 <a
-                  href="#demo"
-                  className="hover:text-teal-600 transition-colors"
+                  href="/#services"
+                  className="transition-colors"
                   style={{ color: '#CCCCCC' }}
+                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
+                >
+                  Cloned Reel Videos
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/#services"
+                  className="transition-colors"
+                  style={{ color: '#CCCCCC' }}
+                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
+                >
+                  Animated Graphics
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/#services"
+                  className="transition-colors"
+                  style={{ color: '#CCCCCC' }}
+                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
+                >
+                  Product Videos
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/#services"
+                  className="transition-colors"
+                  style={{ color: '#CCCCCC' }}
+                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
+                >
+                  Ad Films
+                </a>
+              </li>
+              <li>
+                <a
+                  href="/#services"
+                  className="transition-colors"
+                  style={{ color: '#CCCCCC' }}
+                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
+                >
+                  Music Videos
+                </a>
+              </li>
+            </ul>
+          </div>
+
+          {/* Quick Links Section */}
+          <div>
+            <h4
+              className="text-base font-semibold mb-4"
+              style={{ color: '#FFFFFF' }}
+            >
+              Quick Links
+            </h4>
+            <ul className="space-y-2 text-sm">
+              <li>
+                <a
+                  href="/#services"
+                  className="transition-colors"
+                  style={{ color: '#CCCCCC' }}
+                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
+                >
+                  Services
+                </a>
+              </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="transition-colors"
+                  style={{ color: '#CCCCCC' }}
+                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
                 >
                   Demo
-                </a>
+                </Link>
+              </li>
+              <li>
                 <a
-                  href="#pricing"
-                  className="hover:text-teal-600 transition-colors"
+                  href="/#pricing"
+                  className="transition-colors"
                   style={{ color: '#CCCCCC' }}
+                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
                 >
                   Pricing
                 </a>
+              </li>
+              <li>
                 <a
-                  href="#how-it-works"
-                  className="hover:text-teal-600 transition-colors"
+                  href="/#how-it-works"
+                  className="transition-colors"
                   style={{ color: '#CCCCCC' }}
+                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
                 >
-                  How It Works
+                  How We Work
                 </a>
+              </li>
+              {/* <li>
                 <a
-                  href="#industries"
-                  className="hover:text-teal-600 transition-colors"
+                  href="/#services"
+                  className="transition-colors"
                   style={{ color: '#CCCCCC' }}
+                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
                 >
                   Industries
                 </a>
-              </div>
-            </div>
-
-            {/* Contact Cards */}
-            <div className="grid grid-cols-1 sm:grid-cols-2 gap-3 mt-4">
-              <div
-                className="p-4 rounded-lg border"
-                style={{
-                  backgroundColor: '#F3F4F6',
-                  borderColor: 'var(--border-color)'
-                }}
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center"
-                    style={{ backgroundColor: 'rgba(0,206,209,0.2)' }}
-                  >
-                    <FiMail className="w-4 h-4" style={{ color: 'var(--electric-teal)' }} />
-                  </div>
-                  <div>
-                    <h4
-                      className="font-semibold"
-                      style={{ color: '#000000' }}
-                    >
-                      Email Us
-                    </h4>
-                  </div>
-                </div>
-                <p
-                  className="text-sm"
-                  style={{ color: '#374151' }}
+              </li> */}
+              <li>
+                <Link
+                  to="/about"
+                  className="transition-colors"
+                  style={{ color: '#CCCCCC' }}
+                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
                 >
-                  contact@aifilmz.com
-                </p>
-                <p
-                  className="text-xs mt-1"
-                  style={{ color: '#6B7280' }}
-                >
-                  We'll respond within 24 hours
-                </p>
-              </div>
-
-              <div
-                className="p-4 rounded-lg border"
-                style={{
-                  backgroundColor: '#F3F4F6',
-                  borderColor: 'var(--border-color)'
-                }}
-              >
-                <div className="flex items-center gap-2 mb-2">
-                  <div
-                    className="w-8 h-8 rounded-lg flex items-center justify-center"
-                    style={{ backgroundColor: 'rgba(0,206,209,0.2)' }}
-                  >
-                    <FiPhone className="w-4 h-4" style={{ color: 'var(--electric-teal)' }} />
-                  </div>
-                  <div>
-                    <h4
-                      className="font-semibold"
-                      style={{ color: '#000000' }}
-                    >
-                      Call Us
-                    </h4>
-                  </div>
-                </div>
-                <p
-                  className="text-sm"
-                  style={{ color: '#374151' }}
-                >
-                  +91 8035315291
-                </p>
-                <p
-                  className="text-xs mt-1"
-                  style={{ color: '#6B7280' }}
-                >
-                  Mon-Fri 9AM-6PM IST
-                </p>
-              </div>
-            </div>
+                  About Us
+                </Link>
+              </li>
+            </ul>
           </div>
 
-          {/* Right Section - Contact Form */}
-          <div
-            className="p-5 sm:p-6 rounded-2xl border"
-            style={{
-              backgroundColor: '#FFFFFF',
-              borderColor: 'var(--border-color)'
-            }}
-          >
-            <h3
-              className="text-xl font-bold mb-4"
-              style={{ color: '#000000' }}
+          {/* Contact Section */}
+          <div>
+            <h4
+              className="text-base font-semibold mb-4"
+              style={{ color: '#FFFFFF' }}
             >
-              Get in Touch
-            </h3>
-            <p
-              className="mb-5 leading-relaxed text-sm"
-              style={{ color: '#374151' }}
-            >
-              Whether you have a specific project in mind or just want to explore the possibilities of AI-powered video production, we're here to help bring your vision to life.
-            </p>
-
-            <div className="space-y-3">
-              {/* Full Name & Email */}
-              <div className="grid grid-cols-1 sm:grid-cols-2 gap-4">
-                <div>
-                  <label
-                    className="block text-sm mb-2"
-                    style={{ color: '#000000' }}
-                  >
-                    Full Name <span style={{ color: 'var(--electric-teal)' }}>*</span>
-                  </label>
-                  <div className="relative">
-                    <FiUser
-                      className="absolute left-3 top-1/2 transform -translate-y-1/2"
-                      style={{ color: '#6B7280' }}
-                    />
-                    <input
-                      type="text"
-                      name="fullName"
-                      value={formData.fullName}
-                      onChange={handleChange}
-                      placeholder="John Doe"
-                      required
-                      className="w-full py-2.5 pl-10 pr-4 rounded-lg border focus:outline-none focus:border-teal-500 transition-colors text-sm"
-                      style={{
-                        backgroundColor: 'var(--bg-primary)',
-                        borderColor: 'var(--border-color)',
-                        color: '#000000'
-                      }}
-                    />
-                  </div>
+              Contact Us
+            </h4>
+            <div className="space-y-4 text-sm">
+              {/* Address */}
+              <div className="flex gap-3">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgba(254, 74, 35, 0.2)' }}>
+                  <FiMapPin className="w-5 h-5" style={{ color: '#FE4A23' }} />
                 </div>
-
-                <div>
-                  <label
-                    className="block text-sm mb-2"
-                    style={{ color: '#000000' }}
-                  >
-                    Email Address <span style={{ color: 'var(--electric-teal)' }}>*</span>
-                  </label>
-                  <div className="relative">
-                    <FiMail
-                      className="absolute left-3 top-1/2 transform -translate-y-1/2"
-                      style={{ color: '#6B7280' }}
-                    />
-                    <input
-                      type="email"
-                      name="email"
-                      value={formData.email}
-                      onChange={handleChange}
-                      placeholder="john@example.com"
-                      required
-                      className="w-full py-2.5 pl-10 pr-4 rounded-lg border focus:outline-none focus:border-teal-500 transition-colors text-sm"
-                      style={{
-                        backgroundColor: 'var(--bg-primary)',
-                        borderColor: 'var(--border-color)',
-                        color: '#000000'
-                      }}
-                    />
-                  </div>
+                <div style={{ color: '#CCCCCC' }}>
+                  <p>Ground, 1st Floor,</p>
+                  <p>SupremeWork Co-working Space,</p>
+                  <p>Plot No. 84, Institutional Area,</p>
+                  <p>Prem Puri, Sector 32,</p>
+                  <p>Gurugram, Haryana 122001</p>
                 </div>
               </div>
 
-              {/* Company */}
-              <div>
-                <label
-                  className="block text-sm mb-2"
-                  style={{ color: '#000000' }}
+              {/* Phone */}
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgba(254, 74, 35, 0.2)' }}>
+                  <FiPhone className="w-5 h-5" style={{ color: '#FE4A23' }} />
+                </div>
+                <a
+                  href="tel:+918035315291"
+                  className="transition-colors"
+                  style={{ color: '#CCCCCC' }}
+                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
                 >
-                  Company (Optional)
-                </label>
-                <input
-                  type="text"
-                  name="company"
-                  value={formData.company}
-                  onChange={handleChange}
-                  placeholder="Your Company Name"
-                  className="w-full py-2.5 px-4 rounded-lg border focus:outline-none focus:border-teal-500 transition-colors text-sm"
-                  style={{
-                    backgroundColor: 'var(--bg-primary)',
-                    borderColor: 'var(--border-color)',
-                    color: '#000000'
-                  }}
-                />
+                  +91 8035315291
+                </a>
               </div>
 
-              {/* Project Details */}
-              <div>
-                <label
-                  className="block text-sm mb-2"
-                  style={{ color: '#000000' }}
+              {/* Email */}
+              <div className="flex items-center gap-3">
+                <div className="w-8 h-8 rounded-lg flex items-center justify-center flex-shrink-0" style={{ backgroundColor: 'rgba(254, 74, 35, 0.2)' }}>
+                  <FiMail className="w-5 h-5" style={{ color: '#FE4A23' }} />
+                </div>
+                <a
+                  href="mailto:contact@aifilmz.com"
+                  className="transition-colors"
+                  style={{ color: '#CCCCCC' }}
+                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
                 >
-                  Project Details <span style={{ color: 'var(--electric-teal)' }}>*</span>
-                </label>
-                <textarea
-                  name="projectDetails"
-                  value={formData.projectDetails}
-                  onChange={handleChange}
-                  placeholder="Tell us about your project, goals, timeline, and any specific requirements..."
-                  required
-                  rows="4"
-                  className="w-full py-2.5 px-4 rounded-lg border focus:outline-none focus:border-teal-500 transition-colors resize-none text-sm"
-                  style={{
-                    backgroundColor: 'var(--bg-primary)',
-                    borderColor: 'var(--border-color)',
-                    color: '#000000'
-                  }}
-                ></textarea>
+                  contact@aifilmz.com
+                </a>
               </div>
 
-              {/* Submit Button */}
-              <motion.button
-                onClick={handleSubmit}
-                whileHover={{ scale: 1.02 }}
-                whileTap={{ scale: 0.98 }}
-                className="w-full font-semibold py-2.5 px-6 rounded-lg transition-colors flex items-center justify-center gap-2 text-sm"
-                style={{
-                  backgroundColor: 'var(--accent-color)',
-                  color: 'var(--text-inverse)'
-                }}
-              >
-                <span>Send Message</span>
-                <FiSend className="w-4 h-4" />
-              </motion.button>
+              {/* Business Hours */}
+              <div className="mt-4">
+                <p className="font-semibold mb-1" style={{ color: '#FFFFFF' }}>
+                  Business Hours
+                </p>
+                <p style={{ color: '#CCCCCC' }}>
+                  Mon-Fri: 9AM-6PM IST
+                </p>
+              </div>
             </div>
           </div>
         </div>
 
-        {/* Bottom Copyright */}
+        {/* Bottom Bar */}
         <div
-          className="pt-6 border-t"
-          style={{ borderColor: 'var(--border-color)' }}
+          className="pt-6 border-t flex flex-col md:flex-row justify-between items-center gap-4"
+          style={{ borderColor: '#333333' }}
         >
           <p
-            className="text-center text-xs"
+            className="text-xs text-center md:text-left"
             style={{ color: '#999999' }}
           >
             © 2025 AI Filmz. All rights reserved.
           </p>
+          <div className="flex gap-6 text-xs">
+            <a
+              href="#privacy"
+              className="transition-colors"
+              style={{ color: '#999999' }}
+              onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+              onMouseLeave={(e) => e.target.style.color = '#999999'}
+            >
+              Privacy Policy
+            </a>
+            <a
+              href="#terms"
+              className="transition-colors"
+              style={{ color: '#999999' }}
+              onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+              onMouseLeave={(e) => e.target.style.color = '#999999'}
+            >
+              Terms of Service
+            </a>
+            <a
+              href="#cookies"
+              className="transition-colors"
+              style={{ color: '#999999' }}
+              onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+              onMouseLeave={(e) => e.target.style.color = '#999999'}
+            >
+              Cookie Policy
+            </a>
+          </div>
         </div>
       </div>
     </footer>

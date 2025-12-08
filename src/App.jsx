@@ -1,17 +1,10 @@
 import React, { useState, useEffect } from 'react';
+import { BrowserRouter as Router, Routes, Route } from 'react-router-dom';
 import { motion } from 'framer-motion';
-import Header from './components/Header';
-import HeroSection from './components/HeroSection';
-import WelcomeSection from './components/WelcomeSection';
-import TrustedBy from './components/TrustedBy';
-import OurWork from './components/OurWork';
-import Services from './components/Services';
-import WhyChooseAIAgencySection from './components/WhyChooseAIAgencySection';
-import GlimpseAtFilms from './components/GlimpseAtFilms';
-import HowItWorksSection from './components/HowItWorksSection';
-import PricingSection from './components/PricingSection';
-import Footer from './components/Footer';
 import { ThemeProvider } from './context/ThemeContext';
+import Home from './pages/Home';
+import AboutUs from './pages/AboutUs';
+import Contact from './pages/Contact';
 import './App.css';
 
 function App() {
@@ -40,21 +33,13 @@ function App() {
 
   return (
     <ThemeProvider>
-      <div className="app">
-        <Header />
-        <main>
-          <HeroSection />
-          <WelcomeSection />
-          <TrustedBy />
-          <OurWork />
-          <Services />
-          <WhyChooseAIAgencySection />
-          <GlimpseAtFilms />
-          <HowItWorksSection />
-          <PricingSection />
-          <Footer />
-        </main>
-      </div>
+      <Router>
+        <Routes>
+          <Route path="/" element={<Home />} />
+          <Route path="/about" element={<AboutUs />} />
+          <Route path="/contact" element={<Contact />} />
+        </Routes>
+      </Router>
     </ThemeProvider>
   );
 }

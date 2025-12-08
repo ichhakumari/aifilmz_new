@@ -1,449 +1,325 @@
-import React, { useState, useRef } from 'react';
-import { motion, useInView, AnimatePresence } from 'framer-motion';
-import SafeIcon from '../common/SafeIcon';
+import React, { useRef } from 'react';
+import { motion, useInView } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 
-const { FiPlay, FiExternalLink, FiChevronLeft, FiChevronRight } = FiIcons;
+const { FiPlay, FiArrowRight, FiChevronLeft, FiChevronRight } = FiIcons;
 
 const OurWork = () => {
   const ref = useRef(null);
-  const isInView = useInView(ref, { once: true, threshold: 0.3 });
-  const [activeProject, setActiveProject] = useState(0);
-
+  const scrollContainerRef = useRef(null);
+  const isInView = useInView(ref, { once: true, threshold: 0.2 });
 
   const projects = [
     {
       id: 1,
-      title: "AI Avatar Cloning",
-      description: "Revolutionary AI-powered avatar cloning technology that creates photorealistic digital twins for personalized video content",
-      videoUrl: "/videos/video2.mp4",
-      thumbnail: "/videos/video2.mp4",
-      category: "AI Avatar",
-      duration: "2:15",
-      details: {
-        client: "Digital Media Corp",
-        timeline: "1.5 weeks",
-        technologies: ["AI Avatar Generation", "Deep Learning", "Face Mapping"],
-        challenge: "Create lifelike digital avatars that accurately replicate human expressions and movements",
-        solution: "Advanced AI avatar cloning with neural face mapping and real-time expression synthesis"
+      title: "E-commerce Product Launch",
+      client: "Fashion Retail Brand",
+      industry: "E-commerce",
+      description: "AI-generated product videos that drove massive engagement and conversions",
+      videoUrl: "/videos/shoes.mp4",
+      metric: "500% ROI",
+      stats: {
+        views: "2.5M",
+        engagement: "87%",
+        duration: "3 min"
       }
     },
     {
       id: 2,
-      title: "AI Cloned Reel Videos",
-      description: "Engaging short-form content created using AI cloning technology for social media platforms and viral marketing campaigns",
+      title: "Corporate Training Program",
+      client: "Tech Corporation",
+      industry: "HR/Training",
+      description: "Personalized onboarding videos that transformed employee engagement",
       videoUrl: "/videos/video1.mp4",
-      thumbnail: "https://images.unsplash.com/photo-1611162617474-5b21e879e113?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      category: "Social Media Reels",
-      duration: "0:45",
-      details: {
-        client: "Social Buzz Agency",
-        timeline: "1 week",
-        technologies: ["AI Cloning", "Auto-Editing", "Trend Analysis"],
-        challenge: "Produce high-volume, engaging reel content that drives social media engagement",
-        solution: "AI-powered reel generation with automated editing and trend-optimized content creation"
+      metric: "98% Completion",
+      stats: {
+        employees: "10K+",
+        satisfaction: "95%",
+        duration: "5 min"
       }
     },
     {
       id: 3,
-      title: "AI Animated Graphics",
-      description: "Stunning animated graphics and motion design created with AI-enhanced tools for modern brand storytelling",
-      videoUrl: "/videos/annimated.mp4",
-      thumbnail: "https://images.unsplash.com/photo-1611224923853-80b023f02d71?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      category: "Animation",
-      duration: "1:30",
-      details: {
-        client: "Creative Studios Inc",
-        timeline: "2 weeks",
-        technologies: ["AI Animation", "Motion Graphics", "Procedural Generation"],
-        challenge: "Create complex animated graphics with dynamic movements and visual appeal",
-        solution: "AI-driven animation system with intelligent motion design and automated keyframing"
+      title: "Brand Marketing Campaign",
+      client: "Food & Beverage Giant",
+      industry: "Marketing",
+      description: "AI-powered ad campaign that captured attention and drove brand recall",
+      videoUrl: "/videos/zomato.mp4",
+      metric: "3.2M Reach",
+      stats: {
+        reach: "3.2M",
+        ctr: "12.5%",
+        duration: "2 days"
       }
     },
     {
       id: 4,
-      title: "AI Product Videos",
-      description: "Professional product showcase videos with AI-generated visuals and photorealistic 3D rendering for e-commerce",
-      videoUrl: "/videos/shoes.mp4",
-      thumbnail: "https://images.unsplash.com/photo-1558618666-fcd25c85cd64?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      category: "Product Showcase",
-      duration: "1:45",
-      details: {
-        client: "E-Commerce Brands",
-        timeline: "1.5 weeks",
-        technologies: ["3D Product Rendering", "AI Enhancement", "Virtual Photography"],
-        challenge: "Create stunning product videos without expensive photography setups",
-        solution: "AI-powered 3D rendering with virtual lighting and automated product visualization"
+      title: "Personalized Customer Outreach",
+      client: "SaaS Platform",
+      industry: "Sales",
+      description: "Hyper-personalized video messages that revolutionized customer engagement",
+      videoUrl: "/videos/video2.mp4",
+      metric: "340% Response",
+      stats: {
+        sent: "50K+",
+        response: "68%",
+        duration: "Automated"
       }
     },
     {
       id: 5,
-      title: "AI Ad Films",
-      description: "High-impact advertising films created with AI technology for maximum audience engagement and brand recall",
-      videoUrl: "/videos/zomato.mp4",
-      thumbnail: "https://images.unsplash.com/photo-1578662996442-48f60103fc96?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      category: "Advertisement",
-      duration: "0:30",
-      details: {
-        client: "Brand Marketing Ltd",
-        timeline: "2 weeks",
-        technologies: ["AI Video Generation", "Smart Editing", "Audience Analytics"],
-        challenge: "Produce compelling ad content that resonates with target demographics",
-        solution: "AI-driven ad creation with data-backed creative decisions and automated optimization"
-      }
-    },
-    {
-      id: 6,
-      title: "AI Animated Videos",
-      description: "Fully animated video content powered by AI for explainers, brand stories, and entertainment",
+      title: "Animated Brand Story",
+      client: "Consumer Goods Brand",
+      industry: "Animation",
+      description: "Engaging animated content that brought brand values to life",
       videoUrl: "/videos/Cadbury Dairy Milk.mp4",
-      thumbnail: "https://images.unsplash.com/photo-1626785774573-4b799315345d?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      category: "Animated Content",
-      duration: "2:30",
-      details: {
-        client: "Entertainment Studios",
-        timeline: "3 weeks",
-        technologies: ["AI Animation", "Character Generation", "Scene Synthesis"],
-        challenge: "Create engaging animated content with minimal manual animation work",
-        solution: "AI-powered animation pipeline with intelligent character rigging and scene generation"
-      }
-    },
-    {
-      id: 7,
-      title: "AI Music Videos",
-      description: "Creative music videos with AI-generated visuals synchronized to audio for artists and music labels",
-      videoUrl: "/videos/graphics.mp4",
-      thumbnail: "https://images.unsplash.com/photo-1485846234645-a62644f84728?ixlib=rb-4.0.3&auto=format&fit=crop&w=800&q=80",
-      category: "Music Video",
-      duration: "3:20",
-      details: {
-        client: "Music Label Productions",
-        timeline: "2.5 weeks",
-        technologies: ["AI Visual Generation", "Audio-Visual Sync", "Style Transfer"],
-        challenge: "Create visually stunning music videos that sync perfectly with audio tracks",
-        solution: "AI-powered music video generation with automated audio-visual synchronization and style adaptation"
+      metric: "1.8M Shares",
+      stats: {
+        shares: "1.8M",
+        engagement: "92%",
+        duration: "1 week"
       }
     }
   ];
 
-  const currentProject = projects[activeProject];
-
-  const handlePrevious = () => {
-    setActiveProject((prev) => (prev - 1 + projects.length) % projects.length);
-  };
-
-  const handleNext = () => {
-    setActiveProject((prev) => (prev + 1) % projects.length);
-  };
-
-  const textVariants = {
-    enter: {
-      opacity: 0,
-      x: -50,
-    },
-    center: {
-      opacity: 1,
-      x: 0,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    },
-    exit: {
-      opacity: 0,
-      x: 50,
-      transition: {
-        duration: 0.3
-      }
-    }
-  };
-
-  const videoVariants = {
-    enter: {
-      opacity: 0,
-      scale: 0.9,
-    },
-    center: {
-      opacity: 1,
-      scale: 1,
-      transition: {
-        duration: 0.5,
-        ease: "easeOut"
-      }
-    },
-    exit: {
-      opacity: 0,
-      scale: 1.1,
-      transition: {
-        duration: 0.3
-      }
+  const scroll = (direction) => {
+    if (scrollContainerRef.current) {
+      const scrollAmount = 356; // Card width (350px) + gap (6px)
+      const newScrollPosition = scrollContainerRef.current.scrollLeft + (direction === 'left' ? -scrollAmount : scrollAmount);
+      scrollContainerRef.current.scrollTo({
+        left: newScrollPosition,
+        behavior: 'smooth'
+      });
     }
   };
 
   return (
-    <section ref={ref} className="py-8 sm:py-12 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-tertiary)' }}>
+    <section
+      ref={ref}
+      id="our-work"
+      className="py-16 sm:py-20 px-4 sm:px-6"
+      style={{ backgroundColor: 'var(--bg-secondary)' }}
+    >
       <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <motion.div
-          initial={{ opacity: 0, y: 50 }}
+          initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8 }}
-          className="text-center mb-8 sm:mb-10"
+          className="text-center mb-12"
         >
-          <h2 className="font-bold mb-4 gradient-text" style={{ fontSize: 'var(--text-4xl)' }}>
-            Our Work
+          <span
+            className="font-semibold mb-2 inline-block text-sm tracking-widest uppercase"
+            style={{ color: 'var(--accent-color)' }}
+          >
+            Our Portfolio
+          </span>
+          <h2
+            className="font-bold mb-4"
+            style={{ fontSize: 'var(--text-4xl)', color: 'var(--text-primary)' }}
+          >
+            Explore Projects From <span style={{ color: 'var(--accent-color)' }}>Brands</span>
           </h2>
-          <p className="max-w-3xl mx-auto leading-relaxed" style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)' }}>
-            Explore our portfolio of groundbreaking projects that showcase the perfect fusion of AI technology and creative storytelling.
+          <p
+            className="max-w-3xl mx-auto leading-relaxed"
+            style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)' }}
+          >
+            Affiliate To Brand Collaborations
           </p>
         </motion.div>
 
-        {/* Project Navigation - Radio Buttons */}
-        {/* <motion.div
-          initial={{ opacity: 0, y: 20 }}
-          animate={isInView ? { opacity: 1, y: 0 } : {}}
-          transition={{ duration: 0.8, delay: 0.2 }}
-          className="mb-8"
-        >
-          <div className="flex flex-wrap justify-center gap-3 max-w-5xl mx-auto">
-            {projects.map((project, index) => (
-              <button
-                key={project.id}
-                onClick={() => setActiveProject(index)}
-                className={`flex-shrink-0 px-4 py-2.5 rounded-full text-sm font-semibold transition-all duration-300 ${index === activeProject
-                  ? 'shadow-lg scale-105'
-                  : 'hover:scale-102'
-                  }`}
-                style={{
-                  backgroundColor: index === activeProject
-                    ? 'var(--accent-color)'
-                    : 'var(--bg-quaternary)',
-                  color: index === activeProject
-                    ? 'white'
-                    : 'var(--text-secondary)',
-                  border: index === activeProject
-                    ? 'none'
-                    : '1px solid var(--border-color)'
-                }}
-              >
-                <div className="flex items-center gap-2">
-                  <span className="w-2 h-2 rounded-full" style={{
-                    backgroundColor: index === activeProject ? 'white' : 'var(--accent-color)'
-                  }}></span>
-                  <span>{project.title}</span>
-                </div>
-              </button>
-            ))}
-          </div>
-        </motion.div> */}
+        {/* Horizontal Scrolling Container with Navigation */}
+        <div className="relative">
+          {/* Navigation Buttons */}
+          <button
+            onClick={() => scroll('left')}
+            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center rounded-full transition-all duration-300 hover:scale-110 -ml-6"
+            style={{
+              backgroundColor: 'var(--accent-color)',
+              color: '#FFFFFF',
+              boxShadow: '0 4px 12px rgba(254, 74, 35, 0.3)'
+            }}
+          >
+            <FiChevronLeft className="w-6 h-6" />
+          </button>
 
-        {/* Dynamic Two-Column Layout */}
-        <div className="grid lg:grid-cols-2 gap-6 lg:gap-6 items-center">
-          {/* Left Column - Dynamic Text Content */}
-          <div className="order-2 lg:order-1">
-            <AnimatePresence mode="wait">
+          <button
+            onClick={() => scroll('right')}
+            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center rounded-full transition-all duration-300 hover:scale-110 -mr-6"
+            style={{
+              backgroundColor: 'var(--accent-color)',
+              color: '#FFFFFF',
+              boxShadow: '0 4px 12px rgba(254, 74, 35, 0.3)'
+            }}
+          >
+            <FiChevronRight className="w-6 h-6" />
+          </button>
+
+          {/* Scroll Container */}
+          <div
+            ref={scrollContainerRef}
+            className="flex gap-6 overflow-x-auto pb-4 snap-x snap-mandatory scrollbar-hide"
+            style={{
+              scrollbarWidth: 'none',
+              msOverflowStyle: 'none',
+              WebkitOverflowScrolling: 'touch'
+            }}
+          >
+            {projects.map((project, index) => (
               <motion.div
-                key={activeProject}
-                variants={textVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                className="space-y-4"
+                key={project.id}
+                initial={{ opacity: 0, x: 50 }}
+                animate={isInView ? { opacity: 1, x: 0 } : {}}
+                transition={{ duration: 0.6, delay: index * 0.1 }}
+                className="flex-shrink-0 w-[85vw] sm:w-[350px] snap-center group"
               >
-                {/* Category Badge */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.2 }}
-                  className="inline-block"
-                >
-                  <span
-                    className="px-4 py-2 rounded-full text-sm font-semibold"
-                    style={{
-                      backgroundColor: 'var(--highlight-color)',
-                      color: 'var(--accent-color)'
+                {/* Video Container - Increased Height */}
+                <div className="relative rounded-2xl overflow-hidden mb-4" style={{ aspectRatio: '3.2/5.2' }}>
+                  {/* Video */}
+                  <video
+                    src={project.videoUrl}
+                    className="w-full h-full object-cover cursor-pointer"
+                    autoPlay
+                    loop
+                    muted
+                    playsInline
+                    onClick={(e) => {
+                      if (e.target.paused) {
+                        e.target.play();
+                      } else {
+                        e.target.pause();
+                      }
                     }}
                   >
-                    {currentProject.category}
-                  </span>
-                </motion.div>
+                    Your browser does not support the video tag.
+                  </video>
 
-                {/* Title */}
-                <motion.h3
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.3 }}
-                  className="font-bold"
-                  style={{
-                    fontSize: 'var(--text-2xl)',
-                    color: 'var(--text-primary)',
-                    lineHeight: 1.2
-                  }}
-                >
-                  {currentProject.title}
-                </motion.h3>
+                  {/* Play Button Overlay - Removed (videos autoplay with click controls)
+                  <div className="absolute inset-0 bg-black/20 opacity-100 group-hover:opacity-0 transition-opacity duration-300 flex items-center justify-center">
+                    <div
+                      className="w-16 h-16 rounded-full flex items-center justify-center"
+                      style={{ backgroundColor: 'rgba(254, 74, 35, 0.9)' }}
+                    >
+                      <FiPlay className="w-8 h-8 text-white ml-1" />
+                    </div>
+                  </div>
+                  */}
 
-                {/* Description */}
-                <motion.p
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.4 }}
-                  className="leading-relaxed"
-                  style={{
-                    fontSize: 'var(--text-base)',
-                    color: 'var(--text-secondary)',
-                    lineHeight: 1.6
-                  }}
-                >
-                  {currentProject.description}
-                </motion.p>
+                  {/* Industry Badge */}
+                  <div className="absolute top-4 left-4">
+                    <span
+                      className="px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md"
+                      style={{
+                        backgroundColor: 'rgba(0, 0, 0, 0.6)',
+                        color: '#FFFFFF'
+                      }}
+                    >
+                      {project.industry}
+                    </span>
+                  </div>
 
-                {/* Project Details */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.5 }}
-                  className="space-y-3 pt-3"
-                >
-                  {/* Client Info */}
-                  <div className="flex items-center space-x-4">
-                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-color)' }}></div>
-                    <div>
-                      <span className="text-sm font-medium" style={{ color: 'var(--text-muted)' }}>Client:</span>
-                      <span className="ml-2" style={{ color: 'var(--text-secondary)' }}>{currentProject.details.client}</span>
+                  {/* Metric Badge */}
+                  <div className="absolute top-4 right-4">
+                    <div
+                      className="px-3 py-1.5 rounded-full text-xs font-bold backdrop-blur-md"
+                      style={{
+                        backgroundColor: 'rgba(254, 74, 35, 0.9)',
+                        color: '#FFFFFF'
+                      }}
+                    >
+                      {project.metric}
                     </div>
                   </div>
 
-                  {/* Timeline */}
-                  <div className="flex items-center space-x-4">
-                    <div className="w-2 h-2 rounded-full" style={{ backgroundColor: 'var(--accent-color)' }}></div>
-                    <div>
-                      <span className="text-sm font-medium" style={{ color: 'var(--text-muted)' }}>Timeline:</span>
-                      <span className="ml-2" style={{ color: 'var(--text-secondary)' }}>{currentProject.details.timeline}</span>
-                    </div>
-                  </div>
+                  {/* Client Details Card - Bottom */}
+                  <div
+                    className="absolute bottom-0 left-0 right-0 p-5 backdrop-blur-xl"
+                    style={{
+                      background: 'linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7), transparent)'
+                    }}
+                  >
+                    {/* Client Name */}
+                    <p className="text-xs font-medium mb-1" style={{ color: 'var(--accent-color)' }}>
+                      {project.client}
+                    </p>
 
-                  {/* Technologies */}
-                  <div className="space-y-2">
-                    <span className="text-sm font-medium" style={{ color: 'var(--text-muted)' }}>Technologies:</span>
-                    <div className="flex flex-wrap gap-2">
-                      {currentProject.details.technologies.map((tech, index) => (
-                        <span
-                          key={index}
-                          className="px-3 py-1 rounded-full text-xs font-medium"
-                          style={{
-                            backgroundColor: 'var(--bg-quaternary)',
-                            color: 'var(--text-secondary)',
-                            border: '1px solid var(--border-color)'
-                          }}
-                        >
-                          {tech}
-                        </span>
+                    {/* Title */}
+                    <h3 className="text-lg font-bold mb-2 text-white line-clamp-2">
+                      {project.title}
+                    </h3>
+
+                    {/* Description */}
+                    <p className="text-sm mb-3 text-gray-300 line-clamp-2">
+                      {project.description}
+                    </p>
+
+                    {/* Stats Row */}
+                    <div className="flex items-center gap-4 text-xs text-gray-400 mb-3">
+                      {Object.entries(project.stats).map(([key, value], idx) => (
+                        <div key={idx} className="flex items-center gap-1">
+                          <span className="font-semibold text-white">{value}</span>
+                          <span className="capitalize">{key}</span>
+                        </div>
                       ))}
                     </div>
-                  </div>
 
-                  {/* Challenge & Solution */}
-                  <div className="pt-4 space-y-3">
-                    <div>
-                      <span className="text-sm font-medium" style={{ color: 'var(--text-muted)' }}>Challenge:</span>
-                      <p className="mt-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
-                        {currentProject.details.challenge}
-                      </p>
-                    </div>
-                    <div>
-                      <span className="text-sm font-medium" style={{ color: 'var(--text-muted)' }}>Solution:</span>
-                      <p className="mt-1 text-sm" style={{ color: 'var(--text-secondary)' }}>
-                        {currentProject.details.solution}
-                      </p>
-                    </div>
-                  </div>
-                </motion.div>
-
-                {/* Action Buttons */}
-                <motion.div
-                  initial={{ opacity: 0, y: 20 }}
-                  animate={{ opacity: 1, y: 0 }}
-                  transition={{ delay: 0.6 }}
-                  className="flex flex-col sm:flex-row gap-4 pt-6"
-                >
-
-                  <button
-                    className="btn-secondary"
-                    onClick={() => window.open(currentProject.videoUrl, '_blank')}
-                  >
-                    <SafeIcon icon={FiExternalLink} className="w-5 h-5 mr-2" />
-                    View Details
-                  </button>
-                </motion.div>
-              </motion.div>
-            </AnimatePresence>
-          </div>
-
-          {/* Right Column - Video Card */}
-          <div className="order-1 lg:order-2">
-            <AnimatePresence mode="wait">
-              <motion.div
-                key={activeProject}
-                variants={videoVariants}
-                initial="enter"
-                animate="center"
-                exit="exit"
-                className="relative"
-              >
-                <div className="glass-card p-3 sm:p-4 group cursor-pointer rounded-2xl overflow-hidden">
-                  <div className="relative overflow-hidden rounded-xl mb-3 w-full h-80 sm:h-[400px] lg:h-[500px]">
-                    <video
-                      src={currentProject.videoUrl}
-                      className="w-full h-full object-cover"
-                      controls
-                      muted
-                    >
-                      Your browser does not support the video tag.
-                    </video>
-
-                    {/* Navigation Buttons - On Video */}
+                    {/* View Project Link */}
                     <button
-                      onClick={(e) => { e.stopPropagation(); handlePrevious(); }}
-                      className="absolute left-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-sm transition-all z-10 shadow-lg"
+                      className="flex items-center gap-2 text-sm font-semibold transition-all group/btn"
+                      style={{ color: 'var(--accent-color)' }}
                     >
-                      <SafeIcon icon={FiChevronLeft} className="w-5 h-5" />
-                    </button>
-                    <button
-                      onClick={(e) => { e.stopPropagation(); handleNext(); }}
-                      className="absolute right-3 top-1/2 -translate-y-1/2 p-2.5 rounded-full bg-black/60 hover:bg-black/80 text-white backdrop-blur-sm transition-all z-10 shadow-lg"
-                    >
-                      <SafeIcon icon={FiChevronRight} className="w-5 h-5" />
+                      <span>View Project</span>
+                      <FiArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
                     </button>
                   </div>
                 </div>
               </motion.div>
-            </AnimatePresence>
-
-            {/* Progress Indicators */}
-            <div className="flex justify-center mt-6 space-x-2">
-              {projects.map((_, index) => (
-                <button
-                  key={index}
-                  onClick={() => setActiveProject(index)}
-                  className={`transition-all duration-300 ${index === activeProject ? 'scale-125' : 'scale-100'
-                    }`}
-                >
-                  <div
-                    className={`w-2 h-2 rounded-full transition-all duration-300 ${index === activeProject ? 'w-8' : 'w-2'
-                      }`}
-                    style={{
-                      backgroundColor: index === activeProject
-                        ? 'var(--accent-color)'
-                        : 'var(--border-color)'
-                    }}
-                  />
-                </button>
-              ))}
-            </div>
+            ))}
           </div>
+
+          {/* Scroll Hint - Commented out
+          <div className="flex justify-center mt-6">
+            <p className="text-sm" style={{ color: 'var(--text-muted)' }}>
+              ← Scroll to explore more projects →
+            </p>
+          </div>
+          */}
         </div>
+
+        {/* CTA Section - Commented out
+        <motion.div
+          initial={{ opacity: 0, y: 30 }}
+          animate={isInView ? { opacity: 1, y: 0 } : {}}
+          transition={{ duration: 0.8, delay: 0.6 }}
+          className="text-center mt-12"
+        >
+          <motion.a
+            href="/contact"
+            whileHover={{ scale: 1.05 }}
+            whileTap={{ scale: 0.95 }}
+            className="inline-flex items-center gap-2 px-8 py-4 rounded-full font-semibold text-base transition-all"
+            style={{
+              backgroundColor: 'var(--accent-color)',
+              color: '#FFFFFF'
+            }}
+          >
+            <span>Start Your Project</span>
+            <FiArrowRight className="w-5 h-5" />
+          </motion.a>
+        </motion.div>
+        */}
       </div>
+
+      {/* Custom Scrollbar Styles */}
+      <style jsx>{`
+        .scrollbar-hide::-webkit-scrollbar {
+          display: none;
+        }
+        .scrollbar-hide {
+          -ms-overflow-style: none;
+          scrollbar-width: none;
+        }
+      `}</style>
     </section>
   );
 };

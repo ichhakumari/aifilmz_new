@@ -39,7 +39,7 @@ const PricingSection = () => {
   ];
 
   return (
-    <section ref={ref} className="py-16 sm:py-20 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section ref={ref} id="pricing" className="py-16 sm:py-20 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <motion.div
@@ -54,13 +54,13 @@ const PricingSection = () => {
           >
             Transparent Pricing
           </span>
-          <h2 
-            className="font-bold text-3xl sm:text-4xl md:text-5xl" 
+          <h2
+            className="font-bold text-3xl sm:text-4xl md:text-5xl"
             style={{ color: 'var(--text-primary)' }}
           >
             Simple & <span style={{ color: 'var(--accent-color)' }}>Scalable</span>
           </h2>
-          <p 
+          <p
             className="mt-4 text-base sm:text-lg max-w-2xl mx-auto"
             style={{ color: 'var(--text-secondary)' }}
           >
@@ -87,11 +87,11 @@ const PricingSection = () => {
               {plan.highlight && (
                 <div className="absolute top-0 left-0 right-0 h-1" style={{ backgroundColor: 'var(--accent-color)' }}></div>
               )}
-              
+
               {plan.highlight && (
-                <div 
+                <div
                   className="inline-block mb-4 px-3 py-1 rounded-full text-xs font-semibold w-fit"
-                  style={{ 
+                  style={{
                     backgroundColor: 'var(--accent-color)',
                     color: 'white'
                   }}
@@ -101,13 +101,13 @@ const PricingSection = () => {
               )}
 
               {/* Title & Description */}
-              <h3 
-                className="font-bold text-lg sm:text-xl mb-2" 
+              <h3
+                className="font-bold text-lg sm:text-xl mb-2"
                 style={{ color: 'var(--text-primary)' }}
               >
                 {plan.title}
               </h3>
-              <p 
+              <p
                 className="text-sm mb-6"
                 style={{ color: 'var(--text-secondary)' }}
               >
@@ -117,13 +117,13 @@ const PricingSection = () => {
               {/* Price */}
               <div className="mb-6">
                 <div className="flex items-baseline gap-2">
-                  <span 
-                    className="font-bold text-3xl sm:text-4xl" 
+                  <span
+                    className="font-bold text-3xl sm:text-4xl"
                     style={{ color: 'var(--accent-color)' }}
                   >
                     {plan.price}
                   </span>
-                  <span 
+                  <span
                     className="text-xs font-semibold tracking-wide uppercase"
                     style={{ color: 'var(--text-muted)' }}
                   >
@@ -136,7 +136,7 @@ const PricingSection = () => {
               <ul className="space-y-3 mb-8 flex-grow">
                 {plan.features.map((feature, i) => (
                   <li key={i} className="flex items-start gap-3">
-                    <div 
+                    <div
                       className="w-5 h-5 rounded-full flex items-center justify-center flex-shrink-0 mt-0.5"
                       style={{ backgroundColor: 'var(--accent-color)', opacity: 0.2 }}
                     >
@@ -146,7 +146,7 @@ const PricingSection = () => {
                         style={{ color: 'var(--accent-color)' }}
                       />
                     </div>
-                    <span 
+                    <span
                       className="text-sm"
                       style={{ color: 'var(--text-secondary)' }}
                     >

@@ -36,7 +36,7 @@ const WhyChooseAIAgencySection = () => {
 
   return (
     <section ref={ref} className="py-10  px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-primary)' }}>
-      <div className="container mx-auto max-w-6xl">
+      <div className="container mx-auto max-w-7xl">
         {/* Header */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -44,8 +44,8 @@ const WhyChooseAIAgencySection = () => {
           transition={{ duration: 0.6 }}
           className="text-center mb-14 sm:mb-16"
         >
-          <h2 
-            className="font-bold text-xl sm:text-2xl md:text-3xl mb-4" 
+          <h2
+            className="font-bold text-xl sm:text-2xl md:text-3xl mb-4"
             style={{ color: 'var(--text-primary)' }}
           >
             Why Choose <span style={{ color: 'var(--accent-color)' }}>AIFILMZ</span>
@@ -68,8 +68,8 @@ const WhyChooseAIAgencySection = () => {
             className="flex flex-col"
           >
             <div className="mb-6 sm:mb-8">
-              <h3 
-                className="font-bold text-xl sm:text-2xl mb-3" 
+              <h3
+                className="font-bold text-xl sm:text-2xl mb-3"
                 style={{ color: 'var(--text-primary)' }}
               >
                 AI-Powered Process
@@ -142,8 +142,8 @@ const WhyChooseAIAgencySection = () => {
                   >
                     <SafeIcon icon={feature.icon} className="w-5 h-5 text-white" />
                   </div>
-                  <h4 
-                    className="font-semibold text-sm sm:text-base mb-2" 
+                  <h4
+                    className="font-semibold text-sm sm:text-base mb-2"
                     style={{ color: 'var(--text-primary)' }}
                   >
                     {feature.title}
@@ -165,7 +165,7 @@ const WhyChooseAIAgencySection = () => {
               transition={{ duration: 0.5, delay: 0.8 }}
               className="w-full"
             >
-              <button 
+              <button
                 className="w-full py-3 px-6 rounded-lg font-semibold text-sm sm:text-base transition-all duration-300 hover:shadow-lg hover:scale-105"
                 style={{
                   backgroundColor: 'var(--accent-color)',

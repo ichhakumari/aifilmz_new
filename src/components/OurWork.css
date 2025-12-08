@@ -1,0 +1,355 @@
+/* OurWork Component Styles - Based on Yoda Design */
+
+.intro-wrapper {
+  position: relative;
+  height: 90vh;
+  background-color: var(--bg-secondary);
+}
+
+.intro {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: 100%;
+  position: relative;
+}
+
+.text-align-center {
+  max-width: 600px;
+  text-align: center;
+  position: absolute;
+  top: 50px;
+  scroll-behavior: smooth;
+  height: 100%;
+  will-change: transform, opacity;
+}
+
+.align-center {
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.max-width-small {
+  width: 100%;
+  max-width: 30rem;
+}
+
+.margin-small {
+  margin: 3.5rem;
+  margin-bottom: 0;
+}
+
+.heading-style-h3 {
+  letter-spacing: -0.02em;
+  font-size: 2.8125rem;
+  font-weight: 500;
+  line-height: 1;
+  color: var(--text-primary);
+}
+
+.light-green-underline {
+  box-shadow: none;
+  display: inline-block;
+}
+
+.text-size-medium {
+  font-size: 1.125rem;
+  color: var(--text-secondary);
+  margin-bottom: 5rem;
+}
+
+.section_tabs {
+  z-index: 99;
+  border-radius: 2rem;
+  background-color: var(--bg-tertiary);
+  position: relative;
+}
+
+.padding-section-large {
+  padding-top: 7rem;
+  padding-bottom: 7rem;
+  position: relative;
+}
+
+@media (max-width: 576px) {
+  .padding-section-large {
+    padding-top: 2rem;
+    padding-bottom: 0rem;
+  }
+}
+
+.tabs_height {
+  height: 250vh;
+}
+
+@media (max-width: 576px) {
+  .tabs_height {
+    height: 300vh;
+  }
+}
+
+.tabs_sticky-wrapper {
+  height: 100vh;
+  position: -webkit-sticky;
+  position: sticky;
+  top: 5vh;
+}
+
+.tabs_container {
+  width: 100%;
+  max-width: 120rem;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.tabs_component {
+  height: 55vh;
+  grid-column-gap: 1.5rem;
+  grid-row-gap: 1.5rem;
+  grid-template-rows: auto;
+  grid-template-columns: 0.4fr 1fr;
+  grid-auto-columns: 1fr;
+  padding-left: 3.3%;
+  padding-right: 3.3%;
+  display: grid;
+}
+
+@media (max-width: 991px) {
+  .tabs_component {
+    grid-template-columns: 1fr;
+    height: auto;
+  }
+}
+
+.tabs_left {
+  border-radius: 1.25rem;
+  background-color: var(--card-bg);
+  flex-direction: column;
+  justify-content: flex-end;
+  align-items: stretch;
+  padding: 1.5rem;
+  display: flex;
+  border: 1px solid var(--border-color);
+}
+
+.tabs_left-top {
+  height: 100%;
+  position: relative;
+}
+
+.tabs_let-content {
+  width: 100%;
+  height: 100%;
+  text-align: center;
+  flex-direction: column;
+  justify-content: space-around;
+  padding-top: 0%;
+  padding-bottom: 0%;
+  display: flex;
+  position: absolute;
+  opacity: 0;
+  transition: opacity 0.5s ease;
+}
+
+.tabs_let-content.is-1 {
+  opacity: 1;
+}
+
+.heading-style-h4 {
+  letter-spacing: -0.02em;
+  font-size: 2.125rem;
+  font-weight: 500;
+  line-height: 1.05;
+  color: var(--text-primary);
+}
+
+@media (max-width: 576px) {
+  .heading-style-h4 {
+    margin: 0;
+    font-size: 20px;
+  }
+}
+
+.text-color-gray100 {
+  color: var(--text-primary);
+}
+
+.tabs_line {
+  width: 100%;
+  height: 1px;
+  background-color: var(--border-color);
+  margin: 1.5rem 0;
+}
+
+.text-color-gray400 {
+  color: var(--text-secondary);
+}
+
+.text-size-small {
+  font-size: 1rem;
+  line-height: 1.6;
+}
+
+@media (max-width: 576px) {
+  .text-size-small {
+    font-size: 0.875rem;
+  }
+}
+
+.tabs_left-bottom {
+  flex-direction: column;
+  display: flex;
+  margin-top: 1.5rem;
+}
+
+.button {
+  grid-column-gap: 0.5rem;
+  grid-row-gap: 0.5rem;
+  border: 1px solid var(--accent-color);
+  background-color: transparent;
+  color: var(--text-primary);
+  text-align: center;
+  letter-spacing: 0.03em;
+  text-transform: uppercase;
+  cursor: pointer;
+  border-radius: 0.6rem;
+  justify-content: center;
+  align-items: center;
+  padding: 0.6rem 1.35rem;
+  font-size: 0.875rem;
+  text-decoration: none;
+  transition: color 0.6s, border-color 0.6s;
+  display: flex;
+  overflow: hidden;
+  position: relative;
+}
+
+.button.is-green.is-secondary {
+  color: var(--text-primary);
+  background-color: transparent;
+}
+
+.button.is-green.is-secondary:hover {
+  color: #000000;
+  border-color: var(--accent-color);
+}
+
+.button.is-green.is-secondary:hover .button-circlee {
+  background-color: var(--accent-color);
+  transform: translate3d(0px, -43%, 0px) scale3d(1, 1, 1);
+  width: 100%;
+}
+
+.button-text {
+  z-index: 2;
+  position: relative;
+}
+
+.button-circle-wrapper {
+  width: 1.25rem;
+  height: 1.25rem;
+  border-radius: 100vw;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: relative;
+  overflow: hidden;
+}
+
+.button-icon {
+  z-index: 2;
+  width: 1rem;
+  height: 1rem;
+  justify-content: center;
+  align-items: center;
+  display: flex;
+  position: absolute;
+}
+
+.button-circlee {
+  width: 80%;
+  aspect-ratio: 1 / 1;
+  border-radius: 100vw;
+  position: absolute;
+  top: 0;
+  transform: translate3d(0px, 0%, 0px) scale3d(1, 1, 1);
+  transform-style: preserve-3d;
+  height: 250px;
+  transition: all 0.2s ease-in-out;
+  will-change: transform, width, height;
+  border: 1px solid transparent;
+}
+
+.tabs_right {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25rem;
+  position: relative;
+  overflow: hidden;
+  grid-area: span 1 / span 1 / span 1 / span 1;
+}
+
+@media (max-width: 991px) {
+  .tabs_right {
+    height: 60vh;
+    margin-top: 2rem;
+  }
+}
+
+.tabs_video {
+  width: 100%;
+  height: 100%;
+  border-radius: 1.25rem;
+  object-fit: cover;
+  position: absolute;
+  opacity: 0;
+  transform: translateY(100%);
+  transition: opacity 0.5s ease, transform 0.5s ease;
+}
+
+.tabs_video.is-1,
+.tabs_video.is-1-initial {
+  opacity: 1;
+  transform: translateY(0);
+}
+
+.tabs_video video {
+  width: 100%;
+  height: 100%;
+  object-fit: cover;
+  border-radius: 1.25rem;
+}
+
+/* Responsive adjustments */
+@media (max-width: 991px) {
+  .heading-style-h3 {
+    font-size: 2rem;
+  }
+
+  .text-size-medium {
+    font-size: 1rem;
+  }
+
+  .margin-small {
+    margin: 2rem;
+  }
+}
+
+@media (max-width: 576px) {
+  .intro-wrapper {
+    height: 70vh;
+  }
+
+  .text-align-center {
+    top: 20px;
+  }
+
+  .heading-style-h3 {
+    font-size: 1.75rem;
+  }
+
+  .text-size-medium {
+    font-size: 0.9rem;
+    margin-bottom: 3rem;
+  }
+}

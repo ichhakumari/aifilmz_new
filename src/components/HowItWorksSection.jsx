@@ -13,22 +13,22 @@ const HowItWorksSection = () => {
     {
       icon: FiEdit3,
       title: "Share Your Vision",
-      description: "Tell us about your project - whether you need AI avatar cloning, animated graphics, product videos, ad films, or music videos. Our AI analyzes your requirements to suggest optimal approaches."
+      description: "Every great video starts with a great idea. Tell us what you want to create — AI avatar cloning, animated graphics, product demos, ad films, music videos, or social media reels. Our AI-powered system analyzes your requirements and proposes the smartest creative direction, ensuring your project begins with clarity and purpose."
     },
     {
       icon: FiCode,
       title: "AI-Powered Creation",
-      description: "Our intelligent systems generate avatars, create animated content, produce reel videos, and craft compelling visuals while our creative team refines them with human expertise."
+      description: "This is where creativity meets intelligence. Your vision, combined with our creative team and AI tools, transforms into stunning visual content. We generate lifelike AI avatars, craft animations, design reels, and produce high-quality video assets — all refined by our expert editors and storytellers to maintain a human touch and cinematic quality."
     },
     {
       icon: FiPlayCircle,
       title: "Review & Deliver",
-      description: "Collaborate with our team through iterative feedback. Finalize your AI-generated content and receive deliverables optimized for all platforms."
+      description: "We collaborate with you through a smooth review process. Share your feedback, request changes, and watch your video evolve with each iteration. Once finalized, we deliver optimized content ready for all platforms — social media, websites, ads, or campaign launches."
     }
   ];
 
   return (
-    <section ref={ref} className=" " style={{ backgroundColor: 'var(--bg-quaternary)' }}>
+    <section ref={ref} id="how-it-works" className=" " style={{ backgroundColor: 'var(--bg-quaternary)' }}>
       <div className="container mx-auto max-w-7xl py-8 sm:py-10 px-4 sm:px-6">
         {/* Section Header */}
         <motion.div
@@ -44,7 +44,7 @@ const HowItWorksSection = () => {
             className="max-w-3xl mx-auto leading-relaxed"
             style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)' }}
           >
-            Our streamlined process makes creating professional video content simple, fast, and effective.
+            Our streamlined process makes creating professional video content simple, fast, and exceptionally effective. With the perfect blend of human creativity and AI innovation, we turn your ideas into powerful visuals.
           </p>
         </motion.div>
 

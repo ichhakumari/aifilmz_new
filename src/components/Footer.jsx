@@ -176,17 +176,6 @@ const Footer = () => {
                 </a>
               </li>
               <li>
-                <Link
-                  to="/contact"
-                  className="transition-colors"
-                  style={{ color: '#CCCCCC' }}
-                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
-                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
-                >
-                  Demo
-                </Link>
-              </li>
-              <li>
                 <a
                   href="/#pricing"
                   className="transition-colors"
@@ -208,17 +197,8 @@ const Footer = () => {
                   How We Work
                 </a>
               </li>
-              {/* <li>
-                <a
-                  href="/#services"
-                  className="transition-colors"
-                  style={{ color: '#CCCCCC' }}
-                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
-                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
-                >
-                  Industries
-                </a>
-              </li> */}
+
+
               <li>
                 <Link
                   to="/about"
@@ -230,6 +210,18 @@ const Footer = () => {
                   About Us
                 </Link>
               </li>
+              <li>
+                <Link
+                  to="/contact"
+                  className="transition-colors"
+                  style={{ color: '#CCCCCC' }}
+                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
+                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
+                >
+                  Contact us
+                </Link>
+              </li>
+
             </ul>
           </div>
 

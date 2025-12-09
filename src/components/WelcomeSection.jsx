@@ -2,7 +2,6 @@ import React, { useRef, useState } from 'react';
 import { motion, useInView, AnimatePresence } from 'framer-motion';
 import SafeIcon from '../common/SafeIcon';
 import * as FiIcons from 'react-icons/fi';
-import { useTheme } from '../context/ThemeContext';
 
 const { FiChevronDown, FiChevronUp } = FiIcons;
 
@@ -10,7 +9,6 @@ const WelcomeSection = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, threshold: 0.2 });
     const [isExpanded, setIsExpanded] = useState(true);
-    const { isDark } = useTheme();
 
     const containerVariants = {
         hidden: { opacity: 0 },
@@ -46,16 +44,11 @@ const WelcomeSection = () => {
                     backgroundPosition: 'center',
                     backgroundSize: 'cover',
                     backgroundRepeat: 'no-repeat',
-                    backgroundColor: 'var(--bg-secondary)' // Theme-aware background
+                    backgroundColor: '#1a1a1a'
                 }}
             >
-                {/* Overlay - adjusts based on theme */}
-                <div
-                    className="absolute inset-0 z-0 rounded-2xl"
-                    style={{
-                        backgroundColor: isDark ? 'rgba(0, 0, 0, 0.7)' : 'rgba(255, 255, 255, 0.85)'
-                    }}
-                ></div>
+                {/* Dark Overlay */}
+                <div className="absolute inset-0 bg-black/70 z-0 rounded-2xl"></div>
 
                 {/* Content */}
                 <motion.div
@@ -71,16 +64,12 @@ const WelcomeSection = () => {
                         </div>
                         <button
                             onClick={() => setIsExpanded(!isExpanded)}
-                            className="p-2 rounded-full transition-all duration-300"
-                            style={{
-                                backgroundColor: isDark ? 'rgba(255, 255, 255, 0.1)' : 'rgba(0, 0, 0, 0.1)',
-                                color: 'var(--text-primary)'
-                            }}
+                            className="p-2 rounded-full transition-all duration-300 hover:bg-white/10"
                             aria-label={isExpanded ? "Collapse section" : "Expand section"}
                         >
                             <SafeIcon
                                 icon={isExpanded ? FiChevronUp : FiChevronDown}
-                                className="w-5 h-5"
+                                className="w-5 h-5 text-white"
                             />
                         </button>
                     </div>
@@ -97,8 +86,7 @@ const WelcomeSection = () => {
                                 {/* Heading */}
                                 <motion.h2
                                     variants={itemVariants}
-                                    className="text-xl sm:text-2xl md:text-3xl font-medium text-center mb-6 sm:mb-8 tracking-wide"
-                                    style={{ color: 'var(--text-primary)' }}
+                                    className="text-xl sm:text-2xl md:text-3xl font-medium text-center mb-6 sm:mb-8 tracking-wide text-white"
                                 >
                                     Welcome to <span className='italic' style={{ color: '#FE4A23' }}>AIFILMZ</span>
                                 </motion.h2>
@@ -108,10 +96,7 @@ const WelcomeSection = () => {
                                     variants={itemVariants}
                                     className="text-center max-w-3xl mx-auto"
                                 >
-                                    <p
-                                        className="text-sm sm:text-base leading-relaxed mb-2"
-                                        style={{ color: 'var(--text-secondary)' }}
-                                    >
+                                    <p className="text-sm sm:text-base leading-relaxed mb-2 text-white/80">
                                         High-quality commercial ads, product promos, social media content, AI-generated videos, and animated videos for any occasion. Our team focuses on delivering polished, creative, and engaging visuals that truly stand out.
                                         If you want professional content made with advanced AI and expert editing, connect with us. We'll bring your idea to life with quality you can trust.
                                     </p>

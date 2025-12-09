@@ -31,10 +31,10 @@ const TrustedBySection = () => {
   };
 
   return (
-    <section 
+    <section
       ref={ref}
-      className="py-16 sm:py-20 px-4 sm:px-6"
-      style={{ backgroundColor: 'var(--bg-primary)' }}
+      className="py-10 px-4 sm:px-6"
+      style={{ backgroundColor: 'var(--bg-secondary)' }}
     >
       <div className="container mx-auto max-w-7xl">
         {/* Header */}
@@ -44,10 +44,10 @@ const TrustedBySection = () => {
           transition={{ duration: 0.8 }}
           className="text-center mb-12"
         >
-          <h3 
+          <h3
             className="font-semibold"
-            style={{ 
-              fontSize: 'var(--text-lg)', 
+            style={{
+              fontSize: 'var(--text-lg)',
               color: 'var(--text-secondary)',
               letterSpacing: '0.05em'
             }}
@@ -88,7 +88,7 @@ const TrustedBySection = () => {
               variants={itemVariants}
               className="glass-card text-center p-6 sm:p-8"
             >
-              <h4 
+              <h4
                 className="font-bold mb-2"
                 style={{
                   fontSize: 'var(--text-4xl)',
@@ -97,7 +97,7 @@ const TrustedBySection = () => {
               >
                 {stat.number}
               </h4>
-              <p 
+              <p
                 style={{
                   fontSize: 'var(--text-base)',
                   color: 'var(--text-secondary)'

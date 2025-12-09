@@ -31,7 +31,7 @@ const WelcomeSection = () => {
     return (
         <section
             ref={ref}
-            className=" mt-8 rounded-2xl container mx-auto py-8 sm:py-10 md:py-12 px-4 sm:px-6 lg:px-8 relative overflow-hidden"
+            className=" mt-8 rounded-2xl container mx-auto py-10 px-4 sm:px-6 relative overflow-hidden"
             style={{
                 backgroundImage: 'url(https://images.unsplash.com/photo-1696272440000-0808a203c852?q=80&w=1032&auto=format&fit=crop&ixlib=rb-4.1.0&ixid=M3wxMjA3fDB8MHxwaG90by1wYWdlfHx8fGVufDB8fHx8fA%3D%3D)',
                 backgroundAttachment: 'fixed',
@@ -42,7 +42,7 @@ const WelcomeSection = () => {
         >
             {/* Dark Overlay */}
             <div className="absolute inset-0 bg-black/70 z-0"></div>
-            
+
             {/* Content */}
             <motion.div
                 variants={containerVariants}

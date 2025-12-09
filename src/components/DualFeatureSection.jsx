@@ -193,7 +193,7 @@ const DualFeatureSection = () => {
   return (
     <section
       ref={ref}
-      className="py-20 px-4 sm:px-6 transition-colors duration-500"
+      className="py-10 px-4 sm:px-6 transition-colors duration-500"
       style={{ backgroundColor: 'var(--bg-primary)' }}
     >
       <div className="container mx-auto max-w-7xl">

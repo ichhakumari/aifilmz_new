@@ -14,13 +14,13 @@ const Services = () => {
   const videoRef = useRef(null);
 
   const services = [
-    { title: "AI Avatar Cloning", description: "Hyper-realistic virtual presenters for personalized content", video: "/videos/Dr. Arun Goel_Air pollution & sinus health_10.mp4" },
-    { title: "Reel Videos", description: "Engaging short-form content for social media", video: "/videos/CaptionO_20251121_181242772.mp4" },
-    { title: "Animated Graphics", description: "Stunning motion graphics with AI-enhanced tools", video: "/videos/video-412.mp4" },
-    { title: "Product Videos", description: "Professional product showcases with 3D rendering", video: "/videos/product.mp4" },
-    { title: "Ad Films", description: "High-impact advertising with maximum engagement", video: "/videos/zomato.mp4" },
-    { title: "Animated Videos", description: "Fully animated content for brands and stories", video: "/videos/Cadbury Dairy Milk.mp4" },
-    { title: "Music Videos", description: "Creative visuals synchronized to audio", video: "/videos/music video.mp4" }
+    { title: "AI Avatar Cloning", description: "Hyper-realistic virtual presenters for personalized content", video: "videos/avatar/indira final1_1.mp4" },
+    { title: "Reel Videos", description: "Engaging short-form content for social media", video: "videos/Video-648.mp4" },
+    { title: "Animated Graphics", description: "Stunning motion graphics with AI-enhanced tools", video: "videos/Video-412.mp4" },
+    { title: "Product Videos", description: "Professional product showcases with 3D rendering", video: "videos/product.mp4" },
+    { title: "Ad Films", description: "High-impact advertising with maximum engagement", video: "videos/zomato.mp4" },
+    { title: "Animated Videos", description: "Fully animated content for brands and stories", video: "videos/Cadbury Dairy Milk.mp4" },
+    { title: "Music Videos", description: "Creative visuals synchronized to audio", video: "videos/music video.mp4" }
   ];
 
   const handlePrevious = () => {
@@ -44,7 +44,7 @@ const Services = () => {
     <section
       id="services"
       ref={containerRef}
-      className="py-6 sm:py-8 px-4 sm:px-6"
+      className="py-10 px-4 sm:px-6"
       style={{ backgroundColor: 'var(--bg-tertiary)' }}
     >
       <div className="container mx-auto max-w-7xl">

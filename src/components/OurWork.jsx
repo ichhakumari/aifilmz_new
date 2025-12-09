@@ -11,7 +11,21 @@ const OurWork = () => {
 
   const projects = [
     {
-      id: 1,
+      id: 'project-medical-tech',
+      title: "Medical Technology",
+      client: "Healthcare Technology",
+      industry: "Sales",
+      description: "Hyper-personalized video messages that revolutionized customer engagement",
+      videoUrl: "public/videos/medical.mp4",
+      metric: "340% Response",
+      stats: {
+        sent: "50K+",
+        response: "68%",
+        duration: "Automated"
+      }
+    },
+    {
+      id: 'project-ecommerce-500',
       title: "E-commerce Product Launch",
       client: "Fashion Retail Brand",
       industry: "E-commerce",
@@ -25,12 +39,12 @@ const OurWork = () => {
       }
     },
     {
-      id: 2,
+      id: 'project-corporate-training',
       title: "Corporate Training Program",
       client: "Tech Corporation",
       industry: "HR/Training",
       description: "Personalized onboarding videos that transformed employee engagement",
-      videoUrl: "public/videos/Video-851.mp4",
+      videoUrl: "public/videos/coporatevideos.mp4",
       metric: "98% Completion",
       stats: {
         employees: "10K+",
@@ -39,8 +53,8 @@ const OurWork = () => {
       }
     },
     {
-      id: 3,
-      title: "Brand Marketing Campaign",
+      id: 'project-sharoma-candles',
+      title: "Sharoma Candles Marketing Campaign",
       client: "Sharoma Candles",
       industry: "Marketing",
       description: "AI-powered ad campaign that captured attention and drove brand recall",
@@ -53,26 +67,27 @@ const OurWork = () => {
       }
     },
     {
-      id: 4,
-      title: "Personalized Customer Outreach",
-      client: "SaaS Platform",
-      industry: "Sales",
-      description: "Hyper-personalized video messages that revolutionized customer engagement",
-      videoUrl: "public/videos/ads.mp4",
-      metric: "340% Response",
-      stats: {
-        sent: "50K+",
-        response: "68%",
-        duration: "Automated"
-      }
-    },
-    {
-      id: 5,
-      title: "Animated Brand Story",
-      client: "Consumer Goods Brand",
+      id: 'project-animated-story',
+      title: "Animated Story",
+      client: "-",
       industry: "Animation",
       description: "Engaging animated content that brought brand values to life",
       videoUrl: "public/videos/Video-249.mp4",
+      metric: "1.8M Shares",
+      stats: {
+        shares: "1.8M",
+        engagement: "92%",
+        duration: "1 week"
+      }
+    },
+
+    {
+      id: 'project-biscuit-ads',
+      title: "Biscuit Ads",
+      client: "-",
+      industry: "Ads",
+      description: "Engaging animated content that brought brand values to life",
+      videoUrl: "public/videos/Video-851.mp4",
       metric: "1.8M Shares",
       stats: {
         shares: "1.8M",
@@ -97,7 +112,7 @@ const OurWork = () => {
     <section
       ref={ref}
       id="our-work"
-      className="py-16 sm:py-20 px-4 sm:px-6"
+      className="py-10 px-4 sm:px-6"
       style={{ backgroundColor: 'var(--bg-secondary)' }}
     >
       <div className="container mx-auto max-w-7xl">
@@ -205,7 +220,7 @@ const OurWork = () => {
                   </div>
                   */}
 
-                  {/* Industry Badge */}
+                  {/* Industry Badge - Commented out
                   <div className="absolute top-4 left-4">
                     <span
                       className="px-3 py-1.5 rounded-full text-xs font-semibold backdrop-blur-md"
@@ -217,6 +232,7 @@ const OurWork = () => {
                       {project.industry}
                     </span>
                   </div>
+                  */}
 
                   {/* Metric Badge */}
                   <div className="absolute top-4 right-4">
@@ -238,10 +254,11 @@ const OurWork = () => {
                       background: 'linear-gradient(to top, rgba(0, 0, 0, 0.9), rgba(0, 0, 0, 0.7), transparent)'
                     }}
                   >
-                    {/* Client Name */}
+                    {/* Client Name - Commented out
                     <p className="text-xs font-medium mb-1" style={{ color: 'var(--accent-color)' }}>
                       {project.client}
                     </p>
+                    */}
 
                     {/* Title */}
                     <h3 className="text-lg font-bold mb-2 text-white line-clamp-2">

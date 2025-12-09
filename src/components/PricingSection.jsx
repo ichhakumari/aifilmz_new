@@ -39,7 +39,7 @@ const PricingSection = () => {
   ];
 
   return (
-    <section ref={ref} id="pricing" className="py-16 sm:py-20 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section ref={ref} id="pricing" className="py-10 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className="container mx-auto max-w-6xl">
         {/* Section Header */}
         <motion.div

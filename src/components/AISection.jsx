@@ -23,9 +23,9 @@ export default function AISection() {
 
   return (
     <section
-      className="relative py-16 sm:py-20 px-4 sm:px-6 overflow-hidden"
+      className="relative py-10 px-4 sm:px-6 overflow-hidden"
       style={{
-        backgroundColor: 'var(--bg-primary)',
+        backgroundColor: 'var(--bg-secondary)',
         fontFamily: 'Manrope, sans-serif',
       }}
     >

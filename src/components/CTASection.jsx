@@ -14,7 +14,7 @@ const CTASection = () => {
 
     return (
         <section
-            className="relative py-10 sm:py-12 lg:py-16 px-2 sm:px-4 overflow-hidden"
+            className="relative py-10 px-4 sm:px-6 overflow-hidden"
             style={{ backgroundColor: 'var(--bg-primary)' }}
         >
             {/* Animated Background Elements */}

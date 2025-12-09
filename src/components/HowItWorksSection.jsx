@@ -28,8 +28,8 @@ const HowItWorksSection = () => {
   ];
 
   return (
-    <section ref={ref} id="how-it-works" className=" " style={{ backgroundColor: 'var(--bg-quaternary)' }}>
-      <div className="container mx-auto max-w-7xl py-8 sm:py-10 px-4 sm:px-6">
+    <section ref={ref} id="how-it-works" className="py-10 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-quaternary)' }}>
+      <div className="container mx-auto max-w-7xl">
         {/* Section Header */}
         <motion.div
           initial={{ opacity: 0, y: 30 }}

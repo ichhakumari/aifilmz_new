@@ -10,57 +10,59 @@ const GlimpseAtFilms = () => {
     {
       id: 8,
       title: 'Medical Technology',
-      category: 'Healthcare',
+
       videoUrl: "/videos/avatar/indira final1_1.mp4"
     },
     {
       id: 9,
-      title: 'Automotive AI',
-      category: 'AI Ads',
-      videoUrl: '/videos/eagle.mp4'
+      title: 'Cadbury Dairy Milk',
+
+      videoUrl: '/videos/Cadbury Dairy Milk.mp4'
     },
     {
       id: 1,
-      title: 'Vasavi Gold & Diamonds',
-      category: 'Commercial',
-      videoUrl: "/videos/shoes.mp4"
+      title: 'Attractive Fitness Gym',
+
+      videoUrl: "/videos/Gym =.mp4"
     },
     {
       id: 2,
-      title: 'Sankara Eye Hospital',
-      category: 'Healthcare',
-      videoUrl: "/videos/Cadbury Dairy Milk.mp4"
+      title: 'Amul Janmashtami Special',
+
+      videoUrl: "/videos/Amul Janmashtami Special.mp4"
     },
-    {
-      id: 3,
-      title: "Nature's Box Honey",
-      category: 'Product',
-      videoUrl: "/videos/video1.mp4"
-    },
-    {
-      id: 4,
-      title: 'Quantum Computing',
-      category: 'Tech',
-      videoUrl: "/videos/video2.mp4"
-    },
+
     {
       id: 5,
       title: 'Architectural Design',
-      category: '3D Render',
-      videoUrl: "/videos/zomato.mp4"
+
+      videoUrl: "public/videos/Architectural Design.mp4"
     },
     {
       id: 6,
       title: 'Cyber Security',
-      category: 'Animation',
-      videoUrl: "/videos/Cadbury Dairy Milk.mp4"
+
+      videoUrl: "/videos/Cyber Security.mp4"
     },
     {
       id: 7,
       title: 'Eco-Friendly Launch',
-      category: 'Commercial',
-      videoUrl: "/videos/annimated.mp4"
-    }
+
+      videoUrl: "/videos/Eco-Friendly Launch.mp4"
+    },
+    {
+      id: 3,
+      title: "Republic Day",
+
+      videoUrl: "/videos/republic.mp4"
+    },
+    {
+      id: 4,
+      title: 'Animated Video',
+
+      videoUrl: "/videos/Video-445.mp4"
+    },
+
   ];
 
   const containerVariants = {
@@ -88,7 +90,7 @@ const GlimpseAtFilms = () => {
   };
 
   return (
-    <section id="transforming-brands" ref={ref} className="container mx-auto py-16 sm:py-20 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-primary)' }}>
+    <section id="transforming-brands" ref={ref} className="container mx-auto py-10 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-primary)' }}>
       <div className=" max-w-7xl mx-auto">
         {/* Section Header */}
         <motion.div
@@ -166,21 +168,12 @@ const GlimpseAtFilms = () => {
                     </h3>
                   </div>
                 </div>
-                <span
-                  className="inline-block px-2.5 py-1 rounded-md text-xs font-medium"
-                  style={{
-                    backgroundColor: 'var(--highlight-color)',
-                    color: 'var(--accent-color)'
-                  }}
-                >
-                  {film.category}
-                </span>
               </div>
             </motion.div>
           ))}
         </motion.div>
       </div>
-    </section>
+    </section >
   );
 };
 

@@ -33,7 +33,7 @@ const Logo = ({ name }) => {
 
 const TrustedBy = () => {
   return (
-    <div className="py-8 sm:py-10 overflow-x-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
+    <div className="py-10 overflow-x-hidden" style={{ backgroundColor: 'var(--bg-secondary)' }}>
       <div className="max-w-7xl mx-auto px-4 sm:px-6 lg:px-8">
         <h3
           className="text-center text-xs font-bold tracking-widest uppercase mb-12"

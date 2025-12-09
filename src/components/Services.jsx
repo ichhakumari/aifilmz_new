@@ -4,21 +4,23 @@ import SafeIcon from '../common/SafeIcon';
 import { useTheme } from '../context/ThemeContext';
 import * as FiIcons from 'react-icons/fi';
 
-const { FiChevronLeft, FiChevronRight } = FiIcons;
+const { FiChevronLeft, FiChevronRight, FiVolume2, FiVolumeX } = FiIcons;
 
 const Services = () => {
   const [currentService, setCurrentService] = useState(0);
+  const [isMuted, setIsMuted] = useState(true);
   const { isDark } = useTheme();
   const containerRef = useRef(null);
+  const videoRef = useRef(null);
 
   const services = [
-    { title: "AI Avatar Cloning", description: "Hyper-realistic virtual presenters for personalized content", video: "/videos/video1.mp4" },
-    { title: "Reel Videos", description: "Engaging short-form content for social media", video: "/videos/video2.mp4" },
-    { title: "Animated Graphics", description: "Stunning motion graphics with AI-enhanced tools", video: "/videos/annimated.mp4" },
-    { title: "Product Videos", description: "Professional product showcases with 3D rendering", video: "/videos/graphics.mp4" },
+    { title: "AI Avatar Cloning", description: "Hyper-realistic virtual presenters for personalized content", video: "/videos/Dr. Arun Goel_Air pollution & sinus health_10.mp4" },
+    { title: "Reel Videos", description: "Engaging short-form content for social media", video: "/videos/CaptionO_20251121_181242772.mp4" },
+    { title: "Animated Graphics", description: "Stunning motion graphics with AI-enhanced tools", video: "/videos/video-412.mp4" },
+    { title: "Product Videos", description: "Professional product showcases with 3D rendering", video: "/videos/product.mp4" },
     { title: "Ad Films", description: "High-impact advertising with maximum engagement", video: "/videos/zomato.mp4" },
     { title: "Animated Videos", description: "Fully animated content for brands and stories", video: "/videos/Cadbury Dairy Milk.mp4" },
-    { title: "Music Videos", description: "Creative visuals synchronized to audio", video: "/videos/Amul Janmashtami Special.mp4" }
+    { title: "Music Videos", description: "Creative visuals synchronized to audio", video: "/videos/music video.mp4" }
   ];
 
   const handlePrevious = () => {
@@ -27,6 +29,13 @@ const Services = () => {
 
   const handleNext = () => {
     setCurrentService((prev) => (prev + 1) % services.length);
+  };
+
+  const toggleMute = () => {
+    setIsMuted(!isMuted);
+    if (videoRef.current) {
+      videoRef.current.muted = !isMuted;
+    }
   };
 
   const currentServiceData = services[currentService];
@@ -185,11 +194,12 @@ const Services = () => {
               style={{ aspectRatio: '16/9', borderColor: 'var(--border-color)', backgroundColor: 'black', maxWidth: '100%' }}
             >
               <video
+                ref={videoRef}
                 src={currentServiceData.video}
                 className="w-full h-full object-cover"
                 autoPlay
                 loop
-                muted
+                muted={isMuted}
                 playsInline
               >
                 Your browser does not support the video tag.
@@ -207,6 +217,15 @@ const Services = () => {
                 className="absolute right-2 sm:right-4 top-1/2 -translate-y-1/2 p-2.5 sm:p-3 rounded-full bg-black/60 hover:bg-black/80 text-white transition-all z-10"
               >
                 <SafeIcon icon={FiChevronRight} className="w-5 h-5 sm:w-6 sm:h-6" />
+              </button>
+
+              {/* Sound Toggle Button */}
+              <button
+                onClick={toggleMute}
+                className="absolute top-4 right-4 p-2.5 sm:p-3 rounded-full bg-black/60 hover:bg-black/80 text-white transition-all z-10"
+                aria-label={isMuted ? 'Unmute' : 'Mute'}
+              >
+                <SafeIcon icon={isMuted ? FiVolumeX : FiVolume2} className="w-5 h-5 sm:w-6 sm:h-6" />
               </button>
 
               {/* Video Overlay Info */}

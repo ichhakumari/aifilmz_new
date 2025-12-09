@@ -16,7 +16,7 @@ const OurWork = () => {
       client: "Fashion Retail Brand",
       industry: "E-commerce",
       description: "AI-generated product videos that drove massive engagement and conversions",
-      videoUrl: "/videos/shoes.mp4",
+      videoUrl: "public/videos/Video-500.mp4",
       metric: "500% ROI",
       stats: {
         views: "2.5M",
@@ -30,7 +30,7 @@ const OurWork = () => {
       client: "Tech Corporation",
       industry: "HR/Training",
       description: "Personalized onboarding videos that transformed employee engagement",
-      videoUrl: "/videos/video1.mp4",
+      videoUrl: "public/videos/Video-851.mp4",
       metric: "98% Completion",
       stats: {
         employees: "10K+",
@@ -41,15 +41,15 @@ const OurWork = () => {
     {
       id: 3,
       title: "Brand Marketing Campaign",
-      client: "Food & Beverage Giant",
+      client: "Sharoma Candles",
       industry: "Marketing",
       description: "AI-powered ad campaign that captured attention and drove brand recall",
-      videoUrl: "/videos/zomato.mp4",
+      videoUrl: "public/videos/Sequence 01_1.mp4",
       metric: "3.2M Reach",
       stats: {
         reach: "3.2M",
         ctr: "12.5%",
-        duration: "2 days"
+        duration: "1 day"
       }
     },
     {
@@ -58,7 +58,7 @@ const OurWork = () => {
       client: "SaaS Platform",
       industry: "Sales",
       description: "Hyper-personalized video messages that revolutionized customer engagement",
-      videoUrl: "/videos/video2.mp4",
+      videoUrl: "public/videos/ads.mp4",
       metric: "340% Response",
       stats: {
         sent: "50K+",
@@ -72,7 +72,7 @@ const OurWork = () => {
       client: "Consumer Goods Brand",
       industry: "Animation",
       description: "Engaging animated content that brought brand values to life",
-      videoUrl: "/videos/Cadbury Dairy Milk.mp4",
+      videoUrl: "public/videos/Video-249.mp4",
       metric: "1.8M Shares",
       stats: {
         shares: "1.8M",

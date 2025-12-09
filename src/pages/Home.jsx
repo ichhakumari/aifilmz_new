@@ -9,6 +9,7 @@ import WhyChooseAIAgencySection from '../components/WhyChooseAIAgencySection';
 import GlimpseAtFilms from '../components/GlimpseAtFilms';
 import HowItWorksSection from '../components/HowItWorksSection';
 import PricingSection from '../components/PricingSection';
+import CTASection from '../components/CTASection';
 import Footer from '../components/Footer';
 import OurWork from '../components/OurWork';
 import IndustriesWeServe from '../components/IndustriesWeServe';
@@ -27,7 +28,9 @@ function Home() {
                 <IndustriesWeServe />
                 <GlimpseAtFilms />
                 <HowItWorksSection />
+                <CTASection />
                 <PricingSection />
+
                 <Footer />
             </main>
         </div>

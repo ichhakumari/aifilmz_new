@@ -13,37 +13,43 @@ const IndustriesWeServe = () => {
             icon: FiTrendingUp,
             name: "Startups",
             description: "Launch your brand with compelling video content that captures investor attention and builds customer trust.",
-            color: "#FE4A23"
+            color: "#FE4A23",
+            image: "https://images.unsplash.com/photo-1559136555-9303baea8ebd?w=800"
         },
         {
             icon: FiHome,
             name: "Real Estate",
             description: "Showcase properties with stunning virtual tours, drone footage, and AI-powered presentations.",
-            color: "#FE4A23"
+            color: "#FE4A23",
+            image: "/imges/realestate.jpg"
         },
         {
             icon: FiShoppingCart,
             name: "E-commerce",
             description: "Drive sales with product demos, unboxing videos, and engaging social media content.",
-            color: "#FE4A23"
+            color: "#FE4A23",
+            image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800"
         },
         {
             icon: FiUsers,
             name: "Agencies",
             description: "Scale your client deliverables with our white-label video production and AI avatar solutions.",
-            color: "#FE4A23"
+            color: "#FE4A23",
+            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800"
         },
         {
             icon: FiCoffee,
             name: "Hospitality",
             description: "Attract guests with immersive hotel tours, restaurant showcases, and experience highlights.",
-            color: "#FE4A23"
+            color: "#FE4A23",
+            image: "https://images.unsplash.com/photo-1566073771259-6a8506099945?w=800"
         },
         {
             icon: FiCpu,
             name: "Tech & SaaS",
             description: "Explain complex products with animated explainers, tutorials, and customer success stories.",
-            color: "#FE4A23"
+            color: "#FE4A23",
+            image: "https://images.unsplash.com/photo-1518770660439-4636190af475?w=800"
         }
     ];
 
@@ -100,15 +106,9 @@ const IndustriesWeServe = () => {
                         >
                             {/* Background Image with Gradient Overlay */}
                             <div
-                                className="absolute inset-0 opacity-20 group-hover:opacity-30 transition-opacity duration-300"
+                                className="absolute inset-0 opacity-40 group-hover:opacity-50 transition-opacity duration-300"
                                 style={{
-                                    backgroundImage: `url('https://images.unsplash.com/photo-${index === 0 ? '1559136555-9303baea8ebd?w=800' : // Startups - workspace
-                                            index === 1 ? '1560518883-ce4f8e8e8e8e?w=800' : // Real Estate - building
-                                                index === 2 ? '1556742049-0cfed4f6a45d?w=800' : // E-commerce - shopping
-                                                    index === 3 ? '1552664730-d307ca884978?w=800' : // Agencies - team
-                                                        index === 4 ? '1566073771259-6a8506099945?w=800' : // Hospitality - hotel
-                                                            '1518770660439-4636190af475?w=800' // Tech & SaaS - technology
-                                        }')`,
+                                    backgroundImage: `url('${industry.image}')`,
                                     backgroundSize: 'cover',
                                     backgroundPosition: 'center'
                                 }}
@@ -118,7 +118,7 @@ const IndustriesWeServe = () => {
                             <div
                                 className="absolute inset-0"
                                 style={{
-                                    background: 'linear-gradient(135deg, rgba(0,0,0,0.7) 0%, rgba(0,0,0,0.3) 100%)'
+                                    background: 'linear-gradient(135deg, rgba(0,0,0,0.4) 0%, rgba(0,0,0,0.2) 100%)'
                                 }}
                             />
 

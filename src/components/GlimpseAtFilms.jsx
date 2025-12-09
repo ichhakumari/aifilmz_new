@@ -1,10 +1,6 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
-import SafeIcon from '../common/SafeIcon';
-import * as FiIcons from 'react-icons/fi';
 import { TypeAnimation } from 'react-type-animation';
-
-const { FiPlay } = FiIcons;
 
 const GlimpseAtFilms = () => {
   const ref = useRef(null);
@@ -15,7 +11,7 @@ const GlimpseAtFilms = () => {
       id: 8,
       title: 'Medical Technology',
       category: 'Healthcare',
-      videoUrl: "/videos/graphics.mp4"
+      videoUrl: "/videos/avatar/indira final1_1.mp4"
     },
     {
       id: 9,
@@ -154,17 +150,8 @@ const GlimpseAtFilms = () => {
                   loop
                 />
 
-                {/* Overlay on Hover */}
-                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/30 transition-colors duration-300 flex items-center justify-center">
-                  <motion.div
-                    initial={{ scale: 0.8, opacity: 0 }}
-                    whileHover={{ scale: 1, opacity: 1 }}
-                    className="p-3 rounded-full"
-                    style={{ backgroundColor: 'var(--accent-color)' }}
-                  >
-                    <SafeIcon icon={FiPlay} className="w-6 h-6 text-white" />
-                  </motion.div>
-                </div>
+                {/* Subtle Overlay on Hover - doesn't block controls */}
+                <div className="absolute inset-0 bg-black/0 group-hover:bg-black/10 transition-colors duration-300 pointer-events-none" />
               </div>
 
               {/* Content */}

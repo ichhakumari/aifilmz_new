@@ -14,7 +14,7 @@ const Services = () => {
   const videoRef = useRef(null);
 
   const services = [
-    { title: "AI Avatar Cloning", description: "Hyper-realistic virtual presenters for personalized content", video: "videos/avatar/indira final1_1.mp4" },
+    { title: "AI Avatar Cloning", description: "Hyper-realistic virtual presenters for personalized content", video: "/videos/avatar/Indira Final1.mp4" },
     { title: "Reel Videos", description: "Engaging short-form content for social media", video: "videos/Video-648.mp4" },
     { title: "Animated Graphics", description: "Stunning motion graphics with AI-enhanced tools", video: "videos/Video-412.mp4" },
     { title: "Product Videos", description: "Professional product showcases with 3D rendering", video: "videos/product.mp4" },

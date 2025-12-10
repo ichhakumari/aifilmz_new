@@ -25,10 +25,10 @@ const Header = () => {
   }, [location]);
 
   const navItems = [
-    // { name: 'Services', path: '/#services' },
-    // // { name: 'Pricing', path: '/#pricing' },
-    // { name: 'How We Work', path: '/#how-it-works' },
-    { name: 'About Us', path: '/about' },
+    { name: 'Services', path: '/#services' },
+    // { name: 'Pricing', path: '/#pricing' },
+    { name: 'How we work', path: '/#how-it-works' },
+    { name: 'About us', path: '/about' },
     { name: 'Contact', path: '/contact' }
   ];
 
@@ -141,7 +141,7 @@ const Header = () => {
 
             {/* Connect Button */}
             <motion.a
-              href="tel:918035315291"
+              href="tel:919789565515"
               className="hidden lg:flex items-center space-x-2 px-6 py-2.5 font-medium rounded-full transition-all duration-300"
               style={{ background: 'var(--accent-color)', color: 'var(--text-inverse)' }}
               whileHover={{ scale: 1.05 }}
@@ -212,7 +212,7 @@ const Header = () => {
 
             {/* Mobile Connect Button */}
             <motion.a
-              href="tel:918035315291"
+              href="tel:919789565515"
               className="w-full mt-4 flex items-center justify-center space-x-2 px-6 py-3 rounded-md font-medium"
               style={{ background: 'var(--accent-color)', color: 'var(--text-inverse)' }}
               whileTap={{ scale: 0.95 }}

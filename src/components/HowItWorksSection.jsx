@@ -1,13 +1,20 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import SafeIcon from '../common/SafeIcon';
 import * as FiIcons from 'react-icons/fi';
 
 const { FiEdit3, FiCode, FiPlayCircle, FiArrowRight } = FiIcons;
 
 const HowItWorksSection = () => {
+  const navigate = useNavigate();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.2 });
+
+  const handleContactClick = () => {
+    navigate('/contact');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const steps = [
     {
@@ -109,7 +116,7 @@ const HowItWorksSection = () => {
         </div>
 
         {/* CTA Section */}
-        <motion.div
+        {/* <motion.div
           initial={{ opacity: 0, y: 30 }}
           animate={isInView ? { opacity: 1, y: 0 } : {}}
           transition={{ duration: 0.8, delay: 0.8 }}
@@ -117,18 +124,18 @@ const HowItWorksSection = () => {
         >
           <p className="mb-6" style={{ fontSize: 'var(--text-base)', color: 'var(--text-secondary)' }}>
             Ready to get started?{' '}
-            <a
-              href="#contact-us"
+            <button
+              onClick={handleContactClick}
               className="font-semibold ml-2 transition-colors hover:opacity-80"
-              style={{ color: 'var(--accent-color)' }}
+              style={{ color: 'var(--accent-color)', background: 'none', border: 'none', cursor: 'pointer', padding: 0 }}
             >
               Talk to our team
-            </a>
+            </button>
           </p>
-          <button className="btn-primary">
+          <button onClick={handleContactClick} className="btn-primary">
             Start Your Project
           </button>
-        </motion.div>
+        </motion.div> */}
       </div>
     </section>
   );

@@ -10,6 +10,7 @@ import GlimpseAtFilms from '../components/GlimpseAtFilms';
 import HowItWorksSection from '../components/HowItWorksSection';
 import PricingSection from '../components/PricingSection';
 import CTASection from '../components/CTASection';
+import CTASection2 from '../components/CTASection2';
 import Footer from '../components/Footer';
 import OurWork from '../components/OurWork';
 import IndustriesWeServe from '../components/IndustriesWeServe';
@@ -24,11 +25,13 @@ function Home() {
                 <TrustedBy />
                 <OurWork />
                 <Services />
+                <CTASection />
                 <WhyChooseAIAgencySection />
                 <IndustriesWeServe />
                 <GlimpseAtFilms />
+                <CTASection2 />
                 <HowItWorksSection />
-                <CTASection />
+
                 <PricingSection />
 
                 <Footer />

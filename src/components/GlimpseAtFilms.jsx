@@ -16,19 +16,19 @@ const GlimpseAtFilms = () => {
       id: 8,
       title: 'Medical Technology',
 
-      videoUrl: "public/videos/avatar/Indira Final1.mp4"
+      videoUrl: "public/videos/doctors.mp4"
     },
     {
       id: 9,
       title: 'Cadbury Dairy Milk',
 
-      videoUrl: '/videos/Cadbury Dairy Milk.mp4'
+      videoUrl: 'public/videos/Cadbury Dairy Milk.mp4'
     },
     {
       id: 1,
       title: 'Attractive Fitness Gym',
 
-      videoUrl: "/videos/Gym =.mp4"
+      videoUrl: "/videos/Gym.mp4"
     },
     {
       id: 2,
@@ -95,8 +95,15 @@ const GlimpseAtFilms = () => {
   };
 
   return (
-    <section id="transforming-brands" ref={ref} className="container mx-auto py-10 px-4 sm:px-6" style={{ backgroundColor: 'var(--bg-primary)' }}>
-      <div className=" max-w-7xl mx-auto">
+    <section id="transforming-brands" ref={ref} className="py-10" style={{ backgroundColor: 'var(--bg-primary)' }}>
+      <div className="mx-auto px-4 sm:px-6" style={{ maxWidth: '80rem' }}>
+        <style jsx>{`
+          @media (min-width: 1280px) {
+            div[style*="maxWidth"] {
+              max-width: 1440px !important;
+            }
+          }
+        `}</style>
         {/* Section Header with Toggle */}
         <motion.div
           initial={{ opacity: 0, y: 20 }}
@@ -179,6 +186,7 @@ const GlimpseAtFilms = () => {
                         controls
                         muted
                         loop
+                        loading="lazy"
                       />
 
                       {/* Subtle Overlay on Hover - doesn't block controls */}

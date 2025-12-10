@@ -1,13 +1,20 @@
 import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
+import { useNavigate } from 'react-router-dom';
 import SafeIcon from '../common/SafeIcon';
 import * as FiIcons from 'react-icons/fi';
 
 const { FiCheck } = FiIcons;
 
 const PricingSection = () => {
+  const navigate = useNavigate();
   const ref = useRef(null);
   const isInView = useInView(ref, { once: true, threshold: 0.2 });
+
+  const handleContactClick = () => {
+    navigate('/contact');
+    window.scrollTo({ top: 0, behavior: 'smooth' });
+  };
 
   const pricingPlans = [
     {
@@ -158,6 +165,7 @@ const PricingSection = () => {
 
               {/* CTA Button */}
               <button
+                onClick={handleContactClick}
                 className="w-full py-3 px-4 rounded-lg font-semibold text-sm transition-all duration-300 hover:shadow-lg hover:scale-105"
                 style={{
                   backgroundColor: plan.highlight ? 'var(--accent-color)' : 'var(--bg-tertiary)',
@@ -179,7 +187,7 @@ const PricingSection = () => {
           className="text-center mt-12 text-sm"
           style={{ color: 'var(--text-muted)' }}
         >
-          Need a custom solution? <span style={{ color: 'var(--accent-color)', fontWeight: '600' }}>Contact us</span> for enterprise pricing
+          Need a custom solution? <button onClick={handleContactClick} className="font-semibold transition-colors hover:opacity-80" style={{ color: 'var(--accent-color)', fontWeight: '600', background: 'none', border: 'none', cursor: 'pointer' }}>Contact us</button> for enterprise pricing
         </motion.p>
       </div>
     </section>

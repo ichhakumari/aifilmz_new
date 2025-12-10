@@ -1,4 +1,4 @@
-import React, { useState } from 'react';
+import React from 'react';
 import { motion } from 'framer-motion';
 import Header from '../components/Header';
 import Footer from '../components/Footer';
@@ -9,34 +9,6 @@ const { FiPhone, FiMail, FiMapPin, FiUser, FiSend } = FiIcons;
 
 const Contact = () => {
     const { isDark } = useTheme();
-    const [formData, setFormData] = useState({
-        fullName: '',
-        email: '',
-        phone: '',
-        company: '',
-        message: ''
-    });
-
-    const handleSubmit = (e) => {
-        e.preventDefault();
-        console.log('Form submitted:', formData);
-        alert('Thank you for contacting us! We will get back to you soon.');
-        // Reset form
-        setFormData({
-            fullName: '',
-            email: '',
-            phone: '',
-            company: '',
-            message: ''
-        });
-    };
-
-    const handleChange = (e) => {
-        setFormData({
-            ...formData,
-            [e.target.name]: e.target.value
-        });
-    };
 
     return (
         <div className="min-h-screen" style={{ backgroundColor: 'var(--bg-primary)' }}>
@@ -104,8 +76,8 @@ const Contact = () => {
                                         <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
                                             Phone Number
                                         </h3>
-                                        <a href="tel:+918035315291" className="text-lg" style={{ color: 'var(--text-secondary)' }}>
-                                            +91 8035315291
+                                        <a href="tel:+919789565515" className="text-lg" style={{ color: 'var(--text-secondary)' }}>
+                                            +91 9789565515
                                         </a>
                                         <p className="text-sm mt-1" style={{ color: 'var(--text-muted)' }}>
                                             Mon-Fri: 9AM-6PM IST
@@ -125,8 +97,8 @@ const Contact = () => {
                                         <h3 className="text-lg font-semibold mb-2" style={{ color: 'var(--text-primary)' }}>
                                             Email Address
                                         </h3>
-                                        <a href="mailto:contact@aifilmz.com" className="text-lg" style={{ color: 'var(--text-secondary)' }}>
-                                            contact@aifilmz.com
+                                        <a href="mailto:official@brandingpioneers.com" className="text-lg" style={{ color: 'var(--text-secondary)' }}>
+                                            official@brandingpioneers.com
                                         </a>
                                         <p className="text-sm mt-1" style={{ color: 'var(--text-muted)' }}>
                                             We'll respond within 24 hours
@@ -151,7 +123,7 @@ const Contact = () => {
                                 Send us a Message
                             </h2>
 
-                            <form onSubmit={handleSubmit} className="space-y-6">
+                            <form accept-charset='UTF-8' action='https://app.formester.com/forms/bRZU1TiuM/submissions' method='POST' className="space-y-6" >
                                 {/* Full Name */}
                                 <div>
                                     <label className="block text-sm font-medium mb-2" style={{ color: 'var(--text-primary)' }}>
@@ -162,8 +134,7 @@ const Contact = () => {
                                         <input
                                             type="text"
                                             name="fullName"
-                                            value={formData.fullName}
-                                            onChange={handleChange}
+
                                             placeholder="John Doe"
                                             required
                                             className="w-full py-3 pl-12 pr-4 rounded-lg border focus:outline-none transition-colors"
@@ -188,8 +159,7 @@ const Contact = () => {
                                         <input
                                             type="email"
                                             name="email"
-                                            value={formData.email}
-                                            onChange={handleChange}
+
                                             placeholder="john@example.com"
                                             required
                                             className="w-full py-3 pl-12 pr-4 rounded-lg border focus:outline-none transition-colors"
@@ -214,8 +184,7 @@ const Contact = () => {
                                         <input
                                             type="tel"
                                             name="phone"
-                                            value={formData.phone}
-                                            onChange={handleChange}
+
                                             placeholder="+91 1234567890"
                                             className="w-full py-3 pl-12 pr-4 rounded-lg border focus:outline-none transition-colors"
                                             style={{
@@ -237,8 +206,7 @@ const Contact = () => {
                                     <input
                                         type="text"
                                         name="company"
-                                        value={formData.company}
-                                        onChange={handleChange}
+
                                         placeholder="Your Company Name"
                                         className="w-full py-3 px-4 rounded-lg border focus:outline-none transition-colors"
                                         style={{
@@ -257,9 +225,8 @@ const Contact = () => {
                                         Message <span style={{ color: '#FE4A23' }}>*</span>
                                     </label>
                                     <textarea
+                                        type="text"
                                         name="message"
-                                        value={formData.message}
-                                        onChange={handleChange}
                                         placeholder="Tell us about your project..."
                                         required
                                         rows="5"

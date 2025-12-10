@@ -112,7 +112,7 @@ const OurWork = () => {
     <section
       ref={ref}
       id="our-work"
-      className="py-10 px-4 sm:px-6"
+      className="py-8 px-2 sm:px-4"
       style={{ backgroundColor: 'var(--bg-secondary)' }}
     >
       <div className="container mx-auto max-w-7xl">
@@ -148,26 +148,26 @@ const OurWork = () => {
           {/* Navigation Buttons */}
           <button
             onClick={() => scroll('left')}
-            className="hidden md:flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center rounded-full transition-all duration-300 hover:scale-110 -ml-6"
+            className="flex absolute left-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 items-center justify-center rounded-full transition-all duration-300 hover:scale-110 ml-0 md:-ml-6"
             style={{
               backgroundColor: 'var(--accent-color)',
               color: '#FFFFFF',
               boxShadow: '0 4px 12px rgba(254, 74, 35, 0.3)'
             }}
           >
-            <FiChevronLeft className="w-6 h-6" />
+            <FiChevronLeft className="w-5 h-5 md:w-6 md:h-6" />
           </button>
 
           <button
             onClick={() => scroll('right')}
-            className="hidden md:flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-12 h-12 items-center justify-center rounded-full transition-all duration-300 hover:scale-110 -mr-6"
+            className="flex absolute right-0 top-1/2 -translate-y-1/2 z-10 w-10 h-10 md:w-12 md:h-12 items-center justify-center rounded-full transition-all duration-300 hover:scale-110 mr-0 md:-mr-6"
             style={{
               backgroundColor: 'var(--accent-color)',
               color: '#FFFFFF',
               boxShadow: '0 4px 12px rgba(254, 74, 35, 0.3)'
             }}
           >
-            <FiChevronRight className="w-6 h-6" />
+            <FiChevronRight className="w-5 h-5 md:w-6 md:h-6" />
           </button>
 
           {/* Scroll Container */}
@@ -198,6 +198,8 @@ const OurWork = () => {
                     loop
                     muted
                     playsInline
+                    loading="lazy"
+                    preload="metadata"
                     onClick={(e) => {
                       if (e.target.paused) {
                         e.target.play();
@@ -274,20 +276,20 @@ const OurWork = () => {
                     <div className="flex items-center gap-4 text-xs text-gray-400 mb-3">
                       {Object.entries(project.stats).map(([key, value], idx) => (
                         <div key={idx} className="flex items-center gap-1">
-                          <span className="font-semibold text-white">{value}</span>
+                          <span className="font-semibold" style={{ color: '#fe4a23' }}>{value}</span>
                           <span className="capitalize">{key}</span>
                         </div>
                       ))}
                     </div>
 
                     {/* View Project Link */}
-                    <button
+                    {/* <button
                       className="flex items-center gap-2 text-sm font-semibold transition-all group/btn"
                       style={{ color: 'var(--accent-color)' }}
                     >
                       <span>View Project</span>
                       <FiArrowRight className="w-4 h-4 group-hover/btn:translate-x-1 transition-transform" />
-                    </button>
+                    </button> */}
                   </div>
                 </div>
               </motion.div>

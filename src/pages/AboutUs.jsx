@@ -210,7 +210,9 @@ const AboutUs = () => {
                             Let's blend intelligence and imagination to craft videos your audience will remember. Talk to our team and start your project today.
                         </p>
                         <motion.a
-                            href="/contact"
+                            href="https://wa.me/919789565515"
+                            target="_blank"
+                            rel="noopener noreferrer"
                             whileHover={{ scale: 1.05 }}
                             whileTap={{ scale: 0.95 }}
                             className="inline-block px-8 py-4 rounded-full font-semibold text-lg"

@@ -30,7 +30,7 @@ const Footer = () => {
             {/* Social Media Links */}
             <div className="flex gap-3">
               <a
-                href="https://facebook.com"
+                href="https://www.facebook.com/Officialbrandingpioneers/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity"
@@ -39,7 +39,7 @@ const Footer = () => {
                 <FaFacebookF className="w-5 h-5" style={{ color: '#FE4A23' }} />
               </a>
               <a
-                href="https://twitter.com"
+                href="https://x.com/brandingpio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity"
@@ -48,7 +48,7 @@ const Footer = () => {
                 <FaTwitter className="w-5 h-5" style={{ color: '#FE4A23' }} />
               </a>
               <a
-                href="https://instagram.com"
+                href="https://www.instagram.com/brandingpioneers_/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity"
@@ -57,7 +57,7 @@ const Footer = () => {
                 <FaInstagram className="w-5 h-5" style={{ color: '#FE4A23' }} />
               </a>
               <a
-                href="https://linkedin.com"
+                href="https://www.linkedin.com/company/branding-pioneers/"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity"
@@ -66,7 +66,7 @@ const Footer = () => {
                 <FaLinkedinIn className="w-5 h-5" style={{ color: '#FE4A23' }} />
               </a>
               <a
-                href="https://youtube.com"
+                href="https://www.youtube.com/@Aifilmz.studio"
                 target="_blank"
                 rel="noopener noreferrer"
                 className="w-10 h-10 rounded-lg flex items-center justify-center hover:opacity-80 transition-opacity"
@@ -222,6 +222,7 @@ const Footer = () => {
                 </Link>
               </li>
 
+
             </ul>
           </div>
 
@@ -254,13 +255,13 @@ const Footer = () => {
                   <FiPhone className="w-5 h-5" style={{ color: '#FE4A23' }} />
                 </div>
                 <a
-                  href="tel:+918035315291"
+                  href="tel:+919789565515"
                   className="transition-colors"
                   style={{ color: '#CCCCCC' }}
                   onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
                   onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
                 >
-                  +91 8035315291
+                  +91 9789565515
                 </a>
               </div>
 
@@ -270,13 +271,13 @@ const Footer = () => {
                   <FiMail className="w-5 h-5" style={{ color: '#FE4A23' }} />
                 </div>
                 <a
-                  href="mailto:contact@aifilmz.com"
-                  className="transition-colors"
-                  style={{ color: '#CCCCCC' }}
-                  onMouseEnter={(e) => e.target.style.color = '#FE4A23'}
-                  onMouseLeave={(e) => e.target.style.color = '#CCCCCC'}
+                  href="mailto:official@brandingpioneers.com"
+                  className="flex items-center gap-2 transition-colors duration-300"
+                  style={{
+                    color: '#FFFFFF'
+                  }}
                 >
-                  contact@aifilmz.com
+                  official@brandingpioneers.com
                 </a>
               </div>
 

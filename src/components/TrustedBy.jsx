@@ -2,12 +2,13 @@ import React from 'react';
 import { motion } from 'framer-motion';
 
 const logos = [
-  'class',
-  'SANLO',
-  'MORNINGSTAR',
-  'Google',
-  'K12',
-  'UBISOFT+',
+  'AIIMS Geriatrics',
+  'Apollo Indraprastha',
+  'IVY Hospital',
+  'Sharoma Candles',
+  'Ecovana',
+  'Estique Clinic',
+  'Astro Bazzar',
 ];
 
 // Duplicate logos for a seamless loop

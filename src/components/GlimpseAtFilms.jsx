@@ -16,7 +16,7 @@ const GlimpseAtFilms = () => {
       id: 8,
       title: 'Medical Technology',
 
-      videoUrl: "public/videos/doctors.mp4"
+      videoUrl: "public/videos/Doctors.mp4"
     },
     {
       id: 9,
@@ -59,7 +59,7 @@ const GlimpseAtFilms = () => {
       id: 3,
       title: "Republic Day",
 
-      videoUrl: "/videos/republic.mp4"
+      videoUrl: "/videos/Republic.mp4"
     },
     {
       id: 4,

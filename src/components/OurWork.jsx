@@ -58,7 +58,7 @@ const OurWork = () => {
       client: "Sharoma Candles",
       industry: "Marketing",
       description: "AI-powered ad campaign that captured attention and drove brand recall",
-      videoUrl: "public/videos/Sequence 01_1.mp4",
+      videoUrl: "public/videos/Sequence.mp4",
       metric: "3.2M Reach",
       stats: {
         reach: "3.2M",

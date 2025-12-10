@@ -25,9 +25,9 @@ const Header = () => {
   }, [location]);
 
   const navItems = [
-    { name: 'Services', path: '/#services' },
-    // { name: 'Pricing', path: '/#pricing' },
-    { name: 'How We Work', path: '/#how-it-works' },
+    // { name: 'Services', path: '/#services' },
+    // // { name: 'Pricing', path: '/#pricing' },
+    // { name: 'How We Work', path: '/#how-it-works' },
     { name: 'About Us', path: '/about' },
     { name: 'Contact', path: '/contact' }
   ];
@@ -71,7 +71,7 @@ const Header = () => {
           </Link>
 
           {/* Desktop Navigation */}
-          <nav className="hidden lg:flex items-center space-x-1">
+          <nav className="hidden lg:flex justify-end space-x-1">
             {navItems.map((item, index) => (
               <motion.div
                 key={item.name}
@@ -166,64 +166,66 @@ const Header = () => {
           </div>
         </div>
 
-        {/* Mobile Menu */}
-        {isMobileMenuOpen && (
-          <motion.div
-            initial={{ opacity: 0, height: 0 }}
-            animate={{ opacity: 1, height: 'auto' }}
-            exit={{ opacity: 0, height: 0 }}
-            transition={{ duration: 0.3 }}
-          >
-            <nav className="py-4 px-4 space-y-2 border-t border-gray-200 dark:border-gray-700">
-              {navItems.map((item) => (
-                <div key={item.name}>
-                  {item.path.startsWith('/#') ? (
-                    <a
-                      href={item.path}
-                      onClick={(e) => {
-                        if (location.pathname === '/') {
-                          e.preventDefault();
-                        }
-                        handleNavClick(item.path);
-                      }}
-                      className={`block py-3 px-4 rounded-lg transition-all duration-300 ${isDark
-                        ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                        : 'text-gray-700 hover:text-black hover:bg-gray-100'
-                        }`}
-                    >
-                      {item.name}
-                    </a>
-                  ) : (
-                    <Link
-                      to={item.path}
-                      className={`block py-3 px-4 rounded-lg transition-all duration-300 ${isDark
-                        ? 'text-gray-300 hover:text-white hover:bg-gray-800'
-                        : 'text-gray-700 hover:text-black hover:bg-gray-100'
-                        } ${location.pathname === item.path ? (isDark ? 'bg-gray-800 text-white' : 'bg-gray-100 text-black') : ''}`}
-                    >
-                      {item.name}
-                    </Link>
-                  )}
-                </div>
-              ))}
-
-              {/* Mobile Connect Button */}
-              <motion.a
-                href="tel:918035315291"
-                className="w-full mt-4 flex items-center justify-center space-x-2 px-6 py-3 rounded-full font-medium"
-                style={{ background: 'var(--accent-color)', color: 'var(--text-inverse)' }}
-                whileTap={{ scale: 0.95 }}
-                onClick={() => setIsMobileMenuOpen(false)}
-              >
-                <span>Connect</span>
-                <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
-                  <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
-                </svg>
-              </motion.a>
-            </nav>
-          </motion.div>
-        )}
       </div>
+
+      {/* Mobile Menu Dropdown - Positioned Below Header */}
+      {isMobileMenuOpen && (
+        <motion.div
+          initial={{ opacity: 0, y: -10 }}
+          animate={{ opacity: 1, y: 0 }}
+          exit={{ opacity: 0, y: -10 }}
+          transition={{ duration: 0.3 }}
+          className={`absolute top-full left-4 right-4 mt-2 rounded-lg shadow-2xl ${isDark ? 'bg-gray-900/95' : 'bg-white/95'} backdrop-blur-xl`}
+        >
+          <nav className="py-4 px-4 space-y-2">
+            {navItems.map((item) => (
+              <div key={item.name}>
+                {item.path.startsWith('/#') ? (
+                  <a
+                    href={item.path}
+                    onClick={(e) => {
+                      if (location.pathname === '/') {
+                        e.preventDefault();
+                      }
+                      handleNavClick(item.path);
+                    }}
+                    className={`block py-3 px-4 rounded-none transition-all duration-300 ${isDark
+                      ? 'text-gray-300 hover:text-white hover:bg-gray-800'
+                      : 'text-gray-700 hover:text-black hover:bg-gray-100'
+                      }`}
+                  >
+                    {item.name}
+                  </a>
+                ) : (
+                  <Link
+                    to={item.path}
+                    className={`block py-3 px-4 rounded-none transition-all duration-300 ${isDark
+                      ? 'text-gray-300 hover:text-white hover:bg-gray-800'
+                      : 'text-gray-700 hover:text-black hover:bg-gray-100'
+                      } ${location.pathname === item.path ? (isDark ? 'bg-gray-800 text-white' : 'bg-gray-100 text-black') : ''}`}
+                  >
+                    {item.name}
+                  </Link>
+                )}
+              </div>
+            ))}
+
+            {/* Mobile Connect Button */}
+            <motion.a
+              href="tel:918035315291"
+              className="w-full mt-4 flex items-center justify-center space-x-2 px-6 py-3 rounded-md font-medium"
+              style={{ background: 'var(--accent-color)', color: 'var(--text-inverse)' }}
+              whileTap={{ scale: 0.95 }}
+              onClick={() => setIsMobileMenuOpen(false)}
+            >
+              <span>Connect</span>
+              <svg className="w-4 h-4" fill="none" stroke="currentColor" viewBox="0 0 24 24">
+                <path strokeLinecap="round" strokeLinejoin="round" strokeWidth={2} d="M9 5l7 7-7 7" />
+              </svg>
+            </motion.a>
+          </nav>
+        </motion.div>
+      )}
     </motion.header>
   );
 };

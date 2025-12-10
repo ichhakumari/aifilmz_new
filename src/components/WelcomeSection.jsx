@@ -97,7 +97,7 @@ const WelcomeSection = () => {
                                     className="text-center max-w-3xl mx-auto"
                                 >
                                     <p className="text-sm sm:text-base leading-relaxed mb-2 text-white/80">
-                                        Specializing in <strong className="text-white">AI Avatar Videos</strong> that bring your brand to life with hyper realistic virtual presenters. Our cutting-edge technology creates personalized, engaging content at scale—perfect for marketing, training, and customer engagement.
+                                        Specializing in <strong className="text-white">AI Avatar Videos</strong> that bring your brand to life with hyper realistic virtual presenters. Our cutting-edge technology creates personalized, engaging content at scale perfect for marketing, training, and customer engagement.
                                         <br /><br />
                                         Beyond avatars, we deliver high impact commercial ads, product promos, and social media content powered by advanced AI. From concept to final edit, we bring your vision to life with precision and quality you can trust.
                                     </p>

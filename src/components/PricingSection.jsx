@@ -88,6 +88,15 @@ const PricingSection = () => {
                 backgroundColor: plan.highlight ? 'var(--bg-tertiary)' : 'var(--card-bg)',
                 borderColor: plan.highlight ? 'var(--accent-color)' : 'var(--border-color)',
                 borderWidth: '1px',
+                boxShadow: plan.highlight
+                  ? '0 10px 40px rgba(254, 74, 35, 0.2), 0 4px 12px rgba(0, 0, 0, 0.3)'
+                  : '0 4px 20px rgba(0, 0, 0, 0.2)',
+              }}
+              whileHover={{
+                y: -8,
+                boxShadow: plan.highlight
+                  ? '0 20px 60px rgba(254, 74, 35, 0.3), 0 8px 20px rgba(0, 0, 0, 0.4)'
+                  : '0 12px 40px rgba(0, 0, 0, 0.3)',
               }}
             >
               {/* Highlight Badge */}

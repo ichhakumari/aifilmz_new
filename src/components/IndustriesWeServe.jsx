@@ -2,13 +2,20 @@ import React, { useRef } from 'react';
 import { motion, useInView } from 'framer-motion';
 import * as FiIcons from 'react-icons/fi';
 
-const { FiTrendingUp, FiHome, FiShoppingCart, FiUsers, FiCoffee, FiCpu } = FiIcons;
+const { FiTrendingUp, FiHome, FiShoppingCart, FiHeart, FiCoffee, FiCpu } = FiIcons;
 
 const IndustriesWeServe = () => {
     const ref = useRef(null);
     const isInView = useInView(ref, { once: true, threshold: 0.2 });
 
     const industries = [
+        {
+            icon: FiHeart,
+            name: "Healthcare",
+            description: "Transform patient communication with AI avatars for medical education, appointment reminders, and personalized health guidance.",
+            color: "#FE4A23",
+            image: "https://images.unsplash.com/photo-1576091160399-112ba8d25d1d?w=800"
+        },
         {
             icon: FiTrendingUp,
             name: "Startups",
@@ -29,13 +36,6 @@ const IndustriesWeServe = () => {
             description: "Drive sales with product demos, unboxing videos, and engaging social media content.",
             color: "#FE4A23",
             image: "https://images.unsplash.com/photo-1556742049-0cfed4f6a45d?w=800"
-        },
-        {
-            icon: FiUsers,
-            name: "Agencies",
-            description: "Scale your client deliverables with our white-label video production and AI avatar solutions.",
-            color: "#FE4A23",
-            image: "https://images.unsplash.com/photo-1552664730-d307ca884978?w=800"
         },
         {
             icon: FiCoffee,

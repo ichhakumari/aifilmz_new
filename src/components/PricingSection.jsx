@@ -20,7 +20,7 @@ const PricingSection = () => {
     {
       title: "AI Avatar Productions",
       description: "On-screen virtual presenters with hyper-realistic delivery.",
-      price: "$500",
+      price: "$50",
       priceDetails: "FIRST 30 SECONDS",
       features: [
         "+$250 per 60 seconds additional",
@@ -33,7 +33,7 @@ const PricingSection = () => {
     {
       title: "AI Cinematic Productions",
       description: "Hollywood-level scenes with advanced AI & expert storytelling.",
-      price: "$3,000+",
+      price: "$1,500+",
       priceDetails: "CUSTOM QUOTED",
       features: [
         "Scalable pricing by complexity",

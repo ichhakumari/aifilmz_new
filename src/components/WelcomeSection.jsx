@@ -88,7 +88,7 @@ const WelcomeSection = () => {
                                     variants={itemVariants}
                                     className="text-xl sm:text-2xl md:text-3xl font-medium text-center mb-6 sm:mb-8 tracking-wide text-white"
                                 >
-                                    Welcome to <span className='italic' style={{ color: '#FE4A23' }}>AIFILMZ</span>
+                                    Transforming Ideas Into <span className='italic' style={{ color: '#FE4A23' }}>Cinematic Reality</span>
                                 </motion.h2>
 
                                 {/* Main Description */}
@@ -97,8 +97,9 @@ const WelcomeSection = () => {
                                     className="text-center max-w-3xl mx-auto"
                                 >
                                     <p className="text-sm sm:text-base leading-relaxed mb-2 text-white/80">
-                                        High-quality commercial ads, product promos, social media content, AI-generated videos, and animated videos for any occasion. Our team focuses on delivering polished, creative, and engaging visuals that truly stand out.
-                                        If you want professional content made with advanced AI and expert editing, connect with us. We'll bring your idea to life with quality you can trust.
+                                        Specializing in <strong className="text-white">AI Avatar Videos</strong> that bring your brand to life with hyper realistic virtual presenters. Our cutting-edge technology creates personalized, engaging content at scale—perfect for marketing, training, and customer engagement.
+                                        <br /><br />
+                                        Beyond avatars, we deliver high impact commercial ads, product promos, and social media content powered by advanced AI. From concept to final edit, we bring your vision to life with precision and quality you can trust.
                                     </p>
                                 </motion.div>
                             </motion.div>

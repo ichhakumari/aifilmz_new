@@ -14,13 +14,13 @@ const Services = () => {
   const videoRef = useRef(null);
 
   const services = [
-    { title: "AI Avatar Cloning", description: "Hyper-realistic virtual presenters for personalized content", video: "public/videos/Avatar Cloning.mp4" },
-    { title: "Reel Videos", description: "Engaging short-form content for social media", video: "videos/Video-648.mp4" },
-    { title: "Animated Graphics", description: "Stunning motion graphics with AI-enhanced tools", video: "videos/Video-412.mp4" },
-    { title: "Product Videos", description: "Professional product showcases with 3D rendering", video: "videos/Product.mp4" },
-    { title: "Ad Films", description: "High-impact advertising with maximum engagement", video: "videos/Zomato.mp4" },
-    { title: "Animated Videos", description: "Fully animated content for brands and stories", video: '/videos/Cadbury Dairy Milk.mp4' },
-    { title: "Music Videos", description: "Creative visuals synchronized to audio", video: "videos/Music Video.mp4" }
+    { title: "AI Avatar Cloning", description: "Hyper-realistic virtual presenters for personalized content", video: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371480/Avatar_Cloning_vpdnc8.mp4" },
+    { title: "Reel Videos", description: "Engaging short-form content for social media", video: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371498/Video-648_ahmyef.mp4" },
+    { title: "Animated Graphics", description: "Stunning motion graphics with AI-enhanced tools", video: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371510/Video-412_shwznd.mp4" },
+    { title: "Product Videos", description: "Professional product showcases with 3D rendering", video: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371482/Product_kntr6l.mp4" },
+    { title: "Ad Films", description: "High-impact advertising with maximum engagement", video: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371506/Zomato_lciokx.mp4" },
+    { title: "Animated Videos", description: "Fully animated content for brands and stories", video: 'https://res.cloudinary.com/dqgknssu8/video/upload/v1765371499/Cadbury_Dairy_Milk_cpkpen.mp4' },
+    { title: "Music Videos", description: "Creative visuals synchronized to audio", video: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371485/Music_Video_le6wpm.mp4" }
   ];
 
   const handlePrevious = () => {

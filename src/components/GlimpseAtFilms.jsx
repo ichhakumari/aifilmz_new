@@ -16,56 +16,56 @@ const GlimpseAtFilms = () => {
       id: 8,
       title: 'Medical Technology',
 
-      videoUrl: "public/videos/Doctors.mp4"
+      videoUrl: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371478/Doctors_lp9ihn.mp4"
     },
     {
       id: 9,
       title: 'Cadbury Dairy Milk',
 
-      videoUrl: 'public/videos/Cadbury Dairy Milk.mp4'
+      videoUrl: 'https://res.cloudinary.com/dqgknssu8/video/upload/v1765371499/Cadbury_Dairy_Milk_cpkpen.mp4'
     },
     {
       id: 1,
       title: 'Attractive Fitness Gym',
 
-      videoUrl: "/videos/Gym.mp4"
+      videoUrl: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371504/Gym_luf3rd.mp4"
     },
     {
       id: 2,
       title: 'Amul Janmashtami Special',
 
-      videoUrl: "/videos/Amul Janmashtami Special.mp4"
+      videoUrl: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371310/Amul_Janmashtami_Special_xgcn8c.mp4"
     },
 
     {
       id: 5,
       title: 'Architectural Design',
 
-      videoUrl: "public/videos/Architectural Design.mp4"
+      videoUrl: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371477/Architectural_Design_uvwlvj.mp4"
     },
     {
       id: 6,
       title: 'Cyber Security',
 
-      videoUrl: "/videos/Cyber Security.mp4"
+      videoUrl: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371477/Cyber_Security_whvxij.mp4"
     },
     {
       id: 7,
       title: 'Eco-Friendly Launch',
 
-      videoUrl: "/videos/Eco-Friendly Launch.mp4"
+      videoUrl: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371479/Eco-Friendly_Launch_eomylo.mp4"
     },
     {
       id: 3,
       title: "Republic Day",
 
-      videoUrl: "/videos/Republic.mp4"
+      videoUrl: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371484/Republic_xcn8wh.mp4"
     },
     {
       id: 4,
       title: 'Animated Video',
 
-      videoUrl: "/videos/Video-445.mp4"
+      videoUrl: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371494/Video-445_saacvh.mp4"
     },
 
   ];

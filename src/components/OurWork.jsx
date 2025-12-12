@@ -16,7 +16,7 @@ const OurWork = () => {
       client: "Healthcare Technology",
       industry: "Sales",
       description: "Hyper-personalized video messages that revolutionized customer engagement",
-      videoUrl: "public/videos/medical.mp4",
+      videoUrl: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371480/Medical_srxspe.mp4",
       metric: "340% Response",
       stats: {
         sent: "50K+",
@@ -30,7 +30,7 @@ const OurWork = () => {
       client: "Fashion Retail Brand",
       industry: "E-commerce",
       description: "AI-generated product videos that drove massive engagement and conversions",
-      videoUrl: "public/videos/Video-500.mp4",
+      videoUrl: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371497/Video-500_pgg0qe.mp4",
       metric: "500% ROI",
       stats: {
         views: "2.5M",
@@ -44,7 +44,7 @@ const OurWork = () => {
       client: "Tech Corporation",
       industry: "HR/Training",
       description: "Personalized onboarding videos that transformed employee engagement",
-      videoUrl: "public/videos/coporatevideos.mp4",
+      videoUrl: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371478/Coporatevideos_mvzmbq.mp4",
       metric: "98% Completion",
       stats: {
         employees: "10K+",
@@ -58,7 +58,7 @@ const OurWork = () => {
       client: "Sharoma Candles",
       industry: "Marketing",
       description: "AI-powered ad campaign that captured attention and drove brand recall",
-      videoUrl: "public/videos/Sequence.mp4",
+      videoUrl: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371489/Sequence_01_1_r9wr3d.mp4",
       metric: "3.2M Reach",
       stats: {
         reach: "3.2M",
@@ -72,7 +72,7 @@ const OurWork = () => {
       client: "-",
       industry: "Animation",
       description: "Engaging animated content that brought brand values to life",
-      videoUrl: "public/videos/Video-249.mp4",
+      videoUrl: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371490/Video-249_zb0q39.mp4",
       metric: "1.8M Shares",
       stats: {
         shares: "1.8M",
@@ -87,7 +87,7 @@ const OurWork = () => {
       client: "-",
       industry: "Ads",
       description: "Engaging animated content that brought brand values to life",
-      videoUrl: "public/videos/Video-851.mp4",
+      videoUrl: "https://res.cloudinary.com/dqgknssu8/video/upload/v1765371496/Video-851_h3tctc.mp4",
       metric: "1.8M Shares",
       stats: {
         shares: "1.8M",

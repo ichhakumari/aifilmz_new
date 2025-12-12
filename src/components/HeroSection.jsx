@@ -34,10 +34,12 @@ const HeroSection = () => {
           autoPlay
           muted
           loop
+          preload="auto"
+          playsInline
           className="w-full h-full object-cover"
         >
           <source
-            src="/videos/Herosection1.mp4"
+            src="https://res.cloudinary.com/dqgknssu8/video/upload/v1765371489/Herosection1_w63v3p.mp4"
             type="video/mp4"
           />
         </video>
